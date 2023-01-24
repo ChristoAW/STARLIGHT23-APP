@@ -1,0 +1,22 @@
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../asset/fonts/Montserrat-Medium.ttf') format('truetype');
+    // font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+// khusus huruf F,K,Q,S pake versi 'italic' (sharpen)
+@font-face {
+    font-family: 'Exodus';
+    src: url('../asset/fonts/ExodusDemo-Striped.otf') format('opentype');
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Exodus';
+    src: url('../asset/fonts/ExodusDemo-Sharpen.otf') format('opentype');
+    font-style: italic;
+    font-display: swap;
+}
