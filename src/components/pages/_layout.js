@@ -1,38 +1,70 @@
-import { Box, Flex } from "@chakra-ui/react";
+import { Box, Flex } from '@chakra-ui/react';
+import { useEffect, useState } from 'react';
 
-import Footer from "../Footer/footer";
-import Header from "../Header/header";
-import ScrollButton from "../ScrollToTop/scrollButton";
+import Footer from "@/components/Footer/footer";
+import Header from '@/components/Header/header';
 // import SplashLoader from '@/components/SplashLoader';
 
-const Layout = ({ children, ...props }) => (
-  <Flex
-    flexDir="column"
-    justifyContent="center"
-    alignItems="center"
-    minH="100vh"
-    width="100%"
-    // maxW="100vw"
-    // overflowX="hidden"
-    {...props}
-  >
-    <Box
-      sx={{
-        position: "-webkit-sticky",
-        position: "sticky", /* Safari */ 
-        top: "0",
-      }}
-			maxW="100%"
-			zIndex={5}
-			overflowX="hidden"
+const Layout = ({ children, ...props }) => {
+  const scrollDirection = useScrollDirection();
+
+  return (
+    <Flex
+      flexDir="column"
+      justifyContent="center"
+      alignItems="center"
+      minH="100vh"
+      width="100%"
+      {...props}
     >
-      <Header />
-    </Box>
-    {/* <SplashLoader /> */}
-    {children}
-    {/* <ScrollButton /> */}
-    <Footer />
-  </Flex>
-);
+      <Box
+        sx={{
+          position: '-webkit-sticky',
+          position: 'sticky' /* Safari */,
+          // top: '0',
+        }}
+        top={{
+          md: scrollDirection === 'down' ? '-110' : '0',
+        }}
+        transition={{ md: 'all .4s ease-in-out' }}
+        transitionDelay={{ md: '.1s' }}
+        maxW="100%"
+        zIndex={5}
+        overflowX="hidden"
+      >
+        <Header />
+      </Box>
+      {/* <SplashLoader /> */}
+      {children}
+      <Footer />
+    </Flex>
+  );
+};
+
+function useScrollDirection() {
+  const [scrollDirection, setScrollDirection] = useState(null);
+
+  useEffect(() => {
+    let lastScrollY = window.pageYOffset;
+
+    const updateScrollDirection = () => {
+      const scrollY = window.pageYOffset;
+      const direction = scrollY > lastScrollY ? 'down' : 'up';
+      if (
+        direction !== scrollDirection &&
+        (scrollY - lastScrollY > 10 || scrollY - lastScrollY < -10)
+      ) {
+        setScrollDirection(direction);
+      }
+      lastScrollY = scrollY > 0 ? scrollY : 0;
+    };
+    window.addEventListener('scroll', updateScrollDirection); // add event listener
+    return () => {
+      window.removeEventListener('scroll', updateScrollDirection); // clean up
+    };
+  }, [scrollDirection]);
+
+  return scrollDirection;
+}
 
 export default Layout;

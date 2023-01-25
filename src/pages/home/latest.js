@@ -1,10 +1,10 @@
 import { Box, Flex, Image, Text } from '@chakra-ui/react';
 import PropTypes from 'prop-types';
-import theme from '../theme';
+import theme from '@/theme';
 
-import YtEmbed from "../components/embed/youtube"
+import YtEmbed from "@/components/embed/youtube"
 
-import vidFrame from '../asset/images/pages/about-us/frame.png';
+import vidFrame from '@/asset/images/pages/about-us/frame.png';
 
 YtEmbed.propTypes = {
   embedId: PropTypes.string.isRequired,

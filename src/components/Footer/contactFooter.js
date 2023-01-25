@@ -1,5 +1,5 @@
 import { Flex, Text, Link } from "@chakra-ui/react";
-import theme from "../../theme";
+import theme from "@/theme";
 import {
   FaInstagram,
   FaYoutube,

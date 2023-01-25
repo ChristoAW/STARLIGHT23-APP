@@ -1,8 +1,8 @@
 import { createContext, useEffect, useState } from "react";
 import { useRouter } from "next/router";
 
-import Layout from "../pages/_layout";
-import Title from "../pages/title";
+import Layout from "@/components/pages/_layout";
+import Title from "@/components/pages/title";
 
 export const LayoutContext = createContext();
 
