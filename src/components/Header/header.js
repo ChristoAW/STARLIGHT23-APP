@@ -35,7 +35,7 @@ const NavbarLink = ({ to, children, ...props }) => {
       ps={{ md: "3", lg: "7" }}
       pe={{ md: "calc(2px + .85rem)", lg: "7" }}
       textAlign="center"
-      fontSize={{ md: "md", lg: "lg", xl: "larger" }}
+      fontSize={{ md: "sm", lg: "md", xl: "larger" }}
       color={
         isActive
           ? `${theme.colors.nav["active"]}`
@@ -89,14 +89,15 @@ const Header = () => {
       >
         <Flex justifyContent="space-between" alignItems="center">
           <NextLink href="/" passHref>
-            <Link p="2">
+            {/* <Link p="2"> */}
               <Logo
                 img={logoStarlight.src}
                 alt="Starlight 2023"
+                py={{base: "2", md: "3", lg: "1.5", xl:"3"}}
                 minW="3.5rem"
-                size={{ base: "3.5rem", sm: "4rem", md: "5rem" }}
+                size={{ base: "3.5rem", sm: "4rem", lg: "4.5rem" }}
               />
-            </Link>
+            {/* </Link> */}
           </NextLink>
           <NavbarLink
             to="/recruitment"
