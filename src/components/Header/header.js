@@ -5,12 +5,12 @@ import { useContext, useEffect } from "react";
 import { LayoutContext } from "../context/LayoutContext";
 
 import NextLink from "next/link";
-import theme from "../../theme";
+import theme from "@/theme";
 
 import Logo from "../Logo";
 
-import bgHeader from "../../asset/images/header/header.png";
-import logoStarlight from "../../asset/images/logo/starlight.png";
+import bgHeader from "@/asset/images/header/header.png";
+import logoStarlight from "@/asset/images/logo/starlight.png";
 import MobileNav from "./headerM";
 
 const NavbarLink = ({ to, children, ...props }) => {

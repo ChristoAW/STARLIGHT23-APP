@@ -1,14 +1,14 @@
 import { Text, Flex, Stack, Box, Link, Divider } from "@chakra-ui/react";
 import NextLink from "next/link";
 
-import theme from "../../theme";
+import theme from "@/theme";
 
 import Contact from "./contactFooter";
 import Logo from "../Logo";
 
-import logoStarlight from "../../asset/images/logo/starlight.png";
-import logoBEM from "../../asset/images/logo/bem-umn.png";
-import logoUMN from "../../asset/images/logo/umn-logo.png";
+import logoStarlight from "@/asset/images/logo/starlight.png";
+import logoBEM from "@/asset/images/logo/bem-umn.png";
+import logoUMN from "@/asset/images/logo/umn-logo.png";
 
 const FooterLink = ({ to, children }) => (
   <Box>
