@@ -75,13 +75,11 @@ const Footer = () => {
               textAlign={{ base: "center", md: "left" }}
             >
               <Stack minW={{ base: "150px", xl: "180px" }}>
-                <FooterLink to="/">Home</FooterLink>
-                <FooterLink to="/">About Us</FooterLink>
-                <FooterLink to="/">Treasure Map</FooterLink>
                 <FooterLink to="/">Recruitment</FooterLink>
+                <FooterLink to="/">About Us</FooterLink>
+                <FooterLink to="/">Media</FooterLink>
               </Stack>
               <Stack minW="100px" py={{ base: "2", md: "0" }}>
-                <FooterLink to="/">Media</FooterLink>
                 <FooterLink to="/">Testimony</FooterLink>
                 <FooterLink to="/">Talents</FooterLink>
                 <FooterLink to="/">FAQ</FooterLink>

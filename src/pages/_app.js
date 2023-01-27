@@ -8,6 +8,7 @@ import iconSL from '../../public/favicon.ico';
 
 import LayoutProvider from '../components/context/LayoutContext';
 import { useEffect, useState } from 'react';
+import Scroll from '@/components/smoothScroll/smoothScroll';
 
 // kalo pake base head bagian linknya, icon di hp oke tapi yg di pc ilang
 const BaseHead = () => {
@@ -37,6 +38,7 @@ function MyApp({ Component, pageProps }) {
       {/* <BaseHead /> */}
       <ChakraProvider theme={theme}>
         <LayoutProvider>
+          {/* <Scroll /> */}
           <Component {...pageProps} />
         </LayoutProvider>
       </ChakraProvider>
