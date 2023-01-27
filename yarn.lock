@@ -1917,6 +1917,11 @@
   dependencies:
     "toggle-selection" "^1.0.6"
 
+"core-js@^3.6.4":
+  "integrity" "sha512-9ashVQskuh5AZEZ1JdQWp1GqSoC1e1G87MzRqg2gIfVAQ7Qn9K+uFj8EcniUFA4P2NLZfV+TOlX1SzoKfo+s7w=="
+  "resolved" "https://registry.npmjs.org/core-js/-/core-js-3.27.2.tgz"
+  "version" "3.27.2"
+
 "core-util-is@~1.0.0", "core-util-is@1.0.2":
   "integrity" "sha512-3lqz5YjWTYnW6dlDa5TLaTCcShfar1e40rmcJVwCBJC6mWlFuj0eCHIElmG1g5kyuJ/GD+8Wn4FFCcz4gJPfaQ=="
   "resolved" "https://registry.npmjs.org/core-util-is/-/core-util-is-1.0.2.tgz"
@@ -2805,6 +2810,11 @@
   "resolved" "https://registry.npmjs.org/grapheme-splitter/-/grapheme-splitter-1.0.4.tgz"
   "version" "1.0.4"
 
+"hamburger-react@^2.5.0":
+  "integrity" "sha512-5GSXe+ucxTPJ0SkhIsPQ/PRDweZPIKya1lfahAuExx31SdheeUA4uOPfQIAirbKona8hvo79VDr5LJQzPXsdpw=="
+  "resolved" "https://registry.npmjs.org/hamburger-react/-/hamburger-react-2.5.0.tgz"
+  "version" "2.5.0"
+
 "har-schema@^2.0.0":
   "integrity" "sha512-Oqluz6zhGX8cyRaTQlFMPw80bSJVG2x/cFb8ZPhUILGgHka9SsokCCOQgpveePerqidZOrT14ipqfJb7ILcW5Q=="
   "resolved" "https://registry.npmjs.org/har-schema/-/har-schema-2.0.0.tgz"
@@ -3359,6 +3369,16 @@
   "version" "6.0.0"
   dependencies:
     "p-locate" "^5.0.0"
+
+"lodash.clamp@^4.0.3":
+  "integrity" "sha512-HvzRFWjtcguTW7yd8NJBshuNaCa8aqNFtnswdT7f/cMd/1YKy5Zzoq4W/Oxvnx9l7aeY258uSdDfM793+eLsVg=="
+  "resolved" "https://registry.npmjs.org/lodash.clamp/-/lodash.clamp-4.0.3.tgz"
+  "version" "4.0.3"
+
+"lodash.debounce@^4.0.8":
+  "integrity" "sha512-FT1yDzDYEoYWhnSGnpE/4Kj1fLZkDFyqRb7fNt6FdYOSxlUWAtp42Eh6Wb0rGIv/m9Bgo7x4GhQbm5Ys4SG5ow=="
+  "resolved" "https://registry.npmjs.org/lodash.debounce/-/lodash.debounce-4.0.8.tgz"
+  "version" "4.0.8"
 
 "lodash.merge@^4.6.2":
   "integrity" "sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ=="
@@ -4048,7 +4068,7 @@
     "invariant" "^2.2.4"
     "tslib" "^2.0.0"
 
-"react@*", "react@^15.3.0 || ^16.0.0 || ^17.0.0 || ^18.0.0", "react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^16.9.0 || ^17.0.0 || ^18.0.0", "react@^18.0.0", "react@^18.2.0", "react@>= 16.8.0 || 17.x.x || ^18.0.0-0", "react@>=16.8.0", "react@>=18", "react@18.2.0":
+"react@*", "react@^15.3.0 || ^16.0.0 || ^17.0.0 || ^18.0.0", "react@^16.8 || ^17 || ^18", "react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^16.9.0 || ^17.0.0 || ^18.0.0", "react@^18.0.0", "react@^18.2.0", "react@>= 16.8.0 || 17.x.x || ^18.0.0-0", "react@>=16.8.0", "react@>=18", "react@18.2.0":
   "integrity" "sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ=="
   "resolved" "https://registry.npmjs.org/react/-/react-18.2.0.tgz"
   "version" "18.2.0"
@@ -4328,6 +4348,16 @@
   "integrity" "sha512-94hK0Hh8rPqQl2xXc3HsaBoOXKV20MToPkcXvwbISWLEs+64sBq5kFgn2kJDHb1Pry9yrP0dxrCI9RRci7RXKg=="
   "resolved" "https://registry.npmjs.org/smart-buffer/-/smart-buffer-4.2.0.tgz"
   "version" "4.2.0"
+
+"smooth-scrollbar@^8.8.1":
+  "integrity" "sha512-FQDRtdLTRye8LdRHohNAxh0hyo7gl8+APfA+8Qu5S38MBqR8/WqOoRVzjizH6FTdbU1qGsB7gs8LhMeFJ4Jr8g=="
+  "resolved" "https://registry.npmjs.org/smooth-scrollbar/-/smooth-scrollbar-8.8.1.tgz"
+  "version" "8.8.1"
+  dependencies:
+    "core-js" "^3.6.4"
+    "lodash.clamp" "^4.0.3"
+    "lodash.debounce" "^4.0.8"
+    "tslib" "^1.10.0"
 
 "socks-proxy-agent@^6.0.0":
   "integrity" "sha512-a6KW9G+6B3nWZ1yB8G7pJwL3ggLy1uTzKAgCb7ttblwqdz9fMGJUuTy3uFzEP48FAs9FLILlmzDlE2JJhVQaXQ=="
@@ -4622,6 +4652,11 @@
     "json5" "^1.0.1"
     "minimist" "^1.2.6"
     "strip-bom" "^3.0.0"
+
+"tslib@^1.10.0":
+  "integrity" "sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg=="
+  "resolved" "https://registry.npmjs.org/tslib/-/tslib-1.14.1.tgz"
+  "version" "1.14.1"
 
 "tslib@^1.8.1":
   "integrity" "sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg=="

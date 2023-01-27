@@ -8,7 +8,9 @@ export const LayoutContext = createContext();
 
 const LayoutProvider = ({ children }) => {
   const baseTitle = "STARLIGHT 2023";
+
   const [titleSuffix, setTitleSuffix] = useState("");
+
 	const [inView, setInView] = useState("ABOUT U<i>S</i>");
 
   const router = useRouter();
