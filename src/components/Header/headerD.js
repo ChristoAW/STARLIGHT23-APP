@@ -24,6 +24,7 @@ export const NavbarLink = ({ to, children, display, ...props }) => {
         color: `${theme.colors.nav['active']}`,
         cursor: 'pointer',
       }}
+      transition=".15s ease-in-out"
       {...props}
     >
       <NextLink href={to} passHref>

@@ -29,7 +29,12 @@ const Popup = (props) => {
         <AspectRatio
           ratio={732 / 150}
           w={['45%', '30%', '25%', '20%']}
-          py="20px"
+          my="20px"
+          _hover={{
+            cursor : "pointer",
+            transform: "scale(1.1)"
+          }}
+          transition=".3s ease-in-out"
         >
           <Box
             bgImage={props.selectedDivisi.button}

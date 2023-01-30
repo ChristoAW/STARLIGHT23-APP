@@ -1,14 +1,12 @@
-import { Divider, Flex, Image, Text } from '@chakra-ui/react';
+import { Flex, Image, Text } from '@chakra-ui/react';
 
 import vidFrame from '@/asset/images/pages/about-us/frame.png';
 import bgTreasure from '@/asset/images/pages/about-us/coming-soon.jpg';
-import theme from '@/theme';
 
 // pake frame
 const TreasureMap = () => {
   return (
     <Flex
-      // pb={20}
       w="100%"
       minH="100%"
       justifyContent="center"
@@ -43,7 +41,7 @@ const TreasureMap = () => {
             md: 'calc(.2rem + 5.5vw)',
             xl: 'calc(.1rem + 4.5vw)',
           }}
-          textShadow={Array(1)
+          textShadow={Array(3)
             .fill()
             .map((e, i) => `0 0 ${i + 4}0px #78a0cd`)
             .join(', ')}
