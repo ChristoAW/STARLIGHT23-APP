@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 
 import Footer from '@/components/Footer/footer';
 import Header from '@/components/Header/header';
-// import SplashLoader from '@/components/SplashLoader';
+import SplashScreen from '../SplashScreen';
 
 const Layout = ({ children, ...props }) => {
   const scrollDirection = useScrollDirection();
@@ -37,7 +37,7 @@ const Layout = ({ children, ...props }) => {
       >
         <Header />
       </Box>
-      {/* <SplashLoader /> */}
+      {/* <SplashScreen /> */}
       {children}
       <Footer />
     </Flex>

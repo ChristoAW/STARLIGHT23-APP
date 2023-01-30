@@ -51,7 +51,7 @@ const DesktopNav = () => {
         About U<i>s</i>
       </NavbarLink>
       <NavDivider />
-      <NavbarLink to="/">Media</NavbarLink>
+      {/* <NavbarLink to="/">Media</NavbarLink>
       <NavDivider />
       <NavbarLink to="/">
         Te<i>s</i>timony
@@ -60,8 +60,8 @@ const DesktopNav = () => {
       <NavbarLink to="/">
         Talent<i>s</i>
       </NavbarLink>
-      <NavDivider />
-      <NavbarLink to="/">
+      <NavDivider /> */}
+      <NavbarLink to="/faq">
         FA<i>Q</i>
       </NavbarLink>
     </Stack>

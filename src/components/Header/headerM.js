@@ -106,13 +106,13 @@ const MobileNav = () => {
           <NavbarLink to="/" isOpen={isOpen} setOpen={setOpen}>
             About U<i>s</i>
           </NavbarLink>
-          <NavbarLink to="/media" isOpen={isOpen} setOpen={setOpen}>Media</NavbarLink>
+          {/* <NavbarLink to="/media" isOpen={isOpen} setOpen={setOpen}>Media</NavbarLink>
           <NavbarLink to="/testimony" isOpen={isOpen} setOpen={setOpen}>
             Te<i>s</i>timony
           </NavbarLink>
           <NavbarLink to="/talent" isOpen={isOpen} setOpen={setOpen}>
             Talent<i>s</i>
-          </NavbarLink>
+          </NavbarLink> */}
           <NavbarLink to="/talent" isOpen={isOpen} setOpen={setOpen}>
             FA<i>Q</i>
           </NavbarLink>
