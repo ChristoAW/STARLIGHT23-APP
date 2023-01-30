@@ -14,8 +14,11 @@ const TreasureMap = () => {
           base: 'calc(.4rem + 6.5vw)',
           md: 'calc(.6rem + 7vw)',
         }}
-        textShadow="1px 1px 60px #9dbffc"
-        bgGradient="linear(to-b, #9dbffc, #73aee4)"
+        textShadow={Array(1)
+          .fill()
+          .map((e, i) => `0 0 ${i + 4}0px #78a0cd`)
+          .join(', ')}
+        bgGradient="linear(to-b, #a5bff7, #81addf)"
         bgClip="text"
       >
         COMING <i>S</i>OON
