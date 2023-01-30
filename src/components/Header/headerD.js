@@ -1,4 +1,4 @@
-import { Box, Link, Stack, Divider } from "@chakra-ui/react";
+import { Box, Stack, Divider, Text } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import NextLink from "next/link";
 
@@ -27,7 +27,7 @@ export const NavbarLink = ({ to, children, display, ...props }) => {
       {...props}
     >
       <NextLink href={to} passHref>
-        <Link style={{ textDecoration: 'none' }}>{children}</Link>
+        <Text>{children}</Text>
       </NextLink>
     </Box>
   );

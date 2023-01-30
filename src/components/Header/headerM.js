@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import NextLink from 'next/link';
 
-import { Box, Flex, Image, Link } from '@chakra-ui/react';
+import { Box, Flex, Image, Link, Text } from '@chakra-ui/react';
 import { Squeeze } from 'hamburger-react';
 
 import theme from '@/theme';
@@ -32,7 +32,7 @@ const NavbarLink = ({ to, children, isOpen, setOpen, ...props }) => {
       {...props}
     >
       <NextLink href={to} passHref>
-        <Link style={{ textDecoration: 'none' }}>{children}</Link>
+        <Text>{children}</Text>
       </NextLink>
     </Box>
   );
@@ -68,7 +68,7 @@ const MobileNav = () => {
             size={25}
             distance="md"
             color={theme.colors.deco[400]}
-            easing="ease-in-out"
+            easing="ease-out"
             rounded
             toggled={isOpen}
             toggle={setOpen}
@@ -97,8 +97,8 @@ const MobileNav = () => {
             src={logoStarlight.src}
             alt="Starlight 2023"
             minW="3.5rem"
-            w={{ base: '8rem', sm: '8.5rem' }}
-            pb={{ base: '5', sm: '10' }}
+            w={{ base: '9rem', sm: '9.5rem' }}
+            pb={{ base: '5', sm: '7' }}
           />
           <NavbarLink to="/recruitment" isOpen={isOpen} setOpen={setOpen}>
             Recruitment
@@ -106,14 +106,14 @@ const MobileNav = () => {
           <NavbarLink to="/" isOpen={isOpen} setOpen={setOpen}>
             About U<i>s</i>
           </NavbarLink>
-          <NavbarLink to="/media">Media</NavbarLink>
-          <NavbarLink to="/testimony">
+          <NavbarLink to="/media" isOpen={isOpen} setOpen={setOpen}>Media</NavbarLink>
+          <NavbarLink to="/testimony" isOpen={isOpen} setOpen={setOpen}>
             Te<i>s</i>timony
           </NavbarLink>
-          <NavbarLink to="/talent">
+          <NavbarLink to="/talent" isOpen={isOpen} setOpen={setOpen}>
             Talent<i>s</i>
           </NavbarLink>
-          <NavbarLink to="/talent">
+          <NavbarLink to="/talent" isOpen={isOpen} setOpen={setOpen}>
             FA<i>Q</i>
           </NavbarLink>
         </Flex>

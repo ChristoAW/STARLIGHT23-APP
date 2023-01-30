@@ -12,8 +12,8 @@ import logoUMN from "@/asset/images/logo/umn-logo.png";
 
 const FooterLink = ({ to, children }) => (
   <Box>
-    <NextLink href={to} passHref>
-      <Link>{children}</Link>
+    <NextLink href={to} passHref >
+      <Text _hover={{textDecoration: "underline"}}>{children}</Text>
     </NextLink>
   </Box>
 );
