@@ -5,6 +5,7 @@ import { Heado } from '@/components/pages/about-us/styling/styles';
 import {
   SubHeadBody,
   SubSubHeadBody,
+  WithList,
 } from '@/components/pages/about-us/styling/texts';
 
 import {
@@ -15,7 +16,6 @@ import {
 const AboutUs = () => {
   return (
     <>
-      
       <Flex
         w="100%"
         minH="100%"
@@ -70,24 +70,24 @@ const AboutUs = () => {
             />
           </Box>
           <Box w={{ md: '48%' }} pt={{ base: '10', md: '0' }}>
-            <SubHeadBody
+            <WithList
               // header={['Mi', <i>ss</i>, 'ion']} pake yg ini juga bisa kok
               header={
                 <>
                   Mi<i>ss</i>ion
                 </>
               }
-              body={
-                <UnorderedList>
-                  <ListItem>
-                    Memberikan wadah bagi setiap individu di UMN dan di luar UMN
-                    yang ingin menampilkan bakat terbaik mereka
-                  </ListItem>
-                  <ListItem mt={3}>
-                    Menjaring orang sebanyak mungkin untuk mengikuti rangkaian
-                    kegiatan Starlight 2023
-                  </ListItem>
-                </UnorderedList>
+              list1={
+                <>
+                  Memberikan wadah bagi setiap individu di UMN dan di luar UMN
+                  yang ingin menampilkan bakat terbaik mereka
+                </>
+              }
+              list2={
+                <>
+                  Menjaring orang sebanyak mungkin untuk mengikuti rangkaian
+                  kegiatan Starlight 2023
+                </>
               }
             />
           </Box>
