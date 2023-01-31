@@ -84,3 +84,33 @@ export const Buddy = ({ children, ...props }) => {
     </Text>
   );
 };
+
+export const PageTitle = ({ children, ...props }) => {
+  return (
+    <Text
+      mb={{base: "1.2rem", md: "2rem"}}
+      textAlign="center"
+      fontFamily="Exodus"
+      fontSize={{
+        base: 'calc(.8rem + 4.5vw)',
+        md: 'calc(.8rem + 2.8vw)',
+      }}
+      color={theme.colors.text[300]}
+      // bgGradient="linear(to-b, var(--chakra-colors-text-600), var(--chakra-colors-deco-400))"
+      // bgClip="text"
+      textShadow={{
+        base: `${Array(2)
+          .fill()
+          .map((e, i) => `0 0 ${i + 2}0px var(--chakra-colors-text-300)`)
+          .join(', ')}`,
+        md: `${Array(1)
+          .fill()
+          .map((e, i) => `0 0 ${i + 2}0px var(--chakra-colors-text-300)`)
+          .join(', ')}`,
+      }}
+      {...props}
+    >
+      {children}
+    </Text>
+  );
+};

@@ -113,7 +113,7 @@ const MobileNav = () => {
           <NavbarLink to="/talent" isOpen={isOpen} setOpen={setOpen}>
             Talent<i>s</i>
           </NavbarLink> */}
-          <NavbarLink to="/talent" isOpen={isOpen} setOpen={setOpen}>
+          <NavbarLink to="/faq" isOpen={isOpen} setOpen={setOpen}>
             FA<i>Q</i>
           </NavbarLink>
         </Flex>

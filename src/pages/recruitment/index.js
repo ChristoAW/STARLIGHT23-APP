@@ -7,6 +7,7 @@ import { LayoutContext } from '@/components/context/LayoutContext';
 import PopUp from './popup';
 
 import listDivisi from './list-divisi';
+import { PageTitle } from '@/components/pages/about-us/styling/styles';
 
 const Recruitment = () => {
   const { setTitleSuffix } = useContext(LayoutContext);
@@ -24,13 +25,14 @@ const Recruitment = () => {
       pos="relative"
       justifyContent="center"
       alignItems="center"
-      py={{ base: '10', md: '5rem' }}
+      py={{ base: '10', md: '4rem' }}
+      // px={{ base: '10vw', md: '5rem' }}
       bgColor={theme.colors.bg[800]}
       color={theme.colors.text[300]}
       flexDirection="column"
       overflowY="hidden"
     >
-      <Text
+      {/* <Text
         fontFamily="Exodus"
         fontSize={{
           base: 'calc(.4rem + 6.5vw)',
@@ -41,7 +43,9 @@ const Recruitment = () => {
         bgClip="text"
       >
         RECRUITMENT
-      </Text>
+      </Text> */}
+
+      <PageTitle>Recruitment</PageTitle>
 
       <Box
         bgImage={listDivisi[0].logo}
