@@ -100,11 +100,11 @@ const MobileNav = () => {
             w={{ base: '9rem', sm: '9.5rem' }}
             pb={{ base: '5', sm: '7' }}
           />
-          <NavbarLink to="/recruitment" isOpen={isOpen} setOpen={setOpen}>
-            Recruitment
-          </NavbarLink>
           <NavbarLink to="/" isOpen={isOpen} setOpen={setOpen}>
             About U<i>s</i>
+          </NavbarLink>
+          <NavbarLink to="/recruitment" isOpen={isOpen} setOpen={setOpen}>
+            Recruitment
           </NavbarLink>
           {/* <NavbarLink to="/media" isOpen={isOpen} setOpen={setOpen}>Media</NavbarLink>
           <NavbarLink to="/testimony" isOpen={isOpen} setOpen={setOpen}>
