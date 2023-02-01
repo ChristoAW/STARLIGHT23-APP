@@ -29,11 +29,11 @@ const listDivisi = [
 const loadImage = (entries) => {
   entries.map((entry) => {
     entry.logo =
-      require(`../../asset/images/pages/recruitment/star/${entry.name}-Star.png`).default.src;
+      require(`@/asset/images/pages/recruitment/star/${entry.name}-Star.png`).default.src;
     entry.button =
-      require(`../../asset/images/pages/recruitment/button/${entry.name}.png`).default.src;
+      require(`@/asset/images/pages/recruitment/button/${entry.name}.png`).default.src;
     entry.popup =
-      require(`../../asset/images/pages/recruitment/popup/${entry.name}-min.png`).default.src;
+      require(`@/asset/images/pages/recruitment/popup/${entry.name}-min.png`).default.src;
   });
 };
 

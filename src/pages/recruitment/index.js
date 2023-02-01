@@ -6,7 +6,7 @@ import { LayoutContext } from '@/components/context/LayoutContext';
 
 import PopUp from './popup';
 
-import listDivisi from './list-divisi';
+import listDivisi from '@/data/list-divisi';
 import { PageTitle } from '@/components/styles';
 import bg from '@/asset/images/bg/bg.jpg';
 import bgM from '@/asset/images/bg/bg-m.png';
