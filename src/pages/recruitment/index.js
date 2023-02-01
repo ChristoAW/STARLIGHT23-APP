@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from 'react';
-import { Flex, Box, Text, SimpleGrid, Image, Spacer } from '@chakra-ui/react';
+import { Flex, Box, Spacer } from '@chakra-ui/react';
 import theme from '@/theme';
 
 import { LayoutContext } from '@/components/context/LayoutContext';
@@ -14,10 +14,8 @@ const Recruitment = () => {
   const [isPopUp, setPopUp] = useState('false');
 
   useEffect(() => {
-    setTitleSuffix(' - Home');
+    setTitleSuffix(' - Recruitment');
   }, []);
-
-  console.log(listDivisi);
 
   return (
     <Flex
@@ -32,19 +30,6 @@ const Recruitment = () => {
       flexDirection="column"
       overflowY="hidden"
     >
-      {/* <Text
-        fontFamily="Exodus"
-        fontSize={{
-          base: 'calc(.4rem + 6.5vw)',
-          md: 'calc(.6rem + 7vw)',
-        }}
-        textShadow="1px 1px 60px #9dbffc"
-        bgGradient="linear(to-b, #9dbffc, #73aee4)"
-        bgClip="text"
-      >
-        RECRUITMENT
-      </Text> */}
-
       <PageTitle>Recruitment</PageTitle>
 
       <Box
