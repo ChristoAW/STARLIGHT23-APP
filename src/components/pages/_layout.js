@@ -1,9 +1,9 @@
 import { Box, Flex } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 
-import Footer from "@/components/Footer/footer";
+import Footer from '@/components/Footer/footer';
 import Header from '@/components/Header/header';
-// import SplashLoader from '@/components/SplashLoader';
+import SplashScreen from '../SplashScreen';
 
 const Layout = ({ children, ...props }) => {
   const scrollDirection = useScrollDirection();
@@ -15,6 +15,9 @@ const Layout = ({ children, ...props }) => {
       alignItems="center"
       minH="100vh"
       width="100%"
+      // sx={{
+      //   '::-webkit-scrollbar': { display: 'none' }
+      // }}
       {...props}
     >
       <Box
@@ -24,17 +27,17 @@ const Layout = ({ children, ...props }) => {
           // top: '0',
         }}
         top={{
+          base: '0',
           md: scrollDirection === 'down' ? '-110' : '0',
         }}
         transition={{ md: 'all .4s ease-in-out' }}
         transitionDelay={{ md: '.1s' }}
         maxW="100%"
         zIndex={5}
-        overflowX="hidden"
       >
         <Header />
       </Box>
-      {/* <SplashLoader /> */}
+      {/* <SplashScreen /> */}
       {children}
       <Footer />
     </Flex>

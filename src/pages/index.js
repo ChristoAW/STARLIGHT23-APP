@@ -1,42 +1,44 @@
-import { useContext, useEffect, useRef } from 'react';
-import theme from '@/theme';
+import { Box, Divider } from '@chakra-ui/react';
+import { useContext, useEffect } from 'react';
 
 import { LayoutContext } from '@/components/context/LayoutContext';
-import { useInView, motion } from 'framer-motion';
 
-import LatestNews from './home/latest';
-import TreasureMap from './home/treasure-map';
-import AboutUs from './home/about-us';
+import LatestNews from '@/components/pages/about-us/latest';
+import TreasureMap from '@/components/pages/about-us/treasure-map';
+import AboutUs from '@/components/pages/about-us/about-us';
+
+import bg from '@/asset/images/bg/bg.jpg';
+import bgM from '@/asset/images/bg/bg-m.png';
+import theme from '@/theme';
 
 const Home = () => {
-  const { setTitleSuffix, setInView } = useContext(LayoutContext);
-
-  // const [latest, inViewLatest] = useInView({
-  // 	threshold: 0.1
-  // });
-
-  // const [aboutUs, inViewAboutUs] = useInView({
-  // 	threshold: 0.1
-  // });
+  const { setTitleSuffix } = useContext(LayoutContext);
 
   useEffect(() => {
-    setTitleSuffix(' - Home');
-
-    // if (inViewLatest)
-    // 	setInView("Latest");
-    // if (inViewAboutUs)
-    // 	setInView("ABOUT U<i>S</i>");
-  }, [
-    setTitleSuffix,
-    // inViewAboutUs, inViewLatest, setInView
-  ]);
+    setTitleSuffix(' - About Us');
+  }, [setTitleSuffix]);
 
   return (
     <>
-      <LatestNews />
-      {/* <LatestNews ref={latest}/> */}
-      <TreasureMap />
-      <AboutUs />
+      <Box
+        minH="100vh"
+        bgImage={{ base: bgM.src, md: bg.src }}
+        bgSize="cover"
+        bgPos="center"
+        bgAttachment="fixed"
+      >
+        <LatestNews />
+        <TreasureMap />
+        <Box px={{base: 6, sm: 14, md: 20}}>
+          <Divider
+            orientation="horizontal"
+            mt={{ base: 12, md: 28 }}
+            borderWidth=".05rem"
+            borderColor={theme.colors.text[300]}
+          />
+        </Box>
+        <AboutUs />
+      </Box>
     </>
   );
 };
