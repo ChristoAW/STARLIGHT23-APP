@@ -1,7 +1,7 @@
 import { Box, Divider, Flex, ListItem, UnorderedList } from '@chakra-ui/react';
 import theme from '@/theme';
 
-import { Heado } from '@/components/pages/about-us/styling/styles';
+import { Heado } from '@/components/styles';
 import {
   SubHeadBody,
   SubSubHeadBody,

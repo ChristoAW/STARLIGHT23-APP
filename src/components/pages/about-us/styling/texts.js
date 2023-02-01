@@ -4,7 +4,7 @@ import { Box, ListItem, UnorderedList } from '@chakra-ui/react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
-import { Buddy, SubHeado, SubSubHeado } from './styles';
+import { Buddy, SubHeado, SubSubHeado } from '../../../styles';
 import theme from '@/theme';
 
 const theVariant = {

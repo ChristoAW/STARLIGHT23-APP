@@ -7,7 +7,7 @@ import { LayoutContext } from '@/components/context/LayoutContext';
 import PopUp from './popup';
 
 import listDivisi from './list-divisi';
-import { PageTitle } from '@/components/pages/about-us/styling/styles';
+import { PageTitle } from '@/components/styles';
 
 const Recruitment = () => {
   const { setTitleSuffix } = useContext(LayoutContext);

@@ -88,7 +88,7 @@ export const Buddy = ({ children, ...props }) => {
 export const PageTitle = ({ children, ...props }) => {
   return (
     <Text
-      mb={{base: "1.2rem", md: "2rem"}}
+      mb={{base: "2rem", md: "3rem"}}
       textAlign="center"
       fontFamily="Exodus"
       fontSize={{
