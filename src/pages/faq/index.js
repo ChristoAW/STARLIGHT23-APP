@@ -13,7 +13,6 @@ import bgM from '@/asset/images/bg/bg-m.png';
 
 const FAQ = () => {
   const { setTitleSuffix } = useContext(LayoutContext);
-	const currentAns = qna.a;
 
   useEffect(() => {
     setTitleSuffix(' - FAQ');

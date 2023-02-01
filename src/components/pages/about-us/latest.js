@@ -42,7 +42,7 @@ const LatestNews = () => {
           pointerEvents="none"
           zIndex={3}
         />
-        <YtEmbed pos="absolute" embedId="1RolTkKkp8c" title="Gudetama" />
+        <YtEmbed pos="absolute" embedId="YRgK7p-AENs" title="Gudetama" />
       </Flex>
     </Flex>
   );

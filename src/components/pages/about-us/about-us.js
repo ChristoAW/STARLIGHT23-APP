@@ -1,4 +1,4 @@
-import { Box, Divider, Flex, ListItem, UnorderedList } from '@chakra-ui/react';
+import { Box, Divider, Flex } from '@chakra-ui/react';
 import theme from '@/theme';
 
 import { Heado } from '@/components/styles';

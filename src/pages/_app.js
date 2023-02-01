@@ -10,15 +10,15 @@ import LayoutProvider from '../components/context/LayoutContext';
 import { useEffect, useState } from 'react';
 import Scroll from '@/components/smoothScroll/smoothScroll';
 
-// kalo pake base head bagian linknya, icon di hp oke tapi yg di pc ilang
 const BaseHead = () => {
   return (
     <Head>
       <meta charSet="utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-      <link rel="icon" href="../../public/favicon.ico" />
-      {/* <link rel="apple-touch-icon" href="../../public/favicon.ico" /> */}
+      <meta name="description" content="Let's Sail To The Horizon" />
+      
+      <link rel="icon" href="/favicon.ico" />
+      <link rel="apple-touch-icon" href="/logo/starlight.png" />
     </Head>
   );
 };
@@ -35,7 +35,7 @@ function MyApp({ Component, pageProps }) {
   }
   return (
     <>
-      {/* <BaseHead /> */}
+      <BaseHead />
       <ChakraProvider theme={theme}>
         <LayoutProvider>
           {/* <Scroll /> */}
