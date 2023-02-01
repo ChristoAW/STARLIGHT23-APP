@@ -21,9 +21,7 @@ const qna = [
       heading: 'Tahapan Cara Mendaftar Panitia Starlight 2023',
       type: 'list',
       body: [
-        [
-          'Calon Panitia dapat mendaftarkan diri pada', <b> booth Starlight </b>, 'UMN 2023 melalui gform yang akan dibuka pada tanggal 6 - 12 Februari 2023 di Connector Kantin C dan D pada jam 08.00 - 17.00',
-        ],
+        'Calon Panitia dapat mendaftarkan diri pada booth Starlight UMN 2023 melalui gform yang akan dibuka pada tanggal 6 - 12 Februari 2023 di Connector Kantin C dan D pada jam 08.00 - 17.00',
         'Calon Panitia diberikan kesempatan untuk bertanya atau berkonsultasi mengenai divisi-divisi Starlight UMN 2023 kepada Panitia yang sedang menjaga booth.',
         'Bagi Calon Panitia yang lolos seleksi awal, tahapan selanjutnya adalah interview. Calon Panitia dapat memperoleh seluruh informasi serta jadwal interview melalui Instagram Starlight UMN 2023 @starlightumn dan email student.',
         'Tahap interview Starlight UMN 2023 akan dilakukan secara offline.',
