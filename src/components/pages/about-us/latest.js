@@ -35,8 +35,7 @@ const LatestNews = () => {
       >
         Latest News
       </Text>
-      <TreasureMap />
-      {/* <Flex alignItems="center" justifyContent="center">
+      <Flex alignItems="center" justifyContent="center">
         <Image
           src={vidFrame.src}
           alt="Latest News"
@@ -45,8 +44,8 @@ const LatestNews = () => {
           pointerEvents="none"
           zIndex={3}
         />
-        <YtEmbed pos="absolute" embedId="SlRJ5OPVxCw" title="Starlight's Latest" />
-      </Flex> */}
+        <YtEmbed pos="absolute" embedId="wcM0lA1MCbg" title="Starlight's Latest" />
+      </Flex>
     </Flex>
   );
 };
