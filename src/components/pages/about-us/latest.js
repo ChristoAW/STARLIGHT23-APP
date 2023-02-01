@@ -5,6 +5,8 @@ import theme from '@/theme';
 import YtEmbed from '@/components/embed/youtube';
 
 import vidFrame from '@/asset/images/pages/about-us/frame.png';
+import bgTreasure from '@/asset/images/pages/about-us/coming-soon.jpg';
+import TreasureMap from './treasure-map';
 
 YtEmbed.propTypes = {
   embedId: PropTypes.string.isRequired,
@@ -33,7 +35,8 @@ const LatestNews = () => {
       >
         Latest News
       </Text>
-      <Flex alignItems="center" justifyContent="center">
+      <TreasureMap />
+      {/* <Flex alignItems="center" justifyContent="center">
         <Image
           src={vidFrame.src}
           alt="Latest News"
@@ -42,8 +45,8 @@ const LatestNews = () => {
           pointerEvents="none"
           zIndex={3}
         />
-        <YtEmbed pos="absolute" embedId="YRgK7p-AENs" title="Gudetama" />
-      </Flex>
+        <YtEmbed pos="absolute" embedId="SlRJ5OPVxCw" title="Starlight's Latest" />
+      </Flex> */}
     </Flex>
   );
 };
