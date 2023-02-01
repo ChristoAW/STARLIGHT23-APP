@@ -8,6 +8,8 @@ import PopUp from './popup';
 
 import listDivisi from './list-divisi';
 import { PageTitle } from '@/components/styles';
+import bg from '@/asset/images/bg/bg.jpg';
+import bgM from '@/asset/images/bg/bg-m.png';
 
 const Recruitment = () => {
   const { setTitleSuffix } = useContext(LayoutContext);
@@ -25,10 +27,13 @@ const Recruitment = () => {
       alignItems="center"
       py={{ base: '10', md: '4rem' }}
       // px={{ base: '10vw', md: '5rem' }}
-      bgColor={theme.colors.bg[800]}
       color={theme.colors.text[300]}
       flexDirection="column"
       overflowY="hidden"
+      bgImage={{ base: bgM.src, md: bg.src }}
+      bgSize="cover"
+      bgPos="center"
+      bgAttachment="fixed"
     >
       <PageTitle>Recruitment</PageTitle>
 
