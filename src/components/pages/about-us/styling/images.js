@@ -29,6 +29,16 @@ export const TitleStarlight = () => {
       alt="Starlight 2023"
       w={{ base: '16rem', md: 'calc(8rem + 20vw)' }}
       mt={{ base: '10', md: '5rem' }}
+      // safari filter (?)
+      sx={{
+        base: {
+          WebkitFilter: 'drop-shadow(0 0 20px var(--chakra-colors-text-500))',
+        },
+        md: {
+          WebkitFilter: 'drop-shadow(0 0 0 var(--chakra-colors-text-600))',
+        },
+      }}
+      // masih perlu ini kah?
       filter={{
         base: 'drop-shadow(0 0 20px var(--chakra-colors-text-500))',
         md: 'drop-shadow(0 0 0 var(--chakra-colors-text-600))',
@@ -43,7 +53,7 @@ export const TitleStarlight = () => {
 };
 
 export const LogoStarlight = () => {
-	const control = useAnimation();
+  const control = useAnimation();
   const [ref, inView] = useInView();
 
   useEffect(() => {
@@ -60,7 +70,7 @@ export const LogoStarlight = () => {
       alt="Logo Starlight 2023"
       w={{ base: '12rem', md: 'calc(2rem + 20vw)' }}
       pb={{ base: '5', md: '8' }}
-			as={motion.img}
+      as={motion.img}
       ref={ref}
       variants={theVariant}
       initial="hidden"

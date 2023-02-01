@@ -24,7 +24,9 @@ const Footer = () => {
       <Flex
         w="100%"
         mt="auto"
-        bottom="0"
+        sx={{
+          bottom : "0"
+        }}
         flexDir="column"
         bgColor={theme.colors.bg[500]}
         fontFamily={theme.fonts.montserrat}
