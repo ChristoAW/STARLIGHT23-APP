@@ -17,8 +17,6 @@ const Recruitment = () => {
     setTitleSuffix(' - Recruitment');
   }, []);
 
-  // console.log(listDivisi);
-
   return (
     <Flex
       w="100%"

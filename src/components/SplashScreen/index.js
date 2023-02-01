@@ -48,14 +48,14 @@ const SplashScreen = () => {
       const st = setTimeout(() => {
         setShown(true);
         clearTimeout(st);
-      }, 1600);
+      }, 13000);
 
       if (first) {
         const ft = setTimeout(() => {
           setIsLoading(false);
           setFirst(false);
           clearTimeout(ft);
-        }, 3300);
+        }, 13000);
       }
     }
   }, [first, stop, isLoading]);
@@ -83,8 +83,9 @@ const SplashScreen = () => {
           h="100%"
           loop
           muted
+          playsInline
         >
-          <source src={video.src} type="video/mp4" />
+          <source src={'/splashScreen/animation-logo.mp4'} type="video/mp4" />
           Your browser does not support HTML5 video.
         </Box>
       </Flex>

@@ -1,6 +1,11 @@
-import { Box, Flex, Button, AspectRatio, Popover } from '@chakra-ui/react';
+import { useEffect } from 'react';
+import { Box, Flex, AspectRatio } from '@chakra-ui/react';
 
 const Popup = (props) => {
+  useEffect(() => {
+    document.getElementById('popup').focus();
+  });
+
   return (
     <Flex
       w="100%"
@@ -15,6 +20,8 @@ const Popup = (props) => {
       m={0}
       top={7}
       flexDirection="column"
+      tabIndex={0}
+      id="popup"
     >
       <AspectRatio ratio={1546 / 1191} w={['90%', '75%', '65%', '50%']}>
         <Box
@@ -31,8 +38,8 @@ const Popup = (props) => {
           w={['45%', '30%', '25%', '20%']}
           my="20px"
           _hover={{
-            cursor : "pointer",
-            transform: "scale(1.1)"
+            cursor: 'pointer',
+            transform: 'scale(1.1)',
           }}
           transition=".3s ease-in-out"
         >

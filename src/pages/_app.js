@@ -9,6 +9,7 @@ import iconSL from '../../public/favicon.ico';
 import LayoutProvider from '../components/context/LayoutContext';
 import { useEffect, useState } from 'react';
 import Scroll from '@/components/smoothScroll/smoothScroll';
+import SplashScreen from '@/components/SplashScreen';
 
 const BaseHead = () => {
   return (
@@ -39,6 +40,7 @@ function MyApp({ Component, pageProps }) {
       <ChakraProvider theme={theme}>
         <LayoutProvider>
           {/* <Scroll /> */}
+          <SplashScreen />
           <Component {...pageProps} />
         </LayoutProvider>
       </ChakraProvider>
