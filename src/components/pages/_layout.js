@@ -28,7 +28,7 @@ const Layout = ({ children, ...props }) => {
         }}
         top={{
           base: '0',
-          md: scrollDirection === 'down' ? '-110' : '0',
+          md: scrollDirection === 'down' ? '-140' : '0',
         }}
         transition={{ md: 'all .4s ease-in-out' }}
         transitionDelay={{ md: '.1s' }}

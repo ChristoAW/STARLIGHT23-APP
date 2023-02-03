@@ -15,7 +15,7 @@ const colors = {
   },
 	nav: {
 		active: "#bed7fc",
-		inactive: "#264e73",
+		inactive: "#4778a6",
 	},
   deco: {
     400: "#e9c98f",
