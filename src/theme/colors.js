@@ -15,12 +15,28 @@ const colors = {
   },
 	nav: {
 		active: "#bed7fc",
-		inactive: "#264e73",
+		inactive: "#4778a6",
 	},
   deco: {
     400: "#e9c98f",
     500: "#e1b45c",
   },
+  
+  div: {
+    CALYPSO: "#a7bf46",
+    CETEA: "#845f3e",
+    CHARYBDIS: "#5e8eca",
+    CIRCE: "#9e3a3a",
+    HIPPOCAMPUS: "#2d9d4a",
+    HYDRA: "#d3934a",
+    KRAKEN: "#43bd8b",
+    LEVIATHAN: "#56bdd7",
+    NAIADS: "#9680c3",
+    NEREUS: "#e0c858",
+    POSEIDON: "#edece9",
+    SCYLLA: "#3f3f3f",
+    SIRENS: "#c27eb8",
+  }
 };
 
 export default colors;

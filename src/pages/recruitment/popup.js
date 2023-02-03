@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { Box, Flex, AspectRatio } from '@chakra-ui/react';
+import { Box, Flex, AspectRatio, Image } from '@chakra-ui/react';
 
 const Popup = (props) => {
   useEffect(() => {
@@ -24,15 +24,21 @@ const Popup = (props) => {
       id="popup"
     >
       <AspectRatio ratio={1546 / 1191} w={['90%', '75%', '65%', '50%']}>
-        <Box
+        {/* <Box
           bgImage={props.selectedDivisi.popup}
           w="100%"
           bgSize="contain"
           bgPos="center"
           bgRepeat="no-repeat"
+        /> */}
+        <Image
+          src={props.selectedDivisi.popup}
+          placeholder="blur"
+          layout="fill"
+          draggable="false"
         />
       </AspectRatio>
-      {props.selectedDivisi.name !== 'POSEIDON' && (
+      {/* {props.selectedDivisi.name !== 'POSEIDON' && (
         <AspectRatio
           ratio={732 / 150}
           w={['45%', '30%', '25%', '20%']}
@@ -54,7 +60,7 @@ const Popup = (props) => {
             }}
           />
         </AspectRatio>
-      )}
+      )} */}
     </Flex>
   );
 };

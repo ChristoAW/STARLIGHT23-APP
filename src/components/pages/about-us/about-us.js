@@ -44,7 +44,7 @@ const AboutUs = () => {
               Eksekutif Mahasiswa (BEM) Universitas Multimedia Nusantara untuk
               mewadahi serta menyalurkan minat dan bakat individu. Kegiatan
               Mahasiswa Starlight mengupayakan dorongan bagi masyarakat untuk
-              percaya akan perkembangan bakat mereka masing-masing
+              percaya akan perkembangan bakat mereka masing-masing.
             </>
           }
         />
@@ -64,7 +64,7 @@ const AboutUs = () => {
                 <>
                   Menciptakan lingkungan Starlight yang positif dan mendukung
                   sehingga dapat menjadi tempat bagi panitia dan peserta untuk
-                  menggali potensi dan mengembangkan diri sebaik mungkin
+                  menggali potensi dan mengembangkan diri sebaik mungkin.
                 </>
               }
             />
@@ -80,13 +80,13 @@ const AboutUs = () => {
               list1={
                 <>
                   Memberikan wadah bagi setiap individu di UMN dan di luar UMN
-                  yang ingin menampilkan bakat terbaik mereka
+                  yang ingin menampilkan bakat terbaik mereka.
                 </>
               }
               list2={
                 <>
                   Menjaring orang sebanyak mungkin untuk mengikuti rangkaian
-                  kegiatan Starlight 2023
+                  kegiatan Starlight 2023.
                 </>
               }
             />
@@ -111,7 +111,7 @@ const AboutUs = () => {
               Seperti logo Starlight pada tahun-tahun sebelumnya, Starlight 2023
               juga menggunakan bintang sebagai elemen utamanya. Namun, Starlight
               2023 memberikan penekanan pada kesan "Greek" dan lautan yang
-              didasarkan pada tema, konsep, dan nama divisi pada Starlight 2023
+              didasarkan pada tema, konsep, dan nama divisi pada Starlight 2023.
             </>
           }
         />

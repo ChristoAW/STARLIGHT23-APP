@@ -3,7 +3,6 @@ import NextLink from 'next/link';
 import theme from '@/theme';
 
 import Logo from '../Logo';
-import { NavbarLink } from './headerD';
 
 import MobileNav from './headerM';
 import DesktopNav from './headerD';
@@ -24,27 +23,31 @@ const Header = () => {
       as="header"
     >
       <Flex
+        h={{ md: 'calc(4.5rem + 2vw)', lg: 'calc(5.5rem + 2vw)', xl: 'calc(6rem + 1.5vw)' }}
         w="100vw"
-        pb={1.5}
         mx="auto"
+        pb={1.5}
         px={{ base: '5vw', md: '3vw' }}
-        justifyContent="space-between"
+        pos="relative"
+        // justifyContent="space-between"
+        justifyContent={{ base: 'space-between', md: 'center' }}
         alignItems="center"
       >
-        <Flex justifyContent="space-between" alignItems="center">
+        <Box pos={{ md: 'absolute' }} left={{ md: 0 }} px={{ md: '3vw' }}>
           <NextLink href="/" passHref>
             <Logo
               img={logoStarlight.src}
               alt="Starlight 2023"
               minW="3.5rem"
-              py={{ base: '2', md: '3', lg: '1.5', xl: '3' }}
-              size={{ base: '3.5rem', sm: '4rem', lg: '4.5rem' }}
+              // pe={{ md: 'calc(2px + .85rem)', lg: '5' }}
+              py={{ base: '2', md: '' }}
+              size={{ base: '3.5rem', md: '4.5rem', lg: '5.5rem', xl: '6rem' }}
+              // size={{ base: '3.5rem', sm: '4rem', lg: '4.5rem' }}
             />
           </NextLink>
-          <NavbarLink to="/recruitment" display="block">
-            RECRUITMENT
-          </NavbarLink>
-        </Flex>
+        </Box>
+        {/* <Flex justifyContent="space-between" alignItems="center"> */}
+        {/* </Flex> */}
         <DesktopNav />
         <MobileNav />
       </Flex>
