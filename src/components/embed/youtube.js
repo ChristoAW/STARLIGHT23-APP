@@ -17,12 +17,14 @@ const YtEmbed = ({ embedId, title, pos }) => (
       xl: 'calc(16 * 3.4vw)',
     }}
     // w={{ base: '100%', md: '70vw', xl: '60vw' }}
-    src={`https://www.youtube.com/embed/${embedId}?autoplay=1`}
+    src={`https://www.youtube.com/embed/${embedId}?autoplay=1&mute=1`}
     frameBorder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
     allowFullScreen
     title={title}
   />
+  // dikecilin volumenya / mute
+  // seminggu berikutnya dimatiin autoplaynya
 );
 
 export default YtEmbed;
