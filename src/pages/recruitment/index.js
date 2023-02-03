@@ -55,6 +55,11 @@ const Recruitment = () => {
         onClick={() => setPopUp(listDivisi[0].name)}
         onMouseEnter={() => setIsHover(listDivisi[0].name)}
         onMouseLeave={mouseLeaveHandler}
+        _hover={{ 
+          cursor: 'pointer',
+          filter: `drop-shadow(0 0 15px var(--chakra-colors-div-${listDivisi[0].name}))`
+        }}
+        transition="all .2s ease-in-out"
       />
       {isPopUp === listDivisi[0].name && (
         <PopUp selectedDivisi={listDivisi[0]} setPopUp={setPopUp} />
@@ -79,6 +84,11 @@ const Recruitment = () => {
           onClick={() => setPopUp(listDivisi[1].name)}
           onMouseEnter={() => setIsHover(listDivisi[1].name)}
           onMouseLeave={mouseLeaveHandler}
+          _hover={{ 
+            cursor: 'pointer',
+            filter: `drop-shadow(0 0 15px var(--chakra-colors-div-${listDivisi[1].name}))`
+          }}
+          transition="all .2s ease-in-out"
         />
         {isPopUp === listDivisi[1].name && (
           <PopUp selectedDivisi={listDivisi[1]} setPopUp={setPopUp} />
@@ -101,6 +111,11 @@ const Recruitment = () => {
           onClick={() => setPopUp(listDivisi[2].name)}
           onMouseEnter={() => setIsHover(listDivisi[2].name)}
           onMouseLeave={mouseLeaveHandler}
+          _hover={{ 
+            cursor: 'pointer',
+            filter: `drop-shadow(0 0 15px var(--chakra-colors-div-${listDivisi[2].name}))`
+          }}
+          transition="all .2s ease-in-out"
         />
         {isPopUp === listDivisi[2].name && (
           <PopUp selectedDivisi={listDivisi[2]} setPopUp={setPopUp} />
@@ -123,6 +138,11 @@ const Recruitment = () => {
           onClick={() => setPopUp(listDivisi[3].name)}
           onMouseEnter={() => setIsHover(listDivisi[3].name)}
           onMouseLeave={mouseLeaveHandler}
+          _hover={{ 
+            cursor: 'pointer',
+            filter: `drop-shadow(0 0 15px var(--chakra-colors-div-${listDivisi[3].name}))`
+          }}
+          transition="all .2s ease-in-out"
         />
         {isPopUp === listDivisi[3].name && (
           <PopUp selectedDivisi={listDivisi[3]} setPopUp={setPopUp} />
@@ -145,6 +165,11 @@ const Recruitment = () => {
           onClick={() => setPopUp(listDivisi[4].name)}
           onMouseEnter={() => setIsHover(listDivisi[4].name)}
           onMouseLeave={mouseLeaveHandler}
+          _hover={{ 
+            cursor: 'pointer',
+            filter: `drop-shadow(0 0 15px var(--chakra-colors-div-${listDivisi[4].name}))`
+          }}
+          transition="all .2s ease-in-out"
         />
         {isPopUp === listDivisi[4].name && (
           <PopUp selectedDivisi={listDivisi[4]} setPopUp={setPopUp} />
@@ -170,6 +195,11 @@ const Recruitment = () => {
           onClick={() => setPopUp(listDivisi[5].name)}
           onMouseEnter={() => setIsHover(listDivisi[5].name)}
           onMouseLeave={mouseLeaveHandler}
+          _hover={{ 
+            cursor: 'pointer',
+            filter: `drop-shadow(0 0 15px var(--chakra-colors-div-${listDivisi[5].name}))`
+          }}
+          transition="all .2s ease-in-out"
         />
         {isPopUp === listDivisi[5].name && (
           <PopUp selectedDivisi={listDivisi[5]} setPopUp={setPopUp} />
@@ -192,6 +222,11 @@ const Recruitment = () => {
           onClick={() => setPopUp(listDivisi[6].name)}
           onMouseEnter={() => setIsHover(listDivisi[6].name)}
           onMouseLeave={mouseLeaveHandler}
+          _hover={{ 
+            cursor: 'pointer',
+            filter: `drop-shadow(0 0 15px var(--chakra-colors-div-${listDivisi[6].name}))`
+          }}
+          transition="all .2s ease-in-out"
         />
         {isPopUp === listDivisi[6].name && (
           <PopUp selectedDivisi={listDivisi[6]} setPopUp={setPopUp} />
@@ -214,6 +249,11 @@ const Recruitment = () => {
           onClick={() => setPopUp(listDivisi[7].name)}
           onMouseEnter={() => setIsHover(listDivisi[7].name)}
           onMouseLeave={mouseLeaveHandler}
+          _hover={{ 
+            cursor: 'pointer',
+            filter: `drop-shadow(0 0 15px var(--chakra-colors-div-${listDivisi[7].name}))`
+          }}
+          transition="all .2s ease-in-out"
         />
         {isPopUp === listDivisi[7].name && (
           <PopUp selectedDivisi={listDivisi[7]} setPopUp={setPopUp} />
@@ -236,6 +276,11 @@ const Recruitment = () => {
           onClick={() => setPopUp(listDivisi[8].name)}
           onMouseEnter={() => setIsHover(listDivisi[8].name)}
           onMouseLeave={mouseLeaveHandler}
+          _hover={{ 
+            cursor: 'pointer',
+            filter: `drop-shadow(0 0 15px var(--chakra-colors-div-${listDivisi[8].name}))`
+          }}
+          transition="all .2s ease-in-out"
         />
         {isPopUp === listDivisi[8].name && (
           <PopUp selectedDivisi={listDivisi[8]} setPopUp={setPopUp} />
@@ -261,6 +306,11 @@ const Recruitment = () => {
           onClick={() => setPopUp(listDivisi[9].name)}
           onMouseEnter={() => setIsHover(listDivisi[9].name)}
           onMouseLeave={mouseLeaveHandler}
+          _hover={{ 
+            cursor: 'pointer',
+            filter: `drop-shadow(0 0 15px var(--chakra-colors-div-${listDivisi[9].name}))`
+          }}
+          transition="all .2s ease-in-out"
         />
         {isPopUp === listDivisi[9].name && (
           <PopUp selectedDivisi={listDivisi[9]} setPopUp={setPopUp} />
@@ -283,6 +333,11 @@ const Recruitment = () => {
           onClick={() => setPopUp(listDivisi[10].name)}
           onMouseEnter={() => setIsHover(listDivisi[10].name)}
           onMouseLeave={mouseLeaveHandler}
+          _hover={{ 
+            cursor: 'pointer',
+            filter: `drop-shadow(0 0 15px var(--chakra-colors-div-${listDivisi[10].name}))`
+          }}
+          transition="all .2s ease-in-out"
         />
         {isPopUp === listDivisi[10].name && (
           <PopUp selectedDivisi={listDivisi[10]} setPopUp={setPopUp} />
@@ -305,6 +360,11 @@ const Recruitment = () => {
           onClick={() => setPopUp(listDivisi[11].name)}
           onMouseEnter={() => setIsHover(listDivisi[11].name)}
           onMouseLeave={mouseLeaveHandler}
+          _hover={{ 
+            cursor: 'pointer',
+            filter: `drop-shadow(0 0 15px var(--chakra-colors-div-${listDivisi[11].name}))`
+          }}
+          transition="all .2s ease-in-out"
         />
         {isPopUp === listDivisi[11].name && (
           <PopUp selectedDivisi={listDivisi[11]} setPopUp={setPopUp} />
@@ -327,6 +387,11 @@ const Recruitment = () => {
           onClick={() => setPopUp(listDivisi[12].name)}
           onMouseEnter={() => setIsHover(listDivisi[12].name)}
           onMouseLeave={mouseLeaveHandler}
+          _hover={{ 
+            cursor: 'pointer',
+            filter: `drop-shadow(0 0 15px var(--chakra-colors-div-${listDivisi[12].name}))`
+          }}
+          transition="all .2s ease-in-out"
         />
         {isPopUp === listDivisi[12].name && (
           <PopUp selectedDivisi={listDivisi[12]} setPopUp={setPopUp} />

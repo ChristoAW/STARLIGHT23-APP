@@ -47,7 +47,7 @@ const SplashScreen = () => {
           setIsLoading(false);
           setFirst(false);
           clearTimeout(ft);
-        }, 12000);
+        }, 11500);
         return;
       }
 
@@ -56,7 +56,7 @@ const SplashScreen = () => {
       const st = setTimeout(() => {
         setShown(true);
         clearTimeout(st);
-      }, 8000);
+      }, 4500);
     }
   }, [first, stop, isLoading]);
 
@@ -74,6 +74,8 @@ const SplashScreen = () => {
         justifyContent="center"
         transition="0.4s"
         overflow="hidden"
+        // mau dibikin biar fade out gitu, tapi.. nantian yak :)
+        // opacity={setShown? 1 : 0}
       >
         <Box
           ref={vid}
