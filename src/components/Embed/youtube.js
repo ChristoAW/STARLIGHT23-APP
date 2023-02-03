@@ -23,6 +23,8 @@ const YtEmbed = ({ embedId, title, pos }) => (
     allowFullScreen
     title={title}
   />
+  // dikecilin volumenya / mute
+  // seminggu berikutnya dimatiin autoplaynya
 );
 
 export default YtEmbed;
