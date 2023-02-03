@@ -2,8 +2,6 @@ import { Box, Flex } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
 import { useEffect, useRef, useState } from 'react';
 
-// import video from '@/asset/splashScreen/animation-logo.mp4';
-
 const SplashScreen = () => {
   const router = useRouter();
 
@@ -42,21 +40,23 @@ const SplashScreen = () => {
   useEffect(() => {
     if (isLoading && !stop) {
       vid.current.load();
-      vid.current.play();
 
-      // Minimum time shown
-      const st = setTimeout(() => {
-        setShown(true);
-        clearTimeout(st);
-      }, 13000);
-
+      //first page load
       if (first) {
         const ft = setTimeout(() => {
           setIsLoading(false);
           setFirst(false);
           clearTimeout(ft);
-        }, 13000);
+        }, 12000);
+        return;
       }
+
+      // Minimum time shown
+      vid.current.currentTime = 4;
+      const st = setTimeout(() => {
+        setShown(true);
+        clearTimeout(st);
+      }, 8000);
     }
   }, [first, stop, isLoading]);
 
@@ -84,9 +84,9 @@ const SplashScreen = () => {
           loop
           muted
           playsInline
+          onCanPlay={() => vid.current.play()}
         >
           <source src={'/splashScreen/animation-logo.mp4'} type="video/mp4" />
-          Your browser does not support HTML5 video.
         </Box>
       </Flex>
     )
