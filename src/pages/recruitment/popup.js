@@ -36,6 +36,11 @@ const Popup = (props) => {
           placeholder="blur"
           layout="fill"
           draggable="false"
+          onClick={(e) => {
+            if (!e) var e = window.event;
+            e.cancelBubble = true;
+            if (e.stopPropagation) e.stopPropagation();
+          }}
         />
       </AspectRatio>
       {/* {props.selectedDivisi.name !== 'POSEIDON' && (
