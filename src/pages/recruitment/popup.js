@@ -46,7 +46,8 @@ const Popup = (props) => {
           }}
         />
       </AspectRatio>
-      {props.selectedDivisi.name !== 'POSEIDON' && currDate >= startDate && (
+      {/* {props.selectedDivisi.name !== 'POSEIDON' && currDate >= startDate && ( */}
+      {props.selectedDivisi.name !== 'POSEIDON' && (
         <AspectRatio
           ratio={732 / 150}
           w={['45%', '30%', '25%', '20%']}
