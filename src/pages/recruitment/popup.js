@@ -6,6 +6,9 @@ const Popup = (props) => {
     document.getElementById('popup').focus();
   });
 
+  var currDate = new Date().getTime();
+  var startDate = new Date('2023-02-06').getTime();
+
   return (
     <Flex
       w="100%"
@@ -43,7 +46,7 @@ const Popup = (props) => {
           }}
         />
       </AspectRatio>
-      {/* {props.selectedDivisi.name !== 'POSEIDON' && (
+      {props.selectedDivisi.name !== 'POSEIDON' && currDate >= startDate && (
         <AspectRatio
           ratio={732 / 150}
           w={['45%', '30%', '25%', '20%']}
@@ -60,12 +63,15 @@ const Popup = (props) => {
             bgSize="contain"
             bgPos="center"
             bgRepeat="no-repeat"
-            onClick={() => {
+            onClick={(e) => {
+              if (!e) var e = window.event;
+              e.cancelBubble = true;
+              if (e.stopPropagation) e.stopPropagation();
               window.open(props.selectedDivisi.link);
             }}
           />
         </AspectRatio>
-      )} */}
+      )}
     </Flex>
   );
 };
