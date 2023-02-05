@@ -89,11 +89,11 @@ export const WithList = ({ header, list1, list2, ...props }) => {
       {...props}
     >
       <SubHeado>{header}</SubHeado>
-      <UnorderedList>
+      <UnorderedList listStyleType="none">
         <ListItem>
           <Buddy>{list1}</Buddy>
         </ListItem>
-        <ListItem mt={3}>
+        <ListItem mt={4}>
           <Buddy>{list2}</Buddy>
         </ListItem>
       </UnorderedList>
