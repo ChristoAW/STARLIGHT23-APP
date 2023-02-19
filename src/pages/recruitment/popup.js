@@ -21,7 +21,7 @@ const Popup = (props) => {
       alignItems="center"
       p={0}
       m={0}
-      top={7}
+      top={0}
       flexDirection="column"
       tabIndex={0}
       id="popup"
