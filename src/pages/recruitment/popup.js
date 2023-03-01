@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Box, Flex, AspectRatio, Image } from '@chakra-ui/react';
 
 const Popup = (props) => {
@@ -6,8 +6,18 @@ const Popup = (props) => {
     document.getElementById('popup').focus();
   });
 
-  var currDate = new Date().getTime();
-  var startDate = new Date('2023-02-06').getTime();
+  // // Count Down (semoga berhasil :p -> update suda berhasil yey)
+  // const [currDate, setCurrDate] = useState(new Date().getTime());
+  // var startDate = new Date('2023-03-01').setHours(0); // midnight
+
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setCurrDate(new Date().getTime());
+  //     // console.log("Date : " + currDate);
+  //   }, 1000);
+  //   return() => clearInterval(interval);
+  // },[])
+  // // End Count Down
 
   return (
     <Flex
@@ -46,8 +56,10 @@ const Popup = (props) => {
           }}
         />
       </AspectRatio>
+      
+      {/* BUTTON PENDAFTARAN */}
       {/* {props.selectedDivisi.name !== 'POSEIDON' && currDate >= startDate && ( */}
-      {props.selectedDivisi.name !== 'POSEIDON' && (
+      {/* {props.selectedDivisi.name !== 'POSEIDON' && (
         <AspectRatio
           ratio={732 / 150}
           w={['45%', '30%', '25%', '20%']}
@@ -72,7 +84,7 @@ const Popup = (props) => {
             }}
           />
         </AspectRatio>
-      )}
+      )} */}
     </Flex>
   );
 };
