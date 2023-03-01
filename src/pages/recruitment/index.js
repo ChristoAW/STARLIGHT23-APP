@@ -65,175 +65,7 @@ const Recruitment = () => {
         <PopUp selectedDivisi={listDivisi[0]} setPopUp={setPopUp} />
       )}
 
-      <Flex w="100%" alignContent="center" justifyContent="center">
-        <Spacer />
-        <Box
-          bgImage={listDivisi[10].logo}
-          bgSize="contain"
-          w={
-            isHover === listDivisi[10].name
-              ? ['25vw', null, null, '17vw']
-              : ['23vw', null, null, '15vw']
-          }
-          h={
-            isHover === listDivisi[10].name
-              ? ['25vw', null, null, '17vw']
-              : ['23vw', null, null, '15vw']
-          }
-          m={isHover !== listDivisi[10].name && '1vw'}
-          onClick={() => setPopUp(listDivisi[10].name)}
-          onMouseEnter={() => setIsHover(listDivisi[10].name)}
-          onMouseLeave={mouseLeaveHandler}
-          _hover={{
-            cursor: 'pointer',
-            filter: `drop-shadow(0 0 15px var(--chakra-colors-div-${listDivisi[10].name}))`,
-          }}
-          transition="all .2s ease-in-out"
-        />
-        {isPopUp === listDivisi[10].name && (
-          <PopUp selectedDivisi={listDivisi[10]} setPopUp={setPopUp} />
-        )}
-        <Spacer />
-        <Box
-          bgImage={listDivisi[6].logo}
-          bgSize="contain"
-          w={
-            isHover === listDivisi[6].name
-              ? ['25vw', null, null, '17vw']
-              : ['23vw', null, null, '15vw']
-          }
-          h={
-            isHover === listDivisi[6].name
-              ? ['25vw', null, null, '17vw']
-              : ['23vw', null, null, '15vw']
-          }
-          m={isHover !== listDivisi[6].name && '1vw'}
-          onClick={() => setPopUp(listDivisi[6].name)}
-          onMouseEnter={() => setIsHover(listDivisi[6].name)}
-          onMouseLeave={mouseLeaveHandler}
-          _hover={{
-            cursor: 'pointer',
-            filter: `drop-shadow(0 0 15px var(--chakra-colors-div-${listDivisi[6].name}))`,
-          }}
-          transition="all .2s ease-in-out"
-        />
-        {isPopUp === listDivisi[6].name && (
-          <PopUp selectedDivisi={listDivisi[6]} setPopUp={setPopUp} />
-        )}
-        <Spacer />
-        <Box
-          bgImage={listDivisi[7].logo}
-          bgSize="contain"
-          w={
-            isHover === listDivisi[7].name
-              ? ['25vw', null, null, '17vw']
-              : ['23vw', null, null, '15vw']
-          }
-          h={
-            isHover === listDivisi[7].name
-              ? ['25vw', null, null, '17vw']
-              : ['23vw', null, null, '15vw']
-          }
-          m={isHover !== listDivisi[7].name && '1vw'}
-          onClick={() => setPopUp(listDivisi[7].name)}
-          onMouseEnter={() => setIsHover(listDivisi[7].name)}
-          onMouseLeave={mouseLeaveHandler}
-          _hover={{
-            cursor: 'pointer',
-            filter: `drop-shadow(0 0 15px var(--chakra-colors-div-${listDivisi[7].name}))`,
-          }}
-          transition="all .2s ease-in-out"
-        />
-        {isPopUp === listDivisi[7].name && (
-          <PopUp selectedDivisi={listDivisi[7]} setPopUp={setPopUp} />
-        )}
-        <Spacer />
-      </Flex>
-      <Flex w="100%" alignContent="center" justifyContent="center">
-        <Spacer />
-        <Box
-          bgImage={listDivisi[5].logo}
-          bgSize="contain"
-          w={
-            isHover === listDivisi[5].name
-              ? ['25vw', null, null, '17vw']
-              : ['23vw', null, null, '15vw']
-          }
-          h={
-            isHover === listDivisi[5].name
-              ? ['25vw', null, null, '17vw']
-              : ['23vw', null, null, '15vw']
-          }
-          m={isHover !== listDivisi[5].name && '1vw'}
-          onClick={() => setPopUp(listDivisi[5].name)}
-          onMouseEnter={() => setIsHover(listDivisi[5].name)}
-          onMouseLeave={mouseLeaveHandler}
-          _hover={{
-            cursor: 'pointer',
-            filter: `drop-shadow(0 0 15px var(--chakra-colors-div-${listDivisi[5].name}))`,
-          }}
-          transition="all .2s ease-in-out"
-        />
-        {isPopUp === listDivisi[5].name && (
-          <PopUp selectedDivisi={listDivisi[5]} setPopUp={setPopUp} />
-        )}
-        <Spacer />
-        <Box
-          bgImage={listDivisi[4].logo}
-          bgSize="contain"
-          w={
-            isHover === listDivisi[4].name
-              ? ['25vw', null, null, '17vw']
-              : ['23vw', null, null, '15vw']
-          }
-          h={
-            isHover === listDivisi[4].name
-              ? ['25vw', null, null, '17vw']
-              : ['23vw', null, null, '15vw']
-          }
-          m={isHover !== listDivisi[4].name && '1vw'}
-          onClick={() => setPopUp(listDivisi[4].name)}
-          onMouseEnter={() => setIsHover(listDivisi[4].name)}
-          onMouseLeave={mouseLeaveHandler}
-          _hover={{
-            cursor: 'pointer',
-            filter: `drop-shadow(0 0 15px var(--chakra-colors-div-${listDivisi[4].name}))`,
-          }}
-          transition="all .2s ease-in-out"
-        />
-        {isPopUp === listDivisi[4].name && (
-          <PopUp selectedDivisi={listDivisi[4]} setPopUp={setPopUp} />
-        )}
-        <Spacer />
-        <Box
-          bgImage={listDivisi[8].logo}
-          bgSize="contain"
-          w={
-            isHover === listDivisi[8].name
-              ? ['25vw', null, null, '17vw']
-              : ['23vw', null, null, '15vw']
-          }
-          h={
-            isHover === listDivisi[8].name
-              ? ['25vw', null, null, '17vw']
-              : ['23vw', null, null, '15vw']
-          }
-          m={isHover !== listDivisi[8].name && '1vw'}
-          onClick={() => setPopUp(listDivisi[8].name)}
-          onMouseEnter={() => setIsHover(listDivisi[8].name)}
-          onMouseLeave={mouseLeaveHandler}
-          _hover={{
-            cursor: 'pointer',
-            filter: `drop-shadow(0 0 15px var(--chakra-colors-div-${listDivisi[8].name}))`,
-          }}
-          transition="all .2s ease-in-out"
-        />
-        {isPopUp === listDivisi[8].name && (
-          <PopUp selectedDivisi={listDivisi[8]} setPopUp={setPopUp} />
-        )}
-        <Spacer />
-      </Flex>
-      {/* BATCH 1
+      {/* // BATCH 1 */}
       <Flex w="100%" alignContent="center" justifyContent="center">
         <Spacer />
         <Box
@@ -566,9 +398,179 @@ const Recruitment = () => {
           <PopUp selectedDivisi={listDivisi[12]} setPopUp={setPopUp} />
         )}
         <Spacer />
-      </Flex> */}
+      </Flex>
     </Flex>
   );
 };
 
 export default Recruitment;
+
+// BATCH 2 OPREC
+{/* <Flex w="100%" alignContent="center" justifyContent="center">
+        <Spacer />
+        <Box
+          bgImage={listDivisi[10].logo}
+          bgSize="contain"
+          w={
+            isHover === listDivisi[10].name
+              ? ['25vw', null, null, '17vw']
+              : ['23vw', null, null, '15vw']
+          }
+          h={
+            isHover === listDivisi[10].name
+              ? ['25vw', null, null, '17vw']
+              : ['23vw', null, null, '15vw']
+          }
+          m={isHover !== listDivisi[10].name && '1vw'}
+          onClick={() => setPopUp(listDivisi[10].name)}
+          onMouseEnter={() => setIsHover(listDivisi[10].name)}
+          onMouseLeave={mouseLeaveHandler}
+          _hover={{
+            cursor: 'pointer',
+            filter: `drop-shadow(0 0 15px var(--chakra-colors-div-${listDivisi[10].name}))`,
+          }}
+          transition="all .2s ease-in-out"
+        />
+        {isPopUp === listDivisi[10].name && (
+          <PopUp selectedDivisi={listDivisi[10]} setPopUp={setPopUp} />
+        )}
+        <Spacer />
+        <Box
+          bgImage={listDivisi[6].logo}
+          bgSize="contain"
+          w={
+            isHover === listDivisi[6].name
+              ? ['25vw', null, null, '17vw']
+              : ['23vw', null, null, '15vw']
+          }
+          h={
+            isHover === listDivisi[6].name
+              ? ['25vw', null, null, '17vw']
+              : ['23vw', null, null, '15vw']
+          }
+          m={isHover !== listDivisi[6].name && '1vw'}
+          onClick={() => setPopUp(listDivisi[6].name)}
+          onMouseEnter={() => setIsHover(listDivisi[6].name)}
+          onMouseLeave={mouseLeaveHandler}
+          _hover={{
+            cursor: 'pointer',
+            filter: `drop-shadow(0 0 15px var(--chakra-colors-div-${listDivisi[6].name}))`,
+          }}
+          transition="all .2s ease-in-out"
+        />
+        {isPopUp === listDivisi[6].name && (
+          <PopUp selectedDivisi={listDivisi[6]} setPopUp={setPopUp} />
+        )}
+        <Spacer />
+        <Box
+          bgImage={listDivisi[7].logo}
+          bgSize="contain"
+          w={
+            isHover === listDivisi[7].name
+              ? ['25vw', null, null, '17vw']
+              : ['23vw', null, null, '15vw']
+          }
+          h={
+            isHover === listDivisi[7].name
+              ? ['25vw', null, null, '17vw']
+              : ['23vw', null, null, '15vw']
+          }
+          m={isHover !== listDivisi[7].name && '1vw'}
+          onClick={() => setPopUp(listDivisi[7].name)}
+          onMouseEnter={() => setIsHover(listDivisi[7].name)}
+          onMouseLeave={mouseLeaveHandler}
+          _hover={{
+            cursor: 'pointer',
+            filter: `drop-shadow(0 0 15px var(--chakra-colors-div-${listDivisi[7].name}))`,
+          }}
+          transition="all .2s ease-in-out"
+        />
+        {isPopUp === listDivisi[7].name && (
+          <PopUp selectedDivisi={listDivisi[7]} setPopUp={setPopUp} />
+        )}
+        <Spacer />
+      </Flex>
+      <Flex w="100%" alignContent="center" justifyContent="center">
+        <Spacer />
+        <Box
+          bgImage={listDivisi[5].logo}
+          bgSize="contain"
+          w={
+            isHover === listDivisi[5].name
+              ? ['25vw', null, null, '17vw']
+              : ['23vw', null, null, '15vw']
+          }
+          h={
+            isHover === listDivisi[5].name
+              ? ['25vw', null, null, '17vw']
+              : ['23vw', null, null, '15vw']
+          }
+          m={isHover !== listDivisi[5].name && '1vw'}
+          onClick={() => setPopUp(listDivisi[5].name)}
+          onMouseEnter={() => setIsHover(listDivisi[5].name)}
+          onMouseLeave={mouseLeaveHandler}
+          _hover={{
+            cursor: 'pointer',
+            filter: `drop-shadow(0 0 15px var(--chakra-colors-div-${listDivisi[5].name}))`,
+          }}
+          transition="all .2s ease-in-out"
+        />
+        {isPopUp === listDivisi[5].name && (
+          <PopUp selectedDivisi={listDivisi[5]} setPopUp={setPopUp} />
+        )}
+        <Spacer />
+        <Box
+          bgImage={listDivisi[4].logo}
+          bgSize="contain"
+          w={
+            isHover === listDivisi[4].name
+              ? ['25vw', null, null, '17vw']
+              : ['23vw', null, null, '15vw']
+          }
+          h={
+            isHover === listDivisi[4].name
+              ? ['25vw', null, null, '17vw']
+              : ['23vw', null, null, '15vw']
+          }
+          m={isHover !== listDivisi[4].name && '1vw'}
+          onClick={() => setPopUp(listDivisi[4].name)}
+          onMouseEnter={() => setIsHover(listDivisi[4].name)}
+          onMouseLeave={mouseLeaveHandler}
+          _hover={{
+            cursor: 'pointer',
+            filter: `drop-shadow(0 0 15px var(--chakra-colors-div-${listDivisi[4].name}))`,
+          }}
+          transition="all .2s ease-in-out"
+        />
+        {isPopUp === listDivisi[4].name && (
+          <PopUp selectedDivisi={listDivisi[4]} setPopUp={setPopUp} />
+        )}
+        <Spacer />
+        <Box
+          bgImage={listDivisi[8].logo}
+          bgSize="contain"
+          w={
+            isHover === listDivisi[8].name
+              ? ['25vw', null, null, '17vw']
+              : ['23vw', null, null, '15vw']
+          }
+          h={
+            isHover === listDivisi[8].name
+              ? ['25vw', null, null, '17vw']
+              : ['23vw', null, null, '15vw']
+          }
+          m={isHover !== listDivisi[8].name && '1vw'}
+          onClick={() => setPopUp(listDivisi[8].name)}
+          onMouseEnter={() => setIsHover(listDivisi[8].name)}
+          onMouseLeave={mouseLeaveHandler}
+          _hover={{
+            cursor: 'pointer',
+            filter: `drop-shadow(0 0 15px var(--chakra-colors-div-${listDivisi[8].name}))`,
+          }}
+          transition="all .2s ease-in-out"
+        />
+        {isPopUp === listDivisi[8].name && (
+          <PopUp selectedDivisi={listDivisi[8]} setPopUp={setPopUp} />
+        )}
+        <Spacer />
+      </Flex> */}
