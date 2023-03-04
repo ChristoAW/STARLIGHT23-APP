@@ -52,7 +52,13 @@ const Popup = (props) => {
             Math.floor(Math.random() * 3) + Math.floor(Math.random() * 5)
           }s linear`}
         >
-          <Text fontSize={height > width ? ['2vw', '2.5vw'] : ['3vw', '1.3vw']}>
+          <Text
+            fontSize={
+              props.selectedDivisi.members.length > 7
+                ? ['2vw', '2.5vw', '1.2vw']
+                : ['2.6vw', '1.75vw']
+            }
+          >
             {member}
           </Text>
         </WrapItem>
@@ -90,7 +96,14 @@ const Popup = (props) => {
         id="popup"
       >
         {height > width ? (
-          <AspectRatio ratio={1191 / 1645} w={'75%'}>
+          <AspectRatio
+            ratio={1191 / 1645}
+            w={'75%'}
+            _hover={{
+              cursor: 'pointer',
+              transform: 'scale(1.02)',
+            }}
+          >
             {revealed ? (
               <Flex
                 bgImage={props.selectedDivisi.popupmbg}
@@ -115,7 +128,7 @@ const Popup = (props) => {
                 <Wrap
                   w="70%"
                   position="absolute"
-                  top="50%"
+                  top="45%"
                   align="center"
                   justify="space-evenly"
                 >
@@ -145,7 +158,14 @@ const Popup = (props) => {
             )}
           </AspectRatio>
         ) : (
-          <AspectRatio ratio={1546 / 1191} w={['90%', '75%', '65%', '50%']}>
+          <AspectRatio
+            ratio={1546 / 1191}
+            w={['90%', '75%', '65%', '50%']}
+            _hover={{
+              cursor: 'pointer',
+              transform: 'scale(1.02)',
+            }}
+          >
             {revealed ? (
               <Flex
                 bgImage={props.selectedDivisi.popupdbg}
@@ -170,7 +190,7 @@ const Popup = (props) => {
                 <Wrap
                   w="70%"
                   position="absolute"
-                  top="50%"
+                  top="37.5%"
                   align="center"
                   justify="space-evenly"
                 >
