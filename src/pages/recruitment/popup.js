@@ -9,6 +9,7 @@ import {
   keyframes,
   Text,
 } from '@chakra-ui/react';
+import theme from '@/theme';
 
 //dynamic window dimensions checker
 function getWindowsDimensions() {
@@ -38,6 +39,19 @@ const Popup = (props) => {
     document.getElementById('popup').focus();
   });
 
+  // Count Down (kl bisa nantinya dibikin jadi component supaya bisa dipanggil dimana mana)
+  const [currDate, setCurrDate] = useState('new Date().getTime()');
+  var startDate = new Date('2023-03-05').setHours(12); // midnight = 0
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrDate(new Date().getTime());
+      // console.log("Date : " + currDate);
+    }, 1000);
+    return () => clearInterval(interval);
+  }, []);
+  // End Count Down
+
   const { height, width } = useWindowDimensions();
   const [revealed, setRevealed] = useState(0);
 
@@ -53,10 +67,16 @@ const Popup = (props) => {
           }s linear`}
         >
           <Text
+            color={theme.colors.div['POSEIDON']}
+            textShadow={Array(1)
+              .fill()
+              .map((e, i) => `0 0 ${i + 1}0px rgba(0, 0, 0, 0.9)`)
+              .join(', ')}
+            {...props}
             fontSize={
-              props.selectedDivisi.members.length > 7
-                ? ['2vw', '2.5vw', '1.2vw']
-                : ['2.6vw', '1.75vw']
+              props.selectedDivisi.members.length > 10
+                ? { base: '2.4vw', sm: '2.6vw', md: '2.6vw', lg: '1.2vw' }
+                : { base: '2.7vw', sm: '2.4vw', md: '1.8vw', lg: '1.3vw' }
             }
           >
             {member}
@@ -65,19 +85,16 @@ const Popup = (props) => {
       );
     });
 
-    // console.log(listNama);
-    // // Count Down (semoga berhasil :p -> update suda berhasil yey)
-    // const [currDate, setCurrDate] = useState(new Date().getTime());
-    // var startDate = new Date('2023-03-01').setHours(0); // midnight
+    // Pop Up Animation (kalo bisa, pas di hover, animationnya ga gerak)
+    const clickMe = keyframes`
+    0%, 32%, 50%, 80%, 100% {transform: scale(1);}
+    40% {transform: scale(0.94);}
+    60% {transform: scale(0.98);}`;
 
-    // useEffect(() => {
-    //   const interval = setInterval(() => {
-    //     setCurrDate(new Date().getTime());
-    //     // console.log("Date : " + currDate);
-    //   }, 1000);
-    //   return() => clearInterval(interval);
-    // },[])
-    // // End Count Down
+    const clickAnimate = `${clickMe} infinite 2s ease-out`;
+    // End of Pop Up Animation
+
+    // console.log(listNama);
 
     return (
       <Flex
@@ -98,13 +115,13 @@ const Popup = (props) => {
         {height > width ? (
           <AspectRatio
             ratio={1191 / 1645}
-            w={'75%'}
+            w={'80%'}
             _hover={{
               cursor: 'pointer',
               transform: 'scale(1.02)',
             }}
           >
-            {revealed ? (
+            {revealed && currDate >= startDate ? (
               <Flex
                 bgImage={props.selectedDivisi.popupmbg}
                 w="75%"
@@ -126,7 +143,7 @@ const Popup = (props) => {
                 // }}
               >
                 <Wrap
-                  w="70%"
+                  w={props.selectedDivisi.name === 'SCYLLA' ? '70%' : '65%'}
                   position="absolute"
                   top="45%"
                   align="center"
@@ -148,6 +165,7 @@ const Popup = (props) => {
                   setRevealed(1);
                   // setOpacity(1);
                 }}
+                animation={`${currDate >= startDate ? clickAnimate : ''}`}
                 // animation={
                 //   opacity ? `${fade} 2s linear reverse` : `${fade} 2s linear`
                 // }
@@ -165,8 +183,9 @@ const Popup = (props) => {
               cursor: 'pointer',
               transform: 'scale(1.02)',
             }}
+            animation={`${currDate >= startDate ? clickAnimate : ''}`}
           >
-            {revealed ? (
+            {revealed && currDate >= startDate ? (
               <Flex
                 bgImage={props.selectedDivisi.popupdbg}
                 w="75%"
@@ -190,7 +209,7 @@ const Popup = (props) => {
                 <Wrap
                   w="70%"
                   position="absolute"
-                  top="37.5%"
+                  top={props.selectedDivisi.name === 'SCYLLA' ? '39%' : '45%'}
                   align="center"
                   justify="space-evenly"
                 >
@@ -209,6 +228,7 @@ const Popup = (props) => {
                   if (e.stopPropagation) e.stopPropagation();
                   setRevealed(1);
                 }}
+                animation={`${currDate >= startDate ? clickAnimate : ''}`}
               />
             )}
           </AspectRatio>
