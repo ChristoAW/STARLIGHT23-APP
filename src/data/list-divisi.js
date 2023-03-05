@@ -65,6 +65,7 @@ const listDivisi = [
       'Graciell Syallom Zefanya Tjandra',
       'Nelson Efrata Aliwarga',
       'Hope Theophilus Soelaiman',
+      'Muhammad Redho Adastra',
     ],
   },
   {
