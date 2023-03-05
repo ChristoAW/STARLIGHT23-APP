@@ -120,6 +120,7 @@ const Popup = (props) => {
               cursor: 'pointer',
               transform: 'scale(1.02)',
             }}
+            transition="0.2s linear"
           >
             {revealed && currDate >= startDate ? (
               <Flex
@@ -183,7 +184,7 @@ const Popup = (props) => {
               cursor: 'pointer',
               transform: 'scale(1.02)',
             }}
-            animation={`${currDate >= startDate ? clickAnimate : ''}`}
+            transition="0.2s linear"
           >
             {revealed && currDate >= startDate ? (
               <Flex
