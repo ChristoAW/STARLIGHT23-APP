@@ -49,6 +49,7 @@ const listDivisi = [
       'Yohanes Govinda Agarota',
       'Sakti Yudha Pratama',
       'Alexander',
+      'Brandon Samuel Sasmita',
     ],
   },
   {
