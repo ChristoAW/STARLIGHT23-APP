@@ -63,6 +63,7 @@ const listDivisi = [
       'Gilbert Stefanus Candra',
       'Graciell Syallom Zefanya Tjandra',
       'Nelson Efrata Aliwarga',
+      'Hope Theophilus Soelaiman',
     ],
   },
   {
@@ -102,7 +103,12 @@ const listDivisi = [
   {
     name: 'LEVIATHAN',
     link: 'https://forms.gle/x7SByULMDV9y7u3M6',
-    members: ['Amanda Candrasaputra', 'Debora Esterlita', 'Nicole Clement'],
+    members: [
+      'Amanda Candrasaputra',
+      'Debora Esterlita',
+      'Nicole Clement',
+      'Novryan Susanto',
+    ],
   },
   {
     name: 'NEREUS',
