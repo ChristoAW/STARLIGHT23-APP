@@ -1,0 +1,50 @@
+.c {
+  position: relative;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  margin-top: 20%;
+}
+
+.textCont {
+  height: 100%;
+  position: relative;
+  text-align: center;
+  align-items: center;
+  align-content: center;
+  align-self: center;
+  border-radius: 100%;
+  padding: 10px;
+  border: #fff solid 2px;
+}
+
+.drop {
+  position: relative;
+  height: 75%;
+  width: 100%;
+  border-radius: 51% 49% 48% 52% / 62% 44% 56% 38%;
+  opacity: 0.8;
+  border: 2px solid;
+}
+
+.drop::before {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-radius: 51% 49% 48% 52% / 62% 44% 56% 38%;
+  box-shadow: inset -6px 6px 10px #c0cadb, inset 2px 6px 10px #e2e2e2, inset 20px -20px 22px white;
+}
+
+.drop::after {
+  content: '';
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  background: #e6fdfb;
+  border-radius: 44% 56% 46% 54% / 36% 50% 50% 64%;
+  right: 30%;
+  top: 5%;
+  box-shadow: 16px 40px 0 -10px white;
+  opacity: 0.8;
+}
