@@ -1,5 +1,6 @@
 import { Box, Flex } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
+import theme from '@/theme';
 
 import Footer from '@/components/Footer/footer';
 import Header from '@/components/Header/header';
@@ -15,6 +16,8 @@ const Layout = ({ children, ...props }) => {
       alignItems="center"
       minH="100vh"
       width="100%"
+      bgGradient='linear(#828389 5%, #18223a 25%)'
+      bgColor={{base: '#828389', md : theme.colors.bg[500]}}
       // sx={{
       //   '::-webkit-scrollbar': { display: 'none' }
       // }}
@@ -24,7 +27,6 @@ const Layout = ({ children, ...props }) => {
         sx={{
           position: '-webkit-sticky',
           position: 'sticky' /* Safari */,
-          // top: '0',
         }}
         top={{
           base: '0',

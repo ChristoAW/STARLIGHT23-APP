@@ -13,7 +13,6 @@ export const NavbarLink = ({ to, children, display, ...props }) => {
       ps={{ md: '3', lg: '7' }}
       px={{ md: 'calc(7px + .85rem)', lg: '7' }}
       textAlign="center"
-      // fontSize={{ md: 'sm', lg: 'md', xl: 'larger' }}
       fontSize={{
         md: 'calc(.4rem + 1.5vw)',
         lg: 'calc(.5rem + 1.2vw)',
@@ -61,7 +60,7 @@ const DesktopNav = () => {
       <NavbarLink to="/division">
         Divi<i>s</i>ion
       </NavbarLink>
-      <NavDivider />
+      {/* <NavDivider /> */}
       {/* <NavbarLink to="/">Media</NavbarLink>
       <NavDivider />
       <NavbarLink to="/">
@@ -72,9 +71,9 @@ const DesktopNav = () => {
         Talent<i>s</i>
       </NavbarLink>
       <NavDivider /> */}
-      <NavbarLink to="/faq">
+      {/* <NavbarLink to="/faq">
         FA<i>Q</i>
-      </NavbarLink>
+      </NavbarLink> */}
     </Stack>
   );
 };
