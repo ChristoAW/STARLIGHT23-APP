@@ -98,7 +98,7 @@ const Popup = (props) => {
       id="popup"
       animation={animation !== 'out' ? `${fadeIn} 5s` : `${fadeOut} 3s`}
     >
-      <Flex pos="absolute" top={[3, 3, '15vh']} px={2}>
+      <Flex pos="absolute" top={[3, 3, '15vh']} px={{base: "6vw", md :"20vw"}}>
         <SubHeadBody
           header={<>{formattedName}</>}
           body={<>{props.selectedDivisi.desc}</>}
