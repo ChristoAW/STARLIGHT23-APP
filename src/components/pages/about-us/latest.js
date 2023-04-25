@@ -135,7 +135,7 @@ const LatestNews = () => {
         />
         <Flex
           pos="absolute"
-          w={{ base: '75%', sm: '70%', md: '60vw', xl: '52vw' }}
+          w={{ base: '70vw', sm: '65vw', md: '60vw', xl: '52vw' }}
           justifyContent="space-between"
           alignItems="center"
           zIndex={5}
@@ -145,10 +145,10 @@ const LatestNews = () => {
             backgroundColor="rgb(203,220,203,0.2)"
             backdropFilter="auto"
             backdropBlur="5px"
-            height={{base: "60px", md: 20}}
+            height={{ base: '60px', md: 20 }}
             justifyContent="center"
             alignItems="center"
-            rounded={{base: 10, md: 15}}
+            rounded={{ base: 10, md: 15 }}
             pe={1}
             cursor="pointer"
           >
@@ -163,10 +163,10 @@ const LatestNews = () => {
             backgroundColor="rgb(203,220,203,0.2)"
             backdropFilter="auto"
             backdropBlur="5px"
-            height={{base: "60px", md: 20}}
+            height={{ base: '60px', md: 20 }}
             justifyContent="center"
             alignItems="center"
-            rounded={{base: 10, md: 15}}
+            rounded={{ base: 10, md: 15 }}
             ps={1}
             cursor="pointer"
           >
@@ -180,14 +180,13 @@ const LatestNews = () => {
           {/* Belom bisa pake function */}
           {/* <SwipeBtn icon={FaCaretLeft} pe={1} class="swiper-prev" /> */}
           {/* <SwipeBtn icon={FaCaretRight} ps={1} /> */}
-        
         </Flex>
         <Box
           as={Swiper}
           pos="absolute"
           h={{
             base: 'calc(9 * 5.2vw)',
-            sm: 'calc(9 * 3.7vw)',
+            sm: 'calc(9 * 4.6vw)',
             md: 'calc(9 * 4vw)',
             xl: 'calc(9 * 3.4vw)',
           }}
