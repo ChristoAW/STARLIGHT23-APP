@@ -61,7 +61,7 @@ const MobileNav = () => {
           bgColor: isOpen ? 'none' : `${theme.colors.nav['inactive']}`,
           cursor: 'pointer',
         }}
-        zIndex={5}
+        zIndex={8}
       >
         <Box mt="-1">
           <Squeeze
@@ -103,8 +103,8 @@ const MobileNav = () => {
           <NavbarLink to="/" isOpen={isOpen} setOpen={setOpen}>
             About U<i>s</i>
           </NavbarLink>
-          <NavbarLink to="/recruitment" isOpen={isOpen} setOpen={setOpen}>
-            Recruitment
+          <NavbarLink to="/division" isOpen={isOpen} setOpen={setOpen}>
+            Divi<i>s</i>ion
           </NavbarLink>
           {/* <NavbarLink to="/media" isOpen={isOpen} setOpen={setOpen}>Media</NavbarLink>
           <NavbarLink to="/testimony" isOpen={isOpen} setOpen={setOpen}>
@@ -113,9 +113,9 @@ const MobileNav = () => {
           <NavbarLink to="/talent" isOpen={isOpen} setOpen={setOpen}>
             Talent<i>s</i>
           </NavbarLink> */}
-          <NavbarLink to="/faq" isOpen={isOpen} setOpen={setOpen}>
+          {/* <NavbarLink to="/faq" isOpen={isOpen} setOpen={setOpen}>
             FA<i>Q</i>
-          </NavbarLink>
+          </NavbarLink> */}
         </Flex>
       </Box>
     </>

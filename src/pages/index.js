@@ -29,7 +29,7 @@ const Home = () => {
       >
         <LatestNews />
         <TreasureMap />
-        <Box px={{base: 6, sm: 14, md: 20}}>
+        <Box px={{ base: 6, sm: 14, md: 20 }}>
           <Divider
             orientation="horizontal"
             mt={{ base: 12, md: 28 }}
