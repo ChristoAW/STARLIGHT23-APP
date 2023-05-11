@@ -45,7 +45,7 @@ const Popup = (props) => {
   }
 
   //Create Slides
-  function createSlides() {
+  function createSlides(index) {
     var temp = props.selectedDivisi.members.map((member, idx) => {
       return (
         <SwiperSlide key={idx}>
@@ -64,15 +64,21 @@ const Popup = (props) => {
             }
             bgSize="cover"
             bgPos="center"
+            opacity={
+              idx === index && animation !== 'card-finished' ? '0%' : '100%'
+            }
             onClick={stopProp}
-            animation={`${fadeIn} 5s`}
           />
         </SwiperSlide>
       );
     });
     return temp;
   }
-  const Slides = useMemo(() => createSlides(), []);
+
+  const Slides = useMemo(
+    () => createSlides(activeIndex),
+    [animation, activeIndex]
+  );
 
   return (
     <Flex
