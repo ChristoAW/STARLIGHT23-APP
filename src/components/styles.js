@@ -26,10 +26,14 @@ export const SubHeado = ({ children, ...props }) => {
     <Text
       mb="2"
       fontFamily="Exodus"
-      fontSize={{
-        base: 'calc(.6rem + 3vw)',
-        md: 'calc(.35rem + 2vw)',
-      }}
+      fontSize={
+        props.fontSize
+          ? props.fontSize
+          : {
+              base: 'calc(.6rem + 3vw)',
+              md: 'calc(.35rem + 2vw)',
+            }
+      }
       color={theme.colors.text[300]}
       textShadow={{
         base: `${Array(2)
@@ -88,7 +92,7 @@ export const Buddy = ({ children, ...props }) => {
 export const PageTitle = ({ children, ...props }) => {
   return (
     <Text
-      mb={{base: "2rem", md: "3rem"}}
+      mb={{ base: '2rem', md: '3rem' }}
       textAlign="center"
       fontFamily="Exodus"
       fontSize={{

@@ -33,8 +33,22 @@ export const SubHeadBody = ({ header, body, ...props }) => {
       animate={control}
       {...props}
     >
-      <SubHeado>{header}</SubHeado>
-      <Buddy>{body}</Buddy>
+      <SubHeado
+        fontSize={
+          props.fontSizeH
+            ? props.fontSizeH
+            : { base: 'calc(.6rem + 3vw)', md: 'calc(.35rem + 2vw)' }
+        }
+      >
+        {header}
+      </SubHeado>
+      <Buddy
+        fontSize={
+          props.fontSizeB ? props.fontSizeB : { base: 'md', md: 'lg', xl: 'xl' }
+        }
+      >
+        {body}
+      </Buddy>
     </Box>
   );
 };

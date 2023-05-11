@@ -110,6 +110,15 @@ const Popup = (props) => {
         px={{ base: '6vw', md: '20vw' }}
       >
         <SubHeadBody
+          fontSizeB={
+            `${props.selectedDivisi.name}` === 'Scylla'
+              ? {
+                  base: 'calc(.4rem + 1.8vw)',
+                  md: 'lg',
+                  xl: 'xl',
+                }
+              : { base: 'calc(.4rem + 2.2vw)', md: 'lg', xl: 'xl' }
+          }
           header={<>{formattedName}</>}
           body={<>{props.selectedDivisi.desc}</>}
         />

@@ -138,7 +138,7 @@ const LatestNews = () => {
           w={{ base: '70vw', sm: '65vw', md: '60vw', xl: '52vw' }}
           justifyContent="space-between"
           alignItems="center"
-          zIndex={4}
+          zIndex={3}
         >
           <Flex
             className="swiper-prev"

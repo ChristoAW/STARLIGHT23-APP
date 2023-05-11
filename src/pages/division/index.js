@@ -52,7 +52,7 @@ const Division = () => {
             onMouseLeave={mouseLeaveHandler}
             _hover={{
               cursor: 'pointer',
-              filter: `drop-shadow(0 0 15px var(--chakra-colors-div-${div.name.toUpperCase()}))`,
+              filter: `drop-shadow(0 0 15px var(--chakra-colors-div-${div.name}))`,
             }}
           />
         </GridItem>
