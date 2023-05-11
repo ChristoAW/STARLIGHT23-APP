@@ -98,8 +98,21 @@ const Popup = (props) => {
       id="popup"
       animation={animation !== 'out' ? `${fadeIn} 5s` : `${fadeOut} 3s`}
     >
-      <Flex pos="absolute" top={[3, 3, '15vh']} px={{base: "6vw", md :"20vw"}}>
+      <Flex
+        pos="absolute"
+        top={[3, 3, '15vh']}
+        px={{ base: '6vw', md: '20vw' }}
+      >
         <SubHeadBody
+          fontSizeB={
+            `${props.selectedDivisi.name}` === 'Scylla'
+              ? {
+                  base: 'calc(.4rem + 1.8vw)',
+                  md: 'lg',
+                  xl: 'xl',
+                }
+              : { base: 'calc(.4rem + 2.2vw)', md: 'lg', xl: 'xl' }
+          }
           header={<>{formattedName}</>}
           body={<>{props.selectedDivisi.desc}</>}
         />
