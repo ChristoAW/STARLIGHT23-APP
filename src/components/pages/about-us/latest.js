@@ -234,14 +234,14 @@ const LatestNews = () => {
             <YtEmbed
               pos="absolute"
               embedId="wcM0lA1MCbg"
-              title="Starlight's Latest"
+              title="Starlight 2023 Trailer"
             />
           </SwiperSlide>
           <SwiperSlide>
             <YtEmbed
               pos="absolute"
-              embedId="YRgK7p-AENs"
-              title="Starlight's Latest"
+              embedId="1BBL12D3JjE"
+              title="Interview Memories"
             />
           </SwiperSlide>
         </Box>
