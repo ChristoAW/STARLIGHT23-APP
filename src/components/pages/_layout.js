@@ -5,6 +5,7 @@ import theme from '@/theme';
 import Footer from '@/components/Footer/footer';
 import Header from '@/components/Header/header';
 import SplashScreen from '../SplashScreen';
+import Scrollbar from '../scrollbar/scrollbar';
 
 const Layout = ({ children, ...props }) => {
   const scrollDirection = useScrollDirection();
@@ -23,6 +24,7 @@ const Layout = ({ children, ...props }) => {
       // }}
       {...props}
     >
+      <Scrollbar />
       <Box
         sx={{
           position: '-webkit-sticky',
