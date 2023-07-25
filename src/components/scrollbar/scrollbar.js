@@ -14,7 +14,6 @@ const Scrollbar = () => {
         document.documentElement.scrollHeight - window.innerHeight;
       const scrolled = window.scrollY;
       const percentage = (scrolled / totalScrollHeight) * 100;
-      console.log("Percentage:", percentage);
       setScrollProgress(percentage);
     };
 
