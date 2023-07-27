@@ -1,0 +1,42 @@
+/* styles/global.css */
+
+/* Define a custom cursor using an image */
+body {
+    cursor: url('../../asset/images/cursor/Cursor\ \(Idle\).png'), auto !important;
+}
+
+.css {
+    cursor: url('../../asset/images/cursor/Cursor\ \(Idle\).png'), auto;
+}
+
+span {
+    cursor: url('../../asset/images/cursor/Cursor\ \(Idle\).png'), auto;
+}
+
+img {
+    cursor: url('../../asset/images/cursor/Cursor\ \(Idle\).png'), auto;
+}
+
+a {
+    cursor: url('../../asset/images/cursor/Cursor\ \(Hover\).png'), pointer;
+}
+
+svg {
+    cursor: url('../../asset/images/cursor/Cursor\ \(Hover\).png'), pointer;
+}
+
+path {
+    cursor: url('../../asset/images/cursor/Cursor\ \(Hover\).png'), pointer;
+}
+
+button {
+    cursor: url('../../asset/images/cursor/Cursor\ \(Hover\).png'), pointer;
+}
+
+video {
+    cursor: url('../../asset/images/cursor/Cursor\ \(Hover\).png'), pointer;
+}
+
+iframe {
+    cursor: url('../../asset/images/cursor/Cursor\ \(Hover\).png'), pointer;
+}
