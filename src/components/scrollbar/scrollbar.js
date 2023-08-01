@@ -29,24 +29,31 @@ const Scrollbar = () => {
 
   useEffect(() => {
     const handleMouseMove = (event) => {
-  if (dragging) {
-    const maxScrollHeight =
-      document.documentElement.scrollHeight - window.innerHeight;
-    const offsetY = event.clientY - startY;
-    const scrollPercentage = (offsetY / window.innerHeight) * 100;
-    const newScrollProgress = Math.max(0, Math.min(scrollPercentage, maxScrollHeight));
+      if (dragging) {
+        const maxScrollHeight =
+          document.documentElement.scrollHeight - window.innerHeight;
+        const offsetY = event.clientY - startY;
+        const scrollPercentage = (offsetY / window.innerHeight) * 100;
+        const newScrollProgress = Math.max(
+          0,
+          Math.min(scrollPercentage, maxScrollHeight)
+        );
 
-    const minScrollProgress = (72.3667 / window.innerHeight) * 100;
-    const maxScrollProgress = 100;
-    const clampedScrollProgress = Math.max(minScrollProgress, Math.min(newScrollProgress, maxScrollProgress));
+        const minScrollProgress = (72.3667 / window.innerHeight) * 100;
+        const maxScrollProgress = 100;
+        const clampedScrollProgress = Math.max(
+          minScrollProgress,
+          Math.min(newScrollProgress, maxScrollProgress)
+        );
 
-    setScrollProgress(clampedScrollProgress);
+        setScrollProgress(clampedScrollProgress);
 
-    const newScrollY = (clampedScrollProgress / 100) * (document.documentElement.scrollHeight - window.innerHeight);
-    window.scrollTo(0, newScrollY);
-  }
-};
-
+        const newScrollY =
+          (clampedScrollProgress / 100) *
+          (document.documentElement.scrollHeight - window.innerHeight);
+        window.scrollTo(0, newScrollY);
+      }
+    };
 
     const handleMouseUp = () => {
       setDragging(false);
@@ -68,10 +75,11 @@ const Scrollbar = () => {
       scrollProgress - (72.3667 / window.innerHeight) * 100;
     setStartY(event.clientY - boundingClientRect.top - initialDisplacement);
   };
-  
 
   const checkpoints = [0, 20, 40, 60, 80];
-  const numChains = checkpoints.filter((checkpoints) => scrollProgress >= checkpoints).length;
+  const numChains = checkpoints.filter(
+    (checkpoints) => scrollProgress >= checkpoints
+  ).length;
 
   const maxTranslateY = scrollProgress - (72.3667 / window.innerHeight) * 100;
 
@@ -83,17 +91,20 @@ const Scrollbar = () => {
           src={Chain}
           className={styles.scrollbar}
           style={{
-            transform: `translateY(calc(${scrollProgress}vh - ${index * 192.717 + 192.717 + 72.3667}px))`,
+            transform: `translateY(calc(${scrollProgress}vh - ${
+              index * 192.717 + 192.717 + 72.3667
+            }px))`,
           }}
+          onMouseDown={handleMouseDown}
         />
       ))}
       <Image
-        ref={anchorRef} 
+        ref={anchorRef}
         src={Anchor}
         className={styles.scrollbar}
         style={{
           transform: `translateY(calc(${maxTranslateY}vh))`,
-          cursor: 'grab'
+          cursor: 'grab',
         }}
         onMouseDown={handleMouseDown}
       />

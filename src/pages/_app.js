@@ -4,6 +4,8 @@ import Head from 'next/head';
 import '../theme/fonts.scss';
 import theme from '../theme';
 
+import '../components/styles.scss';
+
 import iconSL from '../../public/favicon.ico';
 
 import LayoutProvider from '../components/context/LayoutContext';
