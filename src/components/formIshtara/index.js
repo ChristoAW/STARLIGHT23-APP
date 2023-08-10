@@ -76,7 +76,7 @@ const GlowOnHoverBox = ({ children }) => {
   );
 };
 
-const IstharaRegistration = () => {
+const formIshtara = () => {
   return (
     <Flex
       w="100%"
@@ -132,7 +132,7 @@ const IstharaRegistration = () => {
               </GlowOnHoverBox>
             </Link>
           </NextLink>
-          <NextLink href="/registration/ishtaraReg" passHref>
+          <NextLink href="./registration/ishtaraReg" passHref>
             <Link>
               <GlowOnHoverBox>
                 <CardText>
@@ -147,4 +147,4 @@ const IstharaRegistration = () => {
   );
 };
 
-export default IstharaRegistration;
+export default formIshtara;

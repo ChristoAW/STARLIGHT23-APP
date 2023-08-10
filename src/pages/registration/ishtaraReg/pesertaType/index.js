@@ -76,7 +76,7 @@ const GlowOnHoverBox = ({ children }) => {
   );
 };
 
-const IstharaRegistration = () => {
+const formIshtara = () => {
   return (
     <Flex
       w="100%"
@@ -123,18 +123,18 @@ const IstharaRegistration = () => {
           mt="4rem"
           mb={{ base: '6rem', md: '10rem' }}
           flexDir={{ base: 'column', lg: 'row' }}
-          gap={{ base: '4', md: '50', xl: '100' }}
+          gap={{ base: '10', md: '150', xl: '200' }}
         >
-          <NextLink href="./isthara/solo" passHref>
+          <NextLink href="" passHref>
             <Link>
               <GlowOnHoverBox>
                 <CardText>
-                  <i>s</i>olo
+                  <i>S</i>olo
                 </CardText>
               </GlowOnHoverBox>
             </Link>
           </NextLink>
-          <NextLink href="./isthara/group" passHref>
+          <NextLink href="./registration/ishtaraReg" passHref>
             <Link>
               <GlowOnHoverBox>
                 <CardText>Group</CardText>
@@ -147,4 +147,4 @@ const IstharaRegistration = () => {
   );
 };
 
-export default IstharaRegistration;
+export default formIshtara;
