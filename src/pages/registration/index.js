@@ -195,22 +195,23 @@ const Registration = () => {
         px={{ base: '2.5rem', md: '4rem' }}
       >
         <Flex mt="2rem" mb="2rem" color={theme.colors.text[300]}>
-          <Checkbox
-            px="2rem"
-            size="lg"
-            checked={checked}
-            onChange={handleCheck}
-          />
-          <Text fontSize={{ base: '1.10rem', md: '1.25rem' }}>
-            Saya telah membaca dan menyetujui seluruh regulasi yang tertera
-          </Text>
+            <Checkbox
+              px="2rem"
+              size="lg"
+              checked={checked}
+              onChange={handleCheck}
+            >
+            <Text fontSize={{ base: '1.10rem', md: '1.25rem' }}>
+              Saya telah membaca dan menyetujui seluruh regulasi yang tertera
+            </Text>
+            </Checkbox>
         </Flex>
       </Flex>
       <Flex
         justifyContent={{ base: 'center', md: 'end' }}
         mr={{ base: '0', md: '12rem' }}
       >
-        <NextLink href=".//isthara" passHref>
+        <NextLink href="./registration/isthara" passHref>
           <Link
             h="3rem"
             w="9rem"
