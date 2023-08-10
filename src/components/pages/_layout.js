@@ -23,7 +23,7 @@ const Layout = ({ children, ...props }) => {
       // }}
       {...props}
     >
-      <Box
+      {<Box
         sx={{
           position: '-webkit-sticky',
           position: 'sticky' /* Safari */,
@@ -38,7 +38,7 @@ const Layout = ({ children, ...props }) => {
         zIndex={5}
       >
         <Header />
-      </Box>
+      </Box>}
       {/* <SplashScreen /> */}
       {children}
       <Footer />
