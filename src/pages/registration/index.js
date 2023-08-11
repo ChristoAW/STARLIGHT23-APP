@@ -1,14 +1,8 @@
 import {
   Box,
   Flex,
-  ListItem,
-  OrderedList,
-  UnorderedList,
   Text,
-  Checkbox,
   Link,
-  Button,
-  Wrap,
 } from '@chakra-ui/react';
 import NextLink from 'next/link';
 

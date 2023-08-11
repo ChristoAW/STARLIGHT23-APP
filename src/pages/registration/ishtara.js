@@ -8,7 +8,6 @@ import {
   Checkbox,
   Link,
   Button,
-  Wrap,
 } from '@chakra-ui/react';
 import NextLink from 'next/link';
 
@@ -67,7 +66,6 @@ const Registration = () => {
         <Flex
           mt="6rem"
           flexDirection="column"
-          justifyContent="cemter"
           alignContent="center"
           textAlign="center"
           color={theme.colors.text[600]}

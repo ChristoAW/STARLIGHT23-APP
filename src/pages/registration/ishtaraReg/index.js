@@ -1,14 +1,8 @@
 import {
   Box,
   Flex,
-  ListItem,
-  OrderedList,
-  UnorderedList,
   Text,
-  Checkbox,
   Link,
-  Button,
-  Wrap,
 } from '@chakra-ui/react';
 import NextLink from 'next/link';
 
@@ -92,7 +86,7 @@ const formIshtara = () => {
       bgAttachment="fixed"
     >
       <Heado textShadow="0 0 20px #b8dafe">
-        Welcome, <i>s</i>tarlighters!
+        Welcome, <i>s</i>tarlighter<i>s</i>!
       </Heado>
       <Flex textAlign="center">
         <Text
@@ -101,7 +95,7 @@ const formIshtara = () => {
           color={theme.colors.text[300]}
           fontFamily="Montserrat"
         >
-          Before expressing your true colors at Starlight 2022, please fill out
+          Before expressing your true colors at Starlight 2023, please fill out
           this form!
         </Text>
       </Flex>
@@ -125,7 +119,7 @@ const formIshtara = () => {
           flexDir={{ base: 'column', lg: 'row' }}
           gap={{ base: '10', md: '150', xl: '200' }}
         >
-          <NextLink href="" passHref>
+          <NextLink href="./ishtaraReg/solo" passHref>
             <Link>
               <GlowOnHoverBox>
                 <CardText>
@@ -134,7 +128,7 @@ const formIshtara = () => {
               </GlowOnHoverBox>
             </Link>
           </NextLink>
-          <NextLink href="./registration/ishtaraReg" passHref>
+          <NextLink href="/istharaReg/group" passHref>
             <Link>
               <GlowOnHoverBox>
                 <CardText>Group</CardText>
