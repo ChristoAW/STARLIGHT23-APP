@@ -3,9 +3,11 @@ import { createContext, useEffect, useReducer, useState } from 'react';
 export const FormIstharaContext = createContext();
 
 import { soloState } from '@/data/registration/SoloState';
+import { groupState, memberState } from '@/data/registration/GroupState';
 
 const initState = {
   solo: soloState,
+  group: groupState,
 };
 
 const FormIstharaContextProvider = ({ children }) => {

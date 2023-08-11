@@ -1,9 +1,4 @@
-import {
-  Box,
-  Flex,
-  Text,
-  Link,
-} from '@chakra-ui/react';
+import { Box, Flex, Text, Link } from '@chakra-ui/react';
 import NextLink from 'next/link';
 
 import { useState } from 'react';
@@ -128,7 +123,7 @@ const formIshtara = () => {
               </GlowOnHoverBox>
             </Link>
           </NextLink>
-          <NextLink href="/istharaReg/group" passHref>
+          <NextLink href="./ishtaraReg/group" passHref>
             <Link>
               <GlowOnHoverBox>
                 <CardText>Group</CardText>
