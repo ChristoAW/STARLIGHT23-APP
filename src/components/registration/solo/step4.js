@@ -19,7 +19,7 @@ import {
 
 import theme from '@/theme';
 
-const SoloStep3 = () => {
+const SoloStep4 = () => {
   return (
     <FormBox>
       <FormHeading>
@@ -37,4 +37,4 @@ const SoloStep3 = () => {
     </FormBox>
   );
 };
-export default SoloStep3;
+export default SoloStep4;

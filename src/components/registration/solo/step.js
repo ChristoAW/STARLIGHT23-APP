@@ -2,7 +2,7 @@ import { FormIstharaContext } from '@/components/context/FormIshtaraContext';
 import { useContext, useEffect, useRef } from 'react';
 
 import SoloStep2 from './step2';
-import SoloStep3 from './step3.js';
+import SoloStep3 from './step3';
 import SoloStep4 from './step4';
 
 const SoloStep = ({ step }) => {

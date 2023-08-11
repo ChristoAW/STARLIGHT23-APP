@@ -1,18 +1,20 @@
 import { OrderedList, ListItem } from '@chakra-ui/react';
 import {
-  FormBox,
-  FormHeading,
-  FormSubHeading,
-  FormTextImportant,
-  FormText,
-  FormInputImportant,
-  FormInput,
-  FormTextareaImportant,
-  FormTextarea,
-  FormNotes,
-  FormInputFile,
-  FormInputDate,
-  FormInputNIM,
+    FormBox,
+    FormHeading,
+    FormSubHeading,
+    FormTextImportant,
+    FormText,
+    FormInputImportant,
+    FormInput,
+    FormTextareaImportant,
+    FormTextarea,
+    FormNotes,
+    FormInputFile,
+    FormInputDate,
+    FormInputNIM,
+    FormInputTel,
+    FormInputEmail,
 } from '../styles';
 
 import theme from '@/theme';
@@ -51,7 +53,6 @@ const SoloStep3 = () => {
       <FormInputNIM />
       <FormTextImportant>KTP (18 years or above) / Kartu Tanda pelajar</FormTextImportant>
       <FormInputFile />
-
     </FormBox>
   );
 };

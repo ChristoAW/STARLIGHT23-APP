@@ -19,6 +19,7 @@ import { Heado } from '@/components/styles';
 
 import FormIstharaContextProvider from '@/components/context/FormIshtaraContext';
 import SoloStep from '@/components/registration/solo/step';
+import NextButton from '@/components/registration/NextButton';
 
 import bg from '@/asset/images/bg/bg.jpg';
 import bgM from '@/asset/images/bg/bg-m.png';
@@ -40,6 +41,7 @@ const SoloReg = () => {
     >
       <FormIstharaContextProvider>
         <SoloStep step={step} />
+        <NextButton {...{ step, setStep }} />
       </FormIstharaContextProvider>
     </Flex>
   );

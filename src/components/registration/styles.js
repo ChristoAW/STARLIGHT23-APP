@@ -10,11 +10,12 @@ import {
   InputLeftAddon,
 } from '@chakra-ui/react';
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 
 import theme from '@/theme';
 
 export const FormBox = ({ children, ...props }) => {
+    const formRef = useRef(null)
   return (
     <Box
       bgColor="rgba(1, 1, 1, 0.5)"
@@ -28,6 +29,7 @@ export const FormBox = ({ children, ...props }) => {
       mb="4rem"
       px={{ base: '2.5rem', md: '4rem' }}
       py={{ base: '3rem', md: '5rem' }}
+      ref={formRef}
       {...props}
     >
       {children}
@@ -94,13 +96,15 @@ export const FormText = ({ children, ...props }) => {
 
 export const FormInputImportant = ({ children, ...props }) => {
   const [isEmpty, setIsEmpty] = useState(false);
+  const [validationMessage, setValidationMessage] = useState('');
 
   const handleBlur = (event) => {
     const inputValue = event.target.value;
     setIsEmpty(inputValue.trim() === '');
+    setValidationMessage(event.target.validationMessage);
   };
 
-  const isInvalid = isEmpty;
+  const isInvalid = validationMessage || isEmpty;
 
   return (
     <FormControl isInvalid={isInvalid}>
@@ -113,9 +117,10 @@ export const FormInputImportant = ({ children, ...props }) => {
         color={theme.colors.deco[400]}
         bgColor={theme.colors.bg[700]}
         onBlur={handleBlur}
+        required
         {...props}
       />
-      <FormErrorMessage>{children}</FormErrorMessage>
+      <FormErrorMessage>{validationMessage}</FormErrorMessage>
     </FormControl>
   );
 };
@@ -166,6 +171,7 @@ export const FormTextareaImportant = ({ children, ...props }) => {
         onBlur={handleError}
         value={text}
         onChange={handleInput}
+        required
         {...props}
       ></Textarea>
       <FormErrorMessage>{children}</FormErrorMessage>
@@ -245,6 +251,7 @@ export const FormInputFile = ({ ...props }) => {
         <input
           type="file"
           accept=".jpg,.jpeg,.png"
+          required
           onChange={handleFileChange}
         />
       </Flex>
@@ -292,12 +299,33 @@ export const FormInputDate = ({ ...props }) => {
           value={date}
           onChange={dateChange}
           onBlur={handleBlur}
+          required
         />
       </Flex>
       <FormErrorMessage>
         Error: Please select your date of birth
       </FormErrorMessage>
     </FormControl>
+  );
+};
+
+export const FormInputNIM = ({ children, ...props }) => {
+  return (
+    <Flex >
+      <InputGroup borderColor={theme.colors.deco[400]} >
+        <InputLeftAddon
+          children="000000"
+          bgColor={theme.colors.bg[600]}
+          color={theme.colors.deco[400]}
+        />
+        <Input
+          type="text"
+          placeholder="12345"
+          color={theme.colors.deco[400]}
+          bgColor={theme.colors.bg[700]}
+        />
+      </InputGroup>
+    </Flex>
   );
 };
 
@@ -342,6 +370,8 @@ export const FormInputTel = ({ children, ...props }) => {
           color={theme.colors.deco[400]}
           bgColor={theme.colors.bg[700]}
           onBlur={handleBlur}
+          required
+          pattern="^((0[0-9]{9,13})|\+62[0-9]{10,16})$"
           {...props}
         />
       </Flex>
@@ -370,7 +400,7 @@ export const FormInputEmail = ({ ...props }) => {
   return (
     <FormControl isInvalid={isInvalid}>
       <Input
-        type="tel"
+        type="email"
         border="1px"
         borderTop="none"
         borderLeft="none"
@@ -379,6 +409,7 @@ export const FormInputEmail = ({ ...props }) => {
         color={theme.colors.deco[400]}
         bgColor={theme.colors.bg[700]}
         onBlur={handleBlur}
+        required
         {...props}
       />
       {isEmpty ? (
