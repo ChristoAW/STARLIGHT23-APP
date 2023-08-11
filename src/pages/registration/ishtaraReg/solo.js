@@ -24,7 +24,7 @@ import bg from '@/asset/images/bg/bg.jpg';
 import bgM from '@/asset/images/bg/bg-m.png';
 
 const SoloReg = () => {
-  const [step, setStep] = useState(4);
+  const [step, setStep] = useState(2);
   return (
     <Flex
       w="100%"
