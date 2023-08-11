@@ -92,7 +92,7 @@ const IstharaRegistration = () => {
       bgAttachment="fixed"
     >
       <Heado textShadow="0 0 20px #b8dafe">
-        Welcome, <i>s</i>tarlighters!
+        Welcome, <i>s</i>tarlighter<i>s</i>!
       </Heado>
       <Flex textAlign="center">
         <Text
@@ -101,7 +101,7 @@ const IstharaRegistration = () => {
           color={theme.colors.text[300]}
           fontFamily="Montserrat"
         >
-          Before expressing your true colors at Starlight 2022, please fill out
+          Before expressing your true colors at Starlight 2023, please fill out
           this form!
         </Text>
       </Flex>
@@ -132,7 +132,7 @@ const IstharaRegistration = () => {
               </GlowOnHoverBox>
             </Link>
           </NextLink>
-          <NextLink href="/registration/ishtaraReg" passHref>
+          <NextLink href="/registration/ishtara" passHref>
             <Link>
               <GlowOnHoverBox>
                 <CardText>

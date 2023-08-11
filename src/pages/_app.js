@@ -40,7 +40,7 @@ function MyApp({ Component, pageProps }) {
       <ChakraProvider theme={theme}>
         <LayoutProvider>
           {/* <Scroll /> */}
-          {/*<SplashScreen />*/} {/*dimatiin sementara*/}
+          {/*<SplashScreen />* {/*dimatiin sementara*/}
           <Component {...pageProps} />
         </LayoutProvider>
       </ChakraProvider>
