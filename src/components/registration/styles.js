@@ -6,6 +6,8 @@ import {
   FormErrorMessage,
   FormControl,
   Textarea,
+  InputGroup,
+  InputLeftAddon,
 } from '@chakra-ui/react';
 
 import { useState } from 'react';
@@ -119,28 +121,26 @@ export const FormInputImportant = ({ children, ...props }) => {
 };
 
 export const FormInput = ({ children, ...props }) => {
-    return (
-      <FormControl>
-        <Input
-          border="1px"
-          borderTop="none"
-          borderLeft="none"
-          borderRight="none"
-          borderRadius="0"
-          color={theme.colors.deco[400]}
-          bgColor={theme.colors.bg[700]}
-          {...props}
-        />
-        <FormErrorMessage>{children}</FormErrorMessage>
-      </FormControl>
-    );
-  };
-  
+  return (
+    <FormControl>
+      <Input
+        border="1px"
+        borderTop="none"
+        borderLeft="none"
+        borderRight="none"
+        borderRadius="0"
+        color={theme.colors.deco[400]}
+        bgColor={theme.colors.bg[700]}
+        {...props}
+      />
+      <FormErrorMessage>{children}</FormErrorMessage>
+    </FormControl>
+  );
+};
 
 export const FormTextareaImportant = ({ children, ...props }) => {
   const [isEmpty, setIsEmpty] = useState(false);
   const [text, setText] = useState('');
-
 
   const handleError = (event) => {
     const inputValue = event.target.value;
@@ -151,7 +151,7 @@ export const FormTextareaImportant = ({ children, ...props }) => {
     const inputValue = event.target.value;
 
     if (inputValue.trim().split(/\s+/).length <= 150) {
-      setText(inputValue); 
+      setText(inputValue);
     }
   };
 
@@ -162,7 +162,7 @@ export const FormTextareaImportant = ({ children, ...props }) => {
         color={theme.colors.deco[400]}
         borderColor={theme.colors.deco[400]}
         bgColor={theme.colors.bg[700]}
-        h ="150px"
+        h="150px"
         onBlur={handleError}
         value={text}
         onChange={handleInput}
@@ -172,34 +172,222 @@ export const FormTextareaImportant = ({ children, ...props }) => {
     </FormControl>
   );
 };
+
 export const FormTextarea = ({ children, ...props }) => {
-    const [text, setText] = useState('');
-  
-    const handleInput = (event) => {
-      const inputValue = event.target.value;
-  
-      if (inputValue.trim().split(/\s+/).length <= 150) {
-        setText(inputValue); 
-      }
-    };
-  
-    return (
-      <FormControl>
-        <Textarea
-          color={theme.colors.deco[400]}
-          borderColor={theme.colors.deco[400]}
-          bgColor={theme.colors.bg[700]}
-          h ="150px"
-          value={text}
-          onChange={handleInput}
-          {...props}
-        ></Textarea>
-      </FormControl>
-    );
+  const [text, setText] = useState('');
+
+  const handleInput = (event) => {
+    const inputValue = event.target.value;
+
+    if (inputValue.trim().split(/\s+/).length <= 150) {
+      setText(inputValue);
+    }
   };
 
-export const FormNotes = ({children, ...props}) =>{
-    return(
-        <Text fontSize={{ base: '.9rem', md: '1rem' }} style={{fontStyle: 'italic'}} mt="1rem" {...props}>*{children}</Text>
-    )
-}
+  return (
+    <FormControl>
+      <Textarea
+        color={theme.colors.deco[400]}
+        borderColor={theme.colors.deco[400]}
+        bgColor={theme.colors.bg[700]}
+        h="150px"
+        value={text}
+        onChange={handleInput}
+        {...props}
+      ></Textarea>
+    </FormControl>
+  );
+};
+
+export const FormNotes = ({ children, ...props }) => {
+  return (
+    <Text
+      fontSize={{ base: '.9rem', md: '1rem' }}
+      style={{ fontStyle: 'italic' }}
+      mt="1rem"
+      {...props}
+    >
+      *{children}
+    </Text>
+  );
+};
+
+export const FormInputFile = ({ ...props }) => {
+  const [error, setError] = useState(null);
+
+  const handleFileChange = (e) => {
+    const selectedFile = e.target.files[0];
+
+    if (selectedFile) {
+      const fileSizeInMB = selectedFile.size / (1024 * 1024);
+      if (fileSizeInMB > 2) {
+        setError('Error');
+        e.target.value = null;
+      } else {
+        setError(null);
+      }
+    }
+  };
+
+  const isInvalid = error;
+  return (
+    <FormControl isInvalid={isInvalid}>
+      <Flex
+        w="100%"
+        mt=".5rem"
+        border="1px"
+        p=".5rem"
+        borderColor={theme.colors.deco[400]}
+        color={theme.colors.deco[400]}
+        bgColor={theme.colors.bg[700]}
+        {...props}
+      >
+        <input
+          type="file"
+          accept=".jpg,.jpeg,.png"
+          onChange={handleFileChange}
+        />
+      </Flex>
+      {error && (
+        <FormErrorMessage>
+          Error: File size too large (max. 2MB)
+        </FormErrorMessage>
+      )}
+    </FormControl>
+  );
+};
+
+export const FormInputDate = ({ ...props }) => {
+  const [date, setDate] = useState('');
+  const [isEmpty, setIsEmpty] = useState(true);
+  const [isBlurred, setIsBlurred] = useState(false);
+
+  const dateChange = (e) => {
+    const selectedDate = e.target.value;
+    setDate(selectedDate);
+    setIsEmpty(selectedDate === '');
+  };
+
+  const handleBlur = () => {
+    setIsBlurred(true);
+    if (date === 'dd/mm/yyyy') {
+      setIsEmpty(true);
+    }
+  };
+
+  const isInvalid = isEmpty && isBlurred;
+
+  return (
+    <FormControl isInvalid={isInvalid}>
+      <Flex
+        w="100%"
+        p=".5rem"
+        borderColor={theme.colors.deco[400]}
+        color={theme.colors.deco[400]}
+        bgColor={theme.colors.bg[700]}
+        {...props}
+      >
+        <Input
+          type="date"
+          value={date}
+          onChange={dateChange}
+          onBlur={handleBlur}
+        />
+      </Flex>
+      <FormErrorMessage>
+        Error: Please select your date of birth
+      </FormErrorMessage>
+    </FormControl>
+  );
+};
+
+export const FormInputTel = ({ children, ...props }) => {
+  const [isEmpty, setIsEmpty] = useState(false);
+  const [isInvalid, setIsInvalid] = useState(false);
+
+  const handleBlur = (event) => {
+    const inputValue = event.target.value;
+    setIsEmpty(inputValue.trim() === '');
+    setIsInvalid(!isValidPhoneNumber(inputValue));
+  };
+
+  const isValidPhoneNumber = (phoneNumber) => {
+    if (phoneNumber.startsWith('+62')) {
+      const numericPart = phoneNumber.slice(3);
+      return (
+        /^[0-9]+$/.test(numericPart) &&
+        numericPart.length >= 10 &&
+        numericPart.length <= 16
+      );
+    } else if (phoneNumber.startsWith('0')) {
+      return (
+        /^[0-9]+$/.test(phoneNumber) &&
+        phoneNumber.length >= 10 &&
+        phoneNumber.length <= 13
+      );
+    }
+    return false;
+  };
+
+  return (
+    <FormControl isInvalid={isEmpty || isInvalid}>
+      <Flex>
+        <Input
+          type="tel"
+          border="1px"
+          borderTop="none"
+          borderLeft="none"
+          borderRight="none"
+          borderRadius="0"
+          color={theme.colors.deco[400]}
+          bgColor={theme.colors.bg[700]}
+          onBlur={handleBlur}
+          {...props}
+        />
+      </Flex>
+      <FormErrorMessage>{children}</FormErrorMessage>
+    </FormControl>
+  );
+};
+
+export const FormInputEmail = ({ ...props }) => {
+  const [isEmpty, setIsEmpty] = useState(false);
+  const [isInvalidEmail, setIsInvalidEmail] = useState(false);
+
+  const validateEmail = (email) => {
+    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    return emailRegex.test(email);
+  };
+
+  const handleBlur = (event) => {
+    const inputValue = event.target.value;
+    setIsEmpty(inputValue.trim() === '');
+    setIsInvalidEmail(!validateEmail(inputValue));
+  };
+
+  const isInvalid = isEmpty || isInvalidEmail;
+
+  return (
+    <FormControl isInvalid={isInvalid}>
+      <Input
+        type="tel"
+        border="1px"
+        borderTop="none"
+        borderLeft="none"
+        borderRight="none"
+        borderRadius="0"
+        color={theme.colors.deco[400]}
+        bgColor={theme.colors.bg[700]}
+        onBlur={handleBlur}
+        {...props}
+      />
+      {isEmpty ? (
+        <FormErrorMessage>Error: Field cannot be empty</FormErrorMessage>
+      ) : (
+        <FormErrorMessage>
+          {isInvalidEmail ? 'Error: Please enter a valid email' : ''}
+        </FormErrorMessage>
+      )}
+    </FormControl>
+  );
+};

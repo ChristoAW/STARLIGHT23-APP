@@ -1,6 +1,4 @@
-import { Box, Flex, Text, Link, FormErrorMessage } from '@chakra-ui/react';
-import NextLink from 'next/link';
-
+import { OrderedList, ListItem } from '@chakra-ui/react';
 import {
   FormBox,
   FormHeading,
@@ -11,33 +9,50 @@ import {
   FormInput,
   FormTextareaImportant,
   FormTextarea,
-  FormNotes
+  FormNotes,
+  FormInputFile,
+  FormInputDate,
+  FormInputNIM,
 } from '../styles';
 
 import theme from '@/theme';
 
-const SoloStep2 = () => {
+const SoloStep3 = () => {
   return (
     <FormBox>
       <FormHeading>
         <i>S</i>tep 3
       </FormHeading>
-      <FormSubHeading>Solo Participation</FormSubHeading>{' '}
-      <FormTextImportant>a. Stage Name</FormTextImportant>
-      <FormInputImportant placeholder="Your Stage Name">
+      <FormSubHeading>Personal Information</FormSubHeading>
+      <FormTextImportant>Formal Photo (3x4)</FormTextImportant>
+      <OrderedList spacing=".5rem" mt=".5rem">
+        <ListItem>Size Orientation 3x4</ListItem>
+        <ListItem>Formal Identity Photo</ListItem>
+        <ListItem>
+          Required High Resolution Photo (no blur or pixelated)
+        </ListItem>
+        <ListItem>JPG/JPEG/PNG format only</ListItem>
+        <ListItem>Maximum File Size: 2MB</ListItem>
+      </OrderedList>
+      <FormInputFile />
+      <FormTextImportant>Full Name</FormTextImportant>
+      <FormInputImportant placeholder="Your name ...">
         Error: Field cannot be empty
       </FormInputImportant>
-      <FormTextImportant>b. Performance Description</FormTextImportant>
-      <FormTextareaImportant placeholder="Briefly describe your talent ... (max. 150 words)">
+      <FormTextImportant>Date of Birth</FormTextImportant>
+      <FormInputDate />
+      <FormTextImportant>Domicile</FormTextImportant>
+      <FormInputImportant placeholder="Gading Serpong, Tanggerang">Error: Field cannot be empty</FormInputImportant>
+    <FormTextImportant>Institution</FormTextImportant>
+    <FormInputImportant placeholder="Universitas Multimedia Nusantara">
         Error: Field cannot be empty
-      </FormTextareaImportant>
-      <FormTextImportant>c. Audition Equipments</FormTextImportant>
-      <FormTextareaImportant placeholder="Equipment needed...">Error: Field cannot be empty</FormTextareaImportant>
-      <FormNotes>Starlight will provide...</FormNotes>
-      <FormTextImportant>d. Additional Notes</FormTextImportant>
-      <FormTextareaImportant placeholder="(Music, Audio, Songs Used) ...">Error: Field cannot be empty</FormTextareaImportant>
-      <FormNotes>Please attach files using Google Drive links</FormNotes>
+      </FormInputImportant>
+      <FormText>NIM (for UMN Students Only)</FormText>
+      <FormInputNIM />
+      <FormTextImportant>KTP (18 years or above) / Kartu Tanda pelajar</FormTextImportant>
+      <FormInputFile />
+
     </FormBox>
   );
 };
-export default SoloStep2;
+export default SoloStep3;

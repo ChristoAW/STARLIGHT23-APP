@@ -105,10 +105,6 @@ const Registration = () => {
                   ditanggung oleh masing-masing peserta
                 </ListItem>
                 <ListItem>
-                  Seluruh peserta <b>WAJIB</b> mencantumkan bukti vaksinasi
-                  berupa sertifikat vaksin (<b>vaksin booster</b>)
-                </ListItem>
-                <ListItem>
                   Seluruh peserta <b>WAJIB</b> mencantumkan informasi kesehatan
                   dan penyakit bawaan/komorbid jika ada
                 </ListItem>
