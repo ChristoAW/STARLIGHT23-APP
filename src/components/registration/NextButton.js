@@ -3,27 +3,37 @@ import { useContext, useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import theme from '@/theme';
 
-import { FormIstharaContext } from '@/components/context/FormIshtaraContext'
+import { FormIstharaContext } from '@/components/context/FormIshtaraContext';
 //mport fetchApi from '@/utils/fetchApi';
 
 //const state, type, resetForm is unused
-const NextButton = ({step, setStep, ...props}) => {
+const NextButton = ({ step, setStep, ...props }) => {
     const { state, type, resetForm, formRef } = useContext(FormIstharaContext);
+    const [btn, setBtn] = useState('NEXT');
 
-    
+	// const [submit, setSubmit] = useState(false);
+  	// const router = useRouter();
+
     const handleClick = () => {
-
         if (!formRef.current.checkValidity()) {
             formRef.current.reportValidity();
             return;
-          }
+        }
 
         setStep(step + 1);
-        console.log("Step incremented:", step + 1);
-    }
+        console.log('Step incremented:', step);
+
+        if (step > 2) {
+			setBtn("SUBMIT");
+            // if (!submit) {
+            // }
+
+            return;
+        }
+    };
     return (
         <Flex justify="flex-end" maxW="1080px" w="100%" mx="auto" mb="2em">
-          <Link
+            <Link
                 h="3rem"
                 w="9rem"
                 color={theme.colors.deco[400]}
@@ -32,21 +42,18 @@ const NextButton = ({step, setStep, ...props}) => {
                 as={Button}
                 onClick={handleClick}
                 _hover={{ bgColor: '0,0,0', color: ' rgb(227,218,201)' }}
-            as={Button}
-            {...props}
-          >
-            NEXT
-          </Link>
+                as={Button}
+                {...props}
+            >
+                {btn}
+            </Link>
         </Flex>
-      );
-}
+    );
+};
 
 export default NextButton;
 
-
 //dari yang tahun 2022
-
-
 
 /*const NextButton = ({ step, setStep, ...p }) => {
   const { state, type, resetForm, formRef } = useContext(FormIstharaContext);
