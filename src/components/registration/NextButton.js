@@ -5,14 +5,25 @@ import theme from '@/theme';
 
 import { FormIstharaContext } from '@/components/context/FormIshtaraContext';
 //mport fetchApi from '@/utils/fetchApi';
+import { useForm } from 'react-hook-form';
 
 //const state, type, resetForm is unused
-const NextButton = ({ step, setStep, ...props }) => {
-    const { state, type, resetForm, formRef } = useContext(FormIstharaContext);
-    const [btn, setBtn] = useState('NEXT');
+const NextButton = ({ step, setStep, onClick, ...props }) => {
+    const { state, type, resetForm, formRef, formValue, setFormValue } =
+        useContext(FormIstharaContext);
 
-	// const [submit, setSubmit] = useState(false);
-  	// const router = useRouter();
+    const { handleSubmit, setValue } = useForm();
+
+    const [submit, setSubmit] = useState(false);
+    const router = useRouter();
+
+    async function saveData (data) {
+        setValue('timestamp', new Date().toLocaleString() + '');
+        console.log(data);
+        // setFormValue({ ...formValue, ...data });
+        // console.log(formValue);
+        // reset();
+    };
 
     const handleClick = () => {
         if (!formRef.current.checkValidity()) {
@@ -20,14 +31,16 @@ const NextButton = ({ step, setStep, ...props }) => {
             return;
         }
 
+        // saveData();
+
         setStep(step + 1);
         console.log('Step incremented:', step);
 
-        if (step > 2) {
-			setBtn("SUBMIT");
-            // if (!submit) {
-            // }
-
+        if (step > 1) {
+            // nanti harusnya 3, ini cuma buat ngetes masukin sheet
+            // alert("Submitted!")
+            // nanti masukin formValue ke API disini tp gajadi keanya
+            router.push('/');
             return;
         }
     };
@@ -40,12 +53,12 @@ const NextButton = ({ step, setStep, ...props }) => {
                 bgColor={theme.colors.bg[700]}
                 border="1px"
                 as={Button}
-                onClick={handleClick}
+                onClick={onClick ? onClick : handleSubmit(handleClick)}
                 _hover={{ bgColor: '0,0,0', color: ' rgb(227,218,201)' }}
-                as={Button}
                 {...props}
             >
-                {btn}
+                {/* ini juga harusnya 3, bukan 1 nantinya ya */}
+                {step > 1 ? 'SUBMIT' : 'NEXT'}
             </Link>
         </Flex>
     );

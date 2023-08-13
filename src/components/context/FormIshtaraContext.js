@@ -1,4 +1,4 @@
-import { createContext, useEffect, useReducer, useState } from 'react';
+import { createContext, useContext, useEffect, useReducer, useState } from 'react';
 
 export const FormIstharaContext = createContext();
 
@@ -67,6 +67,7 @@ const FormIstharaContextProvider = ({ children }) => {
   }, [type]);
 
   const [formRef, setFormRef] = useState();
+  const [formValue, setFormValue] = useState({});
 
   return (
     <FormIstharaContext.Provider
@@ -78,6 +79,8 @@ const FormIstharaContextProvider = ({ children }) => {
         setType,
         formRef,
         setFormRef,
+        formValue,
+        setFormValue,
       }}
     >
       {children}

@@ -13,6 +13,7 @@ import {
 import { useState, useRef } from 'react';
 
 import theme from '@/theme';
+import { useForm } from 'react-hook-form';
 
 export const FormBox = ({ children, ...props }) => {
     const formRef = useRef(null)
@@ -94,7 +95,7 @@ export const FormText = ({ children, ...props }) => {
   );
 };
 
-export const FormInputImportant = ({ children, ...props }) => {
+export const FormInputImportant = ({ children, register, name, ...props }) => {
   const [isEmpty, setIsEmpty] = useState(false);
   const [validationMessage, setValidationMessage] = useState('');
 
@@ -118,6 +119,7 @@ export const FormInputImportant = ({ children, ...props }) => {
         bgColor={theme.colors.bg[700]}
         onBlur={handleBlur}
         required
+        {...register(name)}
         {...props}
       />
       <FormErrorMessage>{validationMessage}</FormErrorMessage>
@@ -125,7 +127,7 @@ export const FormInputImportant = ({ children, ...props }) => {
   );
 };
 
-export const FormInput = ({ children, ...props }) => {
+export const FormInput = ({ children, register, name, ...props }) => {
   return (
     <FormControl>
       <Input
@@ -136,6 +138,7 @@ export const FormInput = ({ children, ...props }) => {
         borderRadius="0"
         color={theme.colors.deco[400]}
         bgColor={theme.colors.bg[700]}
+        {...register(name)}
         {...props}
       />
       <FormErrorMessage>{children}</FormErrorMessage>
@@ -143,7 +146,7 @@ export const FormInput = ({ children, ...props }) => {
   );
 };
 
-export const FormTextareaImportant = ({ children, ...props }) => {
+export const FormTextareaImportant = ({ children, register, name, ...props }) => {
   const [isEmpty, setIsEmpty] = useState(false);
   const [text, setText] = useState('');
 
@@ -172,6 +175,7 @@ export const FormTextareaImportant = ({ children, ...props }) => {
         value={text}
         onChange={handleInput}
         required
+        {...register(name)}
         {...props}
       ></Textarea>
       <FormErrorMessage>{children}</FormErrorMessage>
@@ -179,7 +183,7 @@ export const FormTextareaImportant = ({ children, ...props }) => {
   );
 };
 
-export const FormTextarea = ({ children, ...props }) => {
+export const FormTextarea = ({ children, name, register, ...props }) => {
   const [text, setText] = useState('');
 
   const handleInput = (event) => {
@@ -199,6 +203,7 @@ export const FormTextarea = ({ children, ...props }) => {
         h="150px"
         value={text}
         onChange={handleInput}
+        {...register(name)}
         {...props}
       ></Textarea>
     </FormControl>
@@ -264,7 +269,7 @@ export const FormInputFile = ({ ...props }) => {
   );
 };
 
-export const FormInputDate = ({ ...props }) => {
+export const FormInputDate = ({ register, name, ...props }) => {
   const [date, setDate] = useState('');
   const [isEmpty, setIsEmpty] = useState(true);
   const [isBlurred, setIsBlurred] = useState(false);
@@ -300,6 +305,7 @@ export const FormInputDate = ({ ...props }) => {
           onChange={dateChange}
           onBlur={handleBlur}
           required
+          {...register(name)}
         />
       </Flex>
       <FormErrorMessage>
@@ -309,7 +315,7 @@ export const FormInputDate = ({ ...props }) => {
   );
 };
 
-export const FormInputNIM = ({ children, ...props }) => {
+export const FormInputNIM = ({ children, register, name, ...props }) => {
   return (
     <Flex >
       <InputGroup borderColor={theme.colors.deco[400]} >
@@ -323,13 +329,14 @@ export const FormInputNIM = ({ children, ...props }) => {
           placeholder="12345"
           color={theme.colors.deco[400]}
           bgColor={theme.colors.bg[700]}
+          {...register(name)}
         />
       </InputGroup>
     </Flex>
   );
 };
 
-export const FormInputTel = ({ children, ...props }) => {
+export const FormInputTel = ({ children, register, name, ...props }) => {
   const [isEmpty, setIsEmpty] = useState(false);
   const [isInvalid, setIsInvalid] = useState(false);
 
@@ -372,6 +379,7 @@ export const FormInputTel = ({ children, ...props }) => {
           onBlur={handleBlur}
           required
           pattern="^((0[0-9]{9,13})|\+62[0-9]{10,16})$"
+          {...register(name)}
           {...props}
         />
       </Flex>
@@ -380,7 +388,7 @@ export const FormInputTel = ({ children, ...props }) => {
   );
 };
 
-export const FormInputEmail = ({ ...props }) => {
+export const FormInputEmail = ({ register, name, ...props }) => {
   const [isEmpty, setIsEmpty] = useState(false);
   const [isInvalidEmail, setIsInvalidEmail] = useState(false);
 
@@ -410,6 +418,7 @@ export const FormInputEmail = ({ ...props }) => {
         bgColor={theme.colors.bg[700]}
         onBlur={handleBlur}
         required
+        {...register(name)}
         {...props}
       />
       {isEmpty ? (
