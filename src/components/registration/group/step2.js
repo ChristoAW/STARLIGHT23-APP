@@ -16,7 +16,7 @@ import {
 
 import theme from '@/theme';
 
-const SoloStep2 = () => {
+const GroupStep2 = () => {
   return (
     <FormBox>
       <FormHeading>
@@ -44,4 +44,4 @@ const SoloStep2 = () => {
     </FormBox>
   );
 };
-export default SoloStep2;
+export default GroupStep2;

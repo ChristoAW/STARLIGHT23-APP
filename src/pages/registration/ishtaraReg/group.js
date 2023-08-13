@@ -19,6 +19,7 @@ import { Heado } from '@/components/styles';
 
 import FormIstharaContextProvider from '@/components/context/FormIshtaraContext';
 import GroupStep from '@/components/registration/group/step';
+import NextButton from '@/components/registration/NextButton';
 
 import bg from '@/asset/images/bg/bg.jpg';
 import bgM from '@/asset/images/bg/bg-m.png';
@@ -68,9 +69,7 @@ const GroupRegist = () => {
     >
       <FormIstharaContextProvider>
         <GroupStep step={step} />
-        <Flex justify="flex-end" maxW="1080px" w="100%" mx="auto" mb="2em">
-          <Button {...{ step, setStep }}>NEXT</Button>
-        </Flex>
+        <NextButton {...{ step, setStep }} />
       </FormIstharaContextProvider>
     </Flex>
   );
