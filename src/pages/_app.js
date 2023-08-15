@@ -4,7 +4,7 @@ import Head from 'next/head';
 import '../theme/fonts.scss';
 import theme from '../theme';
 // import CustomCursor from '@/components/cursor/CustomCursor';
-import './styles/global.css';
+import './styles/cursor.scss';
 
 import iconSL from '../../public/favicon.ico';
 
