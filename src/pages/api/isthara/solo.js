@@ -33,7 +33,7 @@ async function handler(req, res) {
       valueInputOption: 'USER_ENTERED',
       requestBody: {
         // all available values in order
-        values: [[timestamp, stageName, name, desc, message]],
+        values: [[timestamp, stageName, name, message, univ, nim, tel, instagram]],
       },
     });
 

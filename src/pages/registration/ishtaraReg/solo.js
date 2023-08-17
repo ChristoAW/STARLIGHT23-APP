@@ -41,7 +41,7 @@ const SoloReg = () => {
     >
       <FormIstharaContextProvider>
         <SoloStep step={step} />
-        <NextButton {...{ step, setStep }} />
+        {/*<NextButton {...{ step, setStep }} />*/}
       </FormIstharaContextProvider>
     </Flex>
   );

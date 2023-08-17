@@ -41,7 +41,7 @@ export const FormHeading = ({ children, ...props }) => {
   return (
     <Text
       fontFamily="Exodus"
-      fontSize={{ base: '3.25rem', md: '2.5rem', sm: '3.25rem' }}
+      fontSize={{ base: '1.75rem', md: '2.5rem', sm: '2.75rem' }}
       color={theme.colors.text[300]}
       textAlign="center"
       {...props}
@@ -54,11 +54,11 @@ export const FormHeading = ({ children, ...props }) => {
 export const FormSubHeading = ({ children, ...props }) => {
   return (
     <Text
-      fontSize={{ base: '1.75rem', md: '1.5rem', xl: '1.75rem' }}
+      fontSize={{ base: '1.5rem', md: '1.5rem', xl: '1.75rem' }}
       color={theme.colors.text[300]}
       fontFamily="Montserrat"
       textAlign="center"
-      mb="6rem"
+      mb="2rem"
       {...props}
     >
       {children}
