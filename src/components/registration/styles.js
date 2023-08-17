@@ -72,7 +72,7 @@ export const FormTextImportant = ({ children, ...props }) => {
       fontSize={{ base: '1rem', md: '1.15rem' }}
       fontFamily="Montserrat"
       display="flex"
-      mt="3rem"
+      mt="2rem"
       {...props}
     >
       {children}
@@ -316,16 +316,15 @@ export const FormInputDate = ({ name, ...props }) => {
 };
 
 export const FormInputNIM = ({ children, name, ...props }) => {
-  const [isNotNum, setIsNotNum ] = useState(false);
+  const [isNotNum, setIsNotNum] = useState(false);
 
   const handleChange = (event) => {
     const input = event.target.value;
     const numeric = /^[0-9]*$/;
 
-    if (!numeric.test(input)){
+    if (!numeric.test(input)) {
       setIsNotNum(true);
-    }
-    else {
+    } else {
       setIsNotNum(false); // Reset the error state when the input is numeric
     }
   };
@@ -358,7 +357,6 @@ export const FormInputNIM = ({ children, name, ...props }) => {
     </FormControl>
   );
 };
-
 
 export const FormInputTel = ({ children, name, ...props }) => {
   const [isEmpty, setIsEmpty] = useState(false);

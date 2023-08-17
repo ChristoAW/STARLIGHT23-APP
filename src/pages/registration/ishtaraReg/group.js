@@ -69,7 +69,6 @@ const GroupRegist = () => {
     >
       <FormIstharaContextProvider>
         <GroupStep step={step} />
-        <NextButton {...{ step, setStep }} />
       </FormIstharaContextProvider>
     </Flex>
   );

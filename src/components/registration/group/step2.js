@@ -15,8 +15,14 @@ import {
 } from '../styles';
 
 import theme from '@/theme';
+import { useForm } from 'react-hook-form';
+import { useContext, useEffect } from 'react';
+import { FormIstharaContext } from '@/components/context/FormIshtaraContext';
 
 const GroupStep2 = () => {
+  const { handleSubmit, register, setValue } = useForm();
+  const { formValue, setFormValue } = useContext(FormIstharaContext);
+
   return (
     <FormBox>
       <FormHeading>
@@ -24,22 +30,38 @@ const GroupStep2 = () => {
       </FormHeading>
       <FormSubHeading>Group Participation</FormSubHeading>{' '}
       <FormTextImportant>a. Stage Name</FormTextImportant>
-      <FormInputImportant placeholder="Your Stage Name">
+      <FormInputImportant
+        name="stageNamee"
+        register={register}
+        placeholder="Your Stage Name"
+      >
         Error: Field cannot be empty
       </FormInputImportant>
       <FormTextImportant>b. Performance Description</FormTextImportant>
-      <FormTextareaImportant placeholder="Briefly describe your talent ... (max. 150 words)">
+      <FormInputImportant
+        name="descTalent"
+        register={register}
+        placeholder="Briefly describe your talent ... (max. 150 words)"
+      >
         Error: Field cannot be empty
-      </FormTextareaImportant>
+      </FormInputImportant>
       <FormTextImportant>c. Audition Equipments</FormTextImportant>
-      <FormTextareaImportant placeholder="Equipment needed...">
+      <FormInputImportant
+        name="equipStage"
+        register={register}
+        placeholder="Equipment needed..."
+      >
         Error: Field cannot be empty
-      </FormTextareaImportant>
+      </FormInputImportant>
       <FormNotes>Starlight will provide...</FormNotes>
       <FormTextImportant>d. Additional Notes</FormTextImportant>
-      <FormTextareaImportant placeholder="(Music, Audio, Songs Used) ...">
+      <FormInputImportant
+        name="moreInfo"
+        register={register}
+        placeholder="(Music, Audio, Songs Used) ..."
+      >
         Error: Field cannot be empty
-      </FormTextareaImportant>
+      </FormInputImportant>
       <FormNotes>Please attach files using Google Drive links</FormNotes>
     </FormBox>
   );
