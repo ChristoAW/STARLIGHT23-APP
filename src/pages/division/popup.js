@@ -7,7 +7,9 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/effect-cards';
 import { EffectCards } from 'swiper';
+
 import styles from './popup.module.css';
+import customCursorUrl from '@/asset/images/cursor/Cursor (Hover).png';
 
 const Popup = (props) => {
   useEffect(() => {
@@ -53,14 +55,12 @@ const Popup = (props) => {
             h={'100%'}
             w={'100%'}
             bgImage={
-              require(`@/asset/images/pages/division/${
-                props.selectedDivisi.name
-              }/${member.split(' ')[0]}.${
-                props.selectedDivisi.name === 'Hippocampus' ||
-                props.selectedDivisi.name === 'Nereus'
+              require(`@/asset/images/pages/division/${props.selectedDivisi.name
+                }/${member.split(' ')[0]}.${props.selectedDivisi.name === 'Hippocampus' ||
+                  props.selectedDivisi.name === 'Nereus'
                   ? 'jpg'
                   : 'png'
-              }`).default.src
+                }`).default.src
             }
             bgSize="cover"
             bgPos="center"
@@ -68,6 +68,9 @@ const Popup = (props) => {
               idx === index && animation !== 'card-finished' ? '0%' : '100%'
             }
             onClick={stopProp}
+            sx={{
+              cursor: 'url(@/asset/images/cursor/Cursor\ \(Hover\).png), auto !important',
+            }}
           />
         </SwiperSlide>
       );
@@ -113,10 +116,10 @@ const Popup = (props) => {
           fontSizeB={
             `${props.selectedDivisi.name}` === 'Scylla'
               ? {
-                  base: 'calc(.4rem + 1.8vw)',
-                  md: 'lg',
-                  xl: 'xl',
-                }
+                base: 'calc(.4rem + 1.8vw)',
+                md: 'lg',
+                xl: 'xl',
+              }
               : { base: 'calc(.4rem + 2.2vw)', md: 'lg', xl: 'xl' }
           }
           header={<>{formattedName}</>}
@@ -147,14 +150,12 @@ const Popup = (props) => {
             <Box
               className={styles.flipCardFront}
               bgImage={
-                require(`@/asset/images/pages/division/${
-                  props.selectedDivisi.name
-                }/${props.selectedDivisi.members[activeIndex].split(' ')[0]}.${
-                  props.selectedDivisi.name === 'Hippocampus' ||
-                  props.selectedDivisi.name === 'Nereus'
+                require(`@/asset/images/pages/division/${props.selectedDivisi.name
+                  }/${props.selectedDivisi.members[activeIndex].split(' ')[0]}.${props.selectedDivisi.name === 'Hippocampus' ||
+                    props.selectedDivisi.name === 'Nereus'
                     ? 'jpg'
                     : 'png'
-                }`).default.src
+                  }`).default.src
               }
               bgSize="contain"
               onClick={stopProp}
