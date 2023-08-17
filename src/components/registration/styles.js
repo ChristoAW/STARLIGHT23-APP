@@ -13,7 +13,6 @@ import {
 import { useState, useRef } from 'react';
 
 import theme from '@/theme';
-import { useForm } from 'react-hook-form';
 
 export const FormBox = ({ children, ...props }) => {
     const formRef = useRef(null)
@@ -223,7 +222,7 @@ export const FormNotes = ({ children, ...props }) => {
   );
 };
 
-export const FormInputFile = ({ ...props }) => {
+export const FormInputFile = ({ name, ...props }) => {
   const [error, setError] = useState(null);
 
   const handleFileChange = (e) => {
@@ -258,6 +257,7 @@ export const FormInputFile = ({ ...props }) => {
           accept=".jpg,.jpeg,.png"
           required
           onChange={handleFileChange}
+          name={name}
         />
       </Flex>
       {error && (
@@ -269,7 +269,7 @@ export const FormInputFile = ({ ...props }) => {
   );
 };
 
-export const FormInputDate = ({ register, name, ...props }) => {
+export const FormInputDate = ({ name, ...props }) => {
   const [date, setDate] = useState('');
   const [isEmpty, setIsEmpty] = useState(true);
   const [isBlurred, setIsBlurred] = useState(false);
@@ -305,7 +305,7 @@ export const FormInputDate = ({ register, name, ...props }) => {
           onChange={dateChange}
           onBlur={handleBlur}
           required
-          {...register(name)}
+          name={name}
         />
       </Flex>
       <FormErrorMessage>
@@ -315,7 +315,7 @@ export const FormInputDate = ({ register, name, ...props }) => {
   );
 };
 
-export const FormInputNIM = ({ children, register, name, ...props }) => {
+export const FormInputNIM = ({ children, name, ...props }) => {
   return (
     <Flex >
       <InputGroup borderColor={theme.colors.deco[400]} >
@@ -329,14 +329,14 @@ export const FormInputNIM = ({ children, register, name, ...props }) => {
           placeholder="12345"
           color={theme.colors.deco[400]}
           bgColor={theme.colors.bg[700]}
-          {...register(name)}
+          name={name}
         />
       </InputGroup>
     </Flex>
   );
 };
 
-export const FormInputTel = ({ children, register, name, ...props }) => {
+export const FormInputTel = ({ children, name, ...props }) => {
   const [isEmpty, setIsEmpty] = useState(false);
   const [isInvalid, setIsInvalid] = useState(false);
 
@@ -379,7 +379,7 @@ export const FormInputTel = ({ children, register, name, ...props }) => {
           onBlur={handleBlur}
           required
           pattern="^((0[0-9]{9,13})|\+62[0-9]{10,16})$"
-          {...register(name)}
+          name={name}
           {...props}
         />
       </Flex>
@@ -388,7 +388,7 @@ export const FormInputTel = ({ children, register, name, ...props }) => {
   );
 };
 
-export const FormInputEmail = ({ register, name, ...props }) => {
+export const FormInputEmail = ({ name, ...props }) => {
   const [isEmpty, setIsEmpty] = useState(false);
   const [isInvalidEmail, setIsInvalidEmail] = useState(false);
 
@@ -418,7 +418,7 @@ export const FormInputEmail = ({ register, name, ...props }) => {
         bgColor={theme.colors.bg[700]}
         onBlur={handleBlur}
         required
-        {...register(name)}
+        name={name}
         {...props}
       />
       {isEmpty ? (
