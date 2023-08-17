@@ -33,6 +33,7 @@ function soloForm() {
     nim: '',
     tel: '',
     instagram: '',
+    email:'',
   });
 
   function defineValue() {
@@ -46,6 +47,7 @@ function soloForm() {
     setValue('univ', formValue.univ);
     setValue('tel', formValue.tel);
     setValue('instagram', formValue.instagram);
+    setValue('email', formValue.email)
     // handle the remaining values
 
     // reset all input fields
@@ -74,6 +76,7 @@ function soloForm() {
     setValue('nim', '');
     setValue('tel', '');
     setValue('instagram', '');
+    setValue('email')
   }
 
   return (
@@ -139,7 +142,9 @@ function soloForm() {
           >
             Error: Field cannot be empty
           </FormInputImportant>
-          {/*🔻File Upload disini🔻*/}
+          <FormTextImportant>Email</FormTextImportant>
+          <FormInputEmail placeholder="starlight@umn.ac.id" name="email" onChange={(event) => handleChange(event)}/>
+                    {/*🔻File Upload disini🔻*/}
 
           {/*<FormInputImportant
             placeholder="@starlightumn"
