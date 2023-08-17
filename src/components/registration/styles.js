@@ -15,7 +15,7 @@ import { useState, useRef } from 'react';
 import theme from '@/theme';
 
 export const FormBox = ({ children, ...props }) => {
-    const formRef = useRef(null)
+  const formRef = useRef(null);
   return (
     <Box
       bgColor="rgba(1, 1, 1, 0.5)"
@@ -316,25 +316,49 @@ export const FormInputDate = ({ name, ...props }) => {
 };
 
 export const FormInputNIM = ({ children, name, ...props }) => {
+  const [isNotNum, setIsNotNum ] = useState(false);
+
+  const handleChange = (event) => {
+    const input = event.target.value;
+    const numeric = /^[0-9]*$/;
+
+    if (!numeric.test(input)){
+      setIsNotNum(true);
+    }
+    else {
+      setIsNotNum(false); // Reset the error state when the input is numeric
+    }
+  };
+
+  const isInvalid = isNotNum;
+
   return (
-    <Flex >
-      <InputGroup borderColor={theme.colors.deco[400]} >
-        <InputLeftAddon
-          children="000000"
-          bgColor={theme.colors.bg[600]}
-          color={theme.colors.deco[400]}
-        />
-        <Input
-          type="text"
-          placeholder="12345"
-          color={theme.colors.deco[400]}
-          bgColor={theme.colors.bg[700]}
-          name={name}
-        />
-      </InputGroup>
-    </Flex>
+    <FormControl isInvalid={isInvalid}>
+      <Flex>
+        <InputGroup borderColor={theme.colors.deco[400]}>
+          <InputLeftAddon
+            children="000000"
+            bgColor={theme.colors.bg[600]}
+            color={theme.colors.deco[400]}
+            {...props}
+          />
+          <Input
+            type="text"
+            color={theme.colors.deco[400]}
+            bgColor={theme.colors.bg[700]}
+            name={name}
+            pattern="[0-9]*" // Only allows numeric input
+            title="0-9" // Custom error message
+            onBlur={handleChange}
+            {...props}
+          />
+        </InputGroup>
+      </Flex>
+      <FormErrorMessage>{children}</FormErrorMessage>
+    </FormControl>
   );
 };
+
 
 export const FormInputTel = ({ children, name, ...props }) => {
   const [isEmpty, setIsEmpty] = useState(false);

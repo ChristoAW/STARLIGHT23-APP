@@ -36,7 +36,7 @@ function soloForm() {
   });
 
   function defineValue() {
-    // console.log(formValue);
+     console.log(formValue);
 
     // handle all values to be transfered to sheet here
     setValue('timestamp', new Date().toLocaleString() + '');
@@ -120,7 +120,7 @@ function soloForm() {
             Error: Field cannot be empty
           </FormInputImportant>
           <FormText>Nomor Induk Mahasiswa (NIM)</FormText>
-          <FormInputNIM name="nim" onChange={(event) => handleChange(event)} />
+          <FormInputNIM name="nim" onChange={(event) => handleChange(event)} placeholder="12345">Please Enter Only Numbers</FormInputNIM>
           <FormNotes>For UMN Students Only</FormNotes>
           <FormTextImportant>Phone Number (Whatsapp)</FormTextImportant>
           <FormInputTel
