@@ -5,7 +5,7 @@ import theme from '@/theme';
 import Footer from '@/components/Footer/footer';
 import Header from '@/components/Header/header';
 import SplashScreen from '../SplashScreen';
-
+import Scrollbar from '../scrollbar/scrollbar';
 const Layout = ({ children, ...props }) => {
   const scrollDirection = useScrollDirection();
 
@@ -16,13 +16,14 @@ const Layout = ({ children, ...props }) => {
       alignItems="center"
       minH="100vh"
       width="100%"
-      bgGradient='linear(#828389 5%, #18223a 25%)'
-      bgColor={{base: '#828389', md : theme.colors.bg[500]}}
-      // sx={{
-      //   '::-webkit-scrollbar': { display: 'none' }
-      // }}
+      bgGradient="linear(#828389 5%, #18223a 25%)"
+      bgColor={{ base: '#828389', md: theme.colors.bg[500] }}
       {...props}
+      sx={{
+        '::-webkit-scrollbar': { display: 'none' },
+      }}
     >
+      <Scrollbar />
       <Box
         sx={{
           position: '-webkit-sticky',
