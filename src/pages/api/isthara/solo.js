@@ -6,7 +6,7 @@ import { google } from 'googleapis';
 async function handler(req, res) {
   if (req.method == 'POST') {
     // initialize all available value from the request here
-    const { timestamp, stageName, name, desc, message } = req.body;
+    const { timestamp, stageName, name, nim, univ, tel, instagram, message } = req.body;
     // res.json({ message: 'It works!' });
 
     const auth = new google.auth.GoogleAuth({
@@ -33,7 +33,7 @@ async function handler(req, res) {
       valueInputOption: 'USER_ENTERED',
       requestBody: {
         // all available values in order
-        values: [[timestamp, stageName, name, message, univ, nim, tel, instagram]],
+        values: [[timestamp, stageName, name, nim, univ, tel, instagram, message]],
       },
     });
 

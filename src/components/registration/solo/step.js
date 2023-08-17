@@ -25,8 +25,6 @@ import { useState } from 'react';
 function soloForm() {
   const { setValue, handleSubmit } = useForm();
 
-  const [desc, setDesc] = useState('');
-
   // this state will be used to store all required data except for those that has its own state
   const [formValue, setFormValue] = useState({
     stageName: '',
@@ -44,10 +42,10 @@ function soloForm() {
     setValue('timestamp', new Date().toLocaleString() + '');
     setValue('stageName', formValue.stageName);
     setValue('name', formValue.name);
-    setValue('NIM', formValue.nim);
+    setValue('nim', formValue.nim);
     setValue('univ', formValue.univ);
     setValue('tel', formValue.tel);
-    setValue('instagram', formValue.instagram)
+    setValue('instagram', formValue.instagram);
     // handle the remaining values
 
     // reset all input fields
@@ -69,7 +67,6 @@ function soloForm() {
       },
     });
     console.log(response.status, response.statusText);
-
     // Disini untuk reset semua input setelah masuk ke sheet
     setValue('name', '');
     setValue('stageName', '');
@@ -123,7 +120,7 @@ function soloForm() {
             Error: Field cannot be empty
           </FormInputImportant>
           <FormText>Nomor Induk Mahasiswa (NIM)</FormText>
-          <FormInputNIM name="NIM" onChange={(event) => handleChange(event)} />
+          <FormInputNIM name="nim" onChange={(event) => handleChange(event)} />
           <FormNotes>For UMN Students Only</FormNotes>
           <FormTextImportant>Phone Number (Whatsapp)</FormTextImportant>
           <FormInputTel
@@ -135,8 +132,15 @@ function soloForm() {
           </FormInputTel>
           <FormNotes>Example: +62XXXXXXXXXX</FormNotes>
           <FormTextImportant>Instagram</FormTextImportant>
+          <FormInputImportant
+            placeholder="@starlightumn"
+            name="instagram"
+            onChange={(event) => handleChange(event)}
+          >
+            Error: Field cannot be empty
+          </FormInputImportant>
           {/*🔻File Upload disini🔻*/}
-          
+
           {/*<FormInputImportant
             placeholder="@starlightumn"
             name="instagram"
@@ -149,8 +153,6 @@ function soloForm() {
           <FormInputFile name="twibbon"></FormInputFile>
           <FormTextImportant>Proof of Following @starlight.umn</FormTextImportant>
   <FormInputFile name="instagram_follow" />*/}
-
-
 
           {/*<FormTextImportant>Description</FormTextImportant>
           <FormTextareaImportant
