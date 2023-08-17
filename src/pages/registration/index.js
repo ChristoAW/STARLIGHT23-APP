@@ -1,18 +1,15 @@
-import {
-  Box,
-  Flex,
-  Text,
-  Link,
-} from '@chakra-ui/react';
+import { Box, Flex, Text, Link } from '@chakra-ui/react';
 import NextLink from 'next/link';
 
-import { useState } from 'react';
+import { useState, useContext, useEffect } from 'react';
+import { LayoutContext } from '@/components/context/LayoutContext';
 
 import theme from '@/theme';
-import { Heado } from '@/components/styles';
+import { PageTitle, SubSubHeado } from '@/components/styles';
 
 import bg from '@/asset/images/bg/bg.jpg';
 import bgM from '@/asset/images/bg/bg-m.png';
+
 const CardText = ({ children, ...props }) => {
   return (
     <Text
@@ -71,6 +68,12 @@ const GlowOnHoverBox = ({ children }) => {
 };
 
 const IstharaRegistration = () => {
+  const { setTitleSuffix } = useContext(LayoutContext);
+
+  useEffect(() => {
+    setTitleSuffix(' - Registration');
+  }, [setTitleSuffix]);
+
   return (
     <Flex
       w="100%"
@@ -78,6 +81,7 @@ const IstharaRegistration = () => {
       justifyContent="center"
       alignItems="center"
       py={{ base: '10', md: '4rem' }}
+      px={{ base: '10vw', md: '5rem' }}
       flexDirection="column"
       overflowY="hidden"
       bgImage={{ base: bgM.src, md: bg.src }}
@@ -85,19 +89,14 @@ const IstharaRegistration = () => {
       bgPos="center"
       bgAttachment="fixed"
     >
-      <Heado textShadow="0 0 20px #b8dafe">
+      <PageTitle>
         Welcome, <i>s</i>tarlighter<i>s</i>!
-      </Heado>
+      </PageTitle>
       <Flex textAlign="center">
-        <Text
-          fontSize={{ base: '1.25rem', md: '1.5rem', xl: '1.75rem' }}
-          mt="2rem"
-          color={theme.colors.text[300]}
-          fontFamily="Montserrat"
-        >
+        <SubSubHeado color={theme.colors.text[300]}>
           Before expressing your true colors at Starlight 2023, please fill out
           this form!
-        </Text>
+        </SubSubHeado>
       </Flex>
       <Flex
         w="100%"
@@ -130,7 +129,7 @@ const IstharaRegistration = () => {
             <Link>
               <GlowOnHoverBox>
                 <CardText>
-                  I<i>s</i>htara
+                  I<i>s</i>thara
                 </CardText>
               </GlowOnHoverBox>
             </Link>

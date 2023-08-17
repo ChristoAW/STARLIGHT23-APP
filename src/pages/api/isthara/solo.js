@@ -5,7 +5,8 @@ import { google } from 'googleapis';
 
 async function handler(req, res) {
   if (req.method == 'POST') {
-    const { timestamp, name, desc, message } = req.body;
+    // initialize all available value from the request here
+    const { timestamp, stageName, name, desc, message } = req.body;
     // res.json({ message: 'It works!' });
 
     const auth = new google.auth.GoogleAuth({
@@ -31,7 +32,8 @@ async function handler(req, res) {
       range: 'Solo!A2:C',
       valueInputOption: 'USER_ENTERED',
       requestBody: {
-        values: [[timestamp, name, desc, message]],
+        // all available values in order
+        values: [[timestamp, stageName, name, desc, message]],
       },
     });
 
@@ -43,3 +45,5 @@ async function handler(req, res) {
 // So we have to explicitly check if the method is a POST request.
 
 export default handler;
+
+// reference : https://www.freecodecamp.org/news/create-a-feedback-form-using-nextjs-and-google-sheets-api/

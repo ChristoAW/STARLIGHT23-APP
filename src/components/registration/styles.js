@@ -95,7 +95,7 @@ export const FormText = ({ children, ...props }) => {
   );
 };
 
-export const FormInputImportant = ({ children, register, name, ...props }) => {
+export const FormInputImportant = ({ children, name, ...props }) => {
   const [isEmpty, setIsEmpty] = useState(false);
   const [validationMessage, setValidationMessage] = useState('');
 
@@ -119,7 +119,7 @@ export const FormInputImportant = ({ children, register, name, ...props }) => {
         bgColor={theme.colors.bg[700]}
         onBlur={handleBlur}
         required
-        {...register(name)}
+        name={name}
         {...props}
       />
       <FormErrorMessage>{validationMessage}</FormErrorMessage>
@@ -127,7 +127,7 @@ export const FormInputImportant = ({ children, register, name, ...props }) => {
   );
 };
 
-export const FormInput = ({ children, register, name, ...props }) => {
+export const FormInput = ({ children, name, ...props }) => {
   return (
     <FormControl>
       <Input
@@ -138,7 +138,7 @@ export const FormInput = ({ children, register, name, ...props }) => {
         borderRadius="0"
         color={theme.colors.deco[400]}
         bgColor={theme.colors.bg[700]}
-        {...register(name)}
+        name={name}
         {...props}
       />
       <FormErrorMessage>{children}</FormErrorMessage>
@@ -146,7 +146,7 @@ export const FormInput = ({ children, register, name, ...props }) => {
   );
 };
 
-export const FormTextareaImportant = ({ children, register, name, ...props }) => {
+export const FormTextareaImportant = ({ children, name, ...props }) => {
   const [isEmpty, setIsEmpty] = useState(false);
   const [text, setText] = useState('');
 
@@ -175,7 +175,7 @@ export const FormTextareaImportant = ({ children, register, name, ...props }) =>
         value={text}
         onChange={handleInput}
         required
-        {...register(name)}
+        name={name}
         {...props}
       ></Textarea>
       <FormErrorMessage>{children}</FormErrorMessage>
@@ -183,7 +183,7 @@ export const FormTextareaImportant = ({ children, register, name, ...props }) =>
   );
 };
 
-export const FormTextarea = ({ children, name, register, ...props }) => {
+export const FormTextarea = ({ children, name, ...props }) => {
   const [text, setText] = useState('');
 
   const handleInput = (event) => {
@@ -203,7 +203,7 @@ export const FormTextarea = ({ children, name, register, ...props }) => {
         h="150px"
         value={text}
         onChange={handleInput}
-        {...register(name)}
+        name={name}
         {...props}
       ></Textarea>
     </FormControl>

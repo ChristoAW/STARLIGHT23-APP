@@ -31,7 +31,7 @@ const Home = () => {
       >
         <SoloForm />
         <GroupForm />
-        <LatestNews />
+        {/* <LatestNews /> */}
         <TreasureMap />
         <Box px={{ base: 6, sm: 14, md: 20 }}>
           <Divider
