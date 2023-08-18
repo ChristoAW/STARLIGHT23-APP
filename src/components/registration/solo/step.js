@@ -124,7 +124,7 @@ function soloForm() {
 
     const response = await fetch('/api/isthara/solo', {
       method: 'POST',
-      body: JSON.stringify(data),
+      body: JSON.stringify(formValue),
       headers: {
         'Content-Type': 'application/json',
       },
