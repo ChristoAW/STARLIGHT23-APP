@@ -8,9 +8,8 @@ import {
   Spinner,
 } from '@chakra-ui/react';
 import theme from '@/theme';
-import NextLink from 'next/link';
 
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { useForm } from 'react-hook-form';
 
@@ -21,12 +20,8 @@ import {
   FormTextImportant,
   FormText,
   FormInputImportant,
-  FormInput,
-  FormTextareaImportant,
-  FormTextarea,
   FormNotes,
   FormInputFile,
-  FormInputDate,
   FormInputNIM,
   FormInputTel,
   FormInputEmail,
@@ -40,7 +35,6 @@ function soloForm() {
   const { setValue, handleSubmit } = useForm();
   const [twibbonUpload, setTwibbonUpload] = useState(null);
   const [instagramUpload, setInstagramUpload] = useState(null);
-  const formRef = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
   const router = useRouter();
@@ -55,10 +49,12 @@ function soloForm() {
     instagram: '',
     email: '',
     line: '',
+    twibProof: '',
+    igProof: ''
   });
 
   function defineValue() {
-    console.log(formValue);
+    // console.log(formValue);
 
     // handle all values to be transfered to sheet here
     setValue('timestamp', new Date().toLocaleString() + '');
@@ -70,6 +66,8 @@ function soloForm() {
     setValue('instagram', formValue.instagram);
     setValue('email', formValue.email);
     setValue('line', formValue.line);
+    setValue('twibProof', formValue.twibProof);
+    setValue('igProof', formValue.igProof);
 
     // image upload handler is inside the fileHandler function
 
@@ -95,7 +93,8 @@ function soloForm() {
       //link twibbon url
       const twibbonDownloadURL = await getDownloadURL(twibbonRef);
       console.log('Twibbon Image:', twibbonDownloadURL);
-      setValue('twibProof', twibbonDownloadURL);
+      formValue.twibProof = twibbonDownloadURL;
+      // setValue('twibProof', twibbonDownloadURL);
     }
 
     if (instagramUpload !== null) {
@@ -109,14 +108,19 @@ function soloForm() {
       //link proof instagram url
       const instagramDownloadURL = await getDownloadURL(instagramRef);
       console.log('Instagram Image:', instagramDownloadURL);
-      setValue('igProof', instagramDownloadURL);
+      formValue.igProof = instagramDownloadURL;
+      // setValue('igProof', instagramDownloadURL);
+      
+      console.log(formValue) // yg disini uda bener masuknya linknya
     }
   }
 
   async function submitHandler(data) {
     setIsLoading(true);
-
+    
     await fileHandler();
+
+    console.log(data); // yang disini masuknya yang sebelomnya
 
     const response = await fetch('/api/isthara/solo', {
       method: 'POST',
@@ -136,12 +140,12 @@ function soloForm() {
     setValue('instagram', '');
     setValue('email', '');
     setValue('line', '');
-    setValue('twibProof', null);
-    setValue('igProof', null);
+    // setValue('twibProof', '');
+    // setValue('igProof', '');
 
     setIsLoading(false);
 
-    router.push('/registration/ishtaraReg/welcome');
+    // router.push('/registration/ishtaraReg/welcome');
   }
 
   return (
