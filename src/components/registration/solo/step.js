@@ -1,6 +1,7 @@
 import { VStack, Button, Flex, Link, Text, Box } from '@chakra-ui/react';
 import { useForm } from 'react-hook-form';
 import theme from '@/theme';
+import NextLink from 'next/link';
 
 import {
   FormBox,
@@ -20,7 +21,7 @@ import {
   FormInputEmail,
 } from '../styles';
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 
 import { storage } from '@/pages/api/isthara/firebase';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
@@ -30,6 +31,8 @@ function soloForm() {
   const { setValue, handleSubmit } = useForm();
   const [twibbonUpload, setTwibbonUpload] = useState(null);
   const [instagramUpload, setInstagramUpload] = useState(null);
+  const formRef = useState(null);
+
 
   // this state will be used to store all required data except for those that has its own state
   const [formValue, setFormValue] = useState({
@@ -43,6 +46,10 @@ function soloForm() {
   });
 
   function defineValue() {
+    if(!formRef.current.checkValidity()){
+      formRef.current.reportValidity();
+      return;
+    }
     console.log(formValue);
 
     // handle all values to be transfered to sheet here
@@ -104,6 +111,8 @@ function soloForm() {
       console.log('Instagram Image:', instagramDownloadURL);
     }
 
+    window.location.href = "/registration/ishtaraReg/welcome";
+
     // Disini untuk reset semua input setelah masuk ke sheet
     setValue('name', '');
     setValue('stageName', '');
@@ -117,7 +126,7 @@ function soloForm() {
   return (
     <VStack>
       <FormBox>
-        <form onSubmit={handleSubmit(submitHandler)}>
+        <form onSubmit={handleSubmit(submitHandler)} ref= {formRef}>
           <FormHeading>
             Pendaftaran I<i>s</i>htara <i>S</i>tarlight 2023
           </FormHeading>
@@ -137,6 +146,7 @@ function soloForm() {
             placeholder="Chintia Libby"
             name="name"
             onChange={(event) => handleChange(event)}
+            required
           >
             Error: Field cannot be empty
           </FormInputImportant>
@@ -226,8 +236,7 @@ function soloForm() {
 
           <br />
           <Flex justify="flex-end" maxW="1080px" w="100%" mx="auto" mb="2em">
-            <NextLink href="/registration/ishtaraReg/welcome" passHref>
-              <Link
+              <Button
                 h="3rem"
                 w="9rem"
                 color={theme.colors.deco[400]}
@@ -239,8 +248,7 @@ function soloForm() {
                 _hover={{ bgColor: '0,0,0', color: ' rgb(227,218,201)' }}
               >
                 SUBMIT
-              </Link>
-            </NextLink>
+              </Button>
           </Flex>
         </form>
       </FormBox>

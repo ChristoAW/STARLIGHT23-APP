@@ -113,6 +113,9 @@ function soloForm() {
     });
     console.log(response.status, response.statusText);
 
+    //biar ganti halaman
+    window.location.href = "/registration/ishtaraReg/welcome";
+
     // Disini untuk reset semua input setelah masuk ke sheet
     setValue('groupName', '');
     setValue('name', '');
@@ -252,7 +255,6 @@ function soloForm() {
             Add Member
           </Button>
           <Flex justify="flex-end" maxW="1080px" w="100%" mx="auto" mb="2em">
-            <NextLink href="/registration/ishtaraReg/welcome" passHref>
               <Link
                 h="3rem"
                 w="9rem"
@@ -266,7 +268,6 @@ function soloForm() {
               >
                 SUBMIT
               </Link>
-            </NextLink>
           </Flex>
         </form>
       </FormBox>
