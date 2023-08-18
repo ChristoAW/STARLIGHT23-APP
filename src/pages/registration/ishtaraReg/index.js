@@ -1,11 +1,13 @@
-import { Box, Flex, Text, Link } from '@chakra-ui/react';
+import { Box, Flex, Text, Link, Image } from '@chakra-ui/react';
 import NextLink from 'next/link';
 
 import { useState } from 'react';
 
 import theme from '@/theme';
-import { PageTitle, SubSubHeado } from '@/components/styles';
+import { PageTitle, SubSubHeado, FormSubHeading } from '@/components/styles';
 
+import istharaSolo from '@/asset/images/regist/isthara-solo.PNG';
+import istharaGroup from '@/asset/images/regist/isthara-group.PNG';
 import bg from '@/asset/images/bg/bg.jpg';
 import bgM from '@/asset/images/bg/bg-m.png';
 const CardText = ({ children, ...props }) => {
@@ -42,7 +44,7 @@ const GlowOnHoverBox = ({ children }) => {
       onMouseLeave={() => setIsHovered(false)}
       cursor="default"
     >
-      <Box
+      {/* <Box
         borderWidth="3px"
         borderColor={theme.colors.deco[500]}
         w="22rem"
@@ -60,12 +62,13 @@ const GlowOnHoverBox = ({ children }) => {
         >
           {children}
         </Text>
-      </Box>
+      </Box> */}
     </Flex>
   );
 };
 
 const formIshtara = () => {
+  const [isHovered, setIsHovered] = useState(false);
   return (
     <Flex
       w="100%"
@@ -108,18 +111,45 @@ const formIshtara = () => {
         >
           <NextLink href="./ishtaraReg/solo" passHref>
             <Link>
-              <GlowOnHoverBox>
-                <CardText>
-                  <i>S</i>olo
-                </CardText>
-              </GlowOnHoverBox>
+              <Image
+                w="90%"
+                textAlign="center"
+                borderWidth="7px"
+                borderColor={theme.colors.deco[500]}
+                display="flex"
+                alignItems="center"
+                justifyContent="center"
+                transition="box-shadow 0.1s ease"
+                transition="box-shadow 0.1s ease"
+                _hover={{
+                  filter: 'drop-shadow(0px 0px 10px #fff)',
+                }}
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)}
+                src={istharaSolo.src}
+              />
             </Link>
           </NextLink>
+
           <NextLink href="./ishtaraReg/group" passHref>
             <Link>
-              <GlowOnHoverBox>
-                <CardText>Group</CardText>
-              </GlowOnHoverBox>
+              <Image
+                w="90%"
+                textAlign="center"
+                borderWidth="7px"
+                borderColor={theme.colors.deco[500]}
+                display="flex"
+                alignItems="center"
+                justifyContent="center"
+                transition="box-shadow 0.1s ease"
+                transition="box-shadow 0.1s ease"
+                _hover={{
+                  filter: 'drop-shadow(0px 0px 10px #fff)',
+                }}
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)}
+                src={istharaGroup.src}
+              />
             </Link>
           </NextLink>
         </Flex>
