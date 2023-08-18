@@ -1,4 +1,12 @@
-import { Button, Flex, Link, Text, Box, Divider, Spinner } from '@chakra-ui/react';
+import {
+  Button,
+  Flex,
+  Link,
+  Text,
+  Box,
+  Divider,
+  Spinner,
+} from '@chakra-ui/react';
 import theme from '@/theme';
 
 import { useState } from 'react';
@@ -103,7 +111,14 @@ function groupForm() {
   };
 
   const addFields = () => {
-    let newField = { name: '', univ: '', nim: '', tel: '', instagram: '', email: '' };
+    let newField = {
+      name: '',
+      univ: '',
+      nim: '',
+      tel: '',
+      instagram: '',
+      email: '',
+    };
     setInputFields([...inputFields, newField]);
   };
 
@@ -145,8 +160,7 @@ function groupForm() {
   }
 
   async function submitHandler(data) {
-
-setIsLoading(true);
+    setIsLoading(true);
 
     await fileHandler();
 
@@ -160,7 +174,7 @@ setIsLoading(true);
     console.log(response.status, response.statusText);
 
     //biar ganti halaman
-    window.location.href = "/registration/ishtaraReg/welcome";
+    window.location.href = '/registration/ishtaraReg/welcome';
 
     // Disini untuk reset semua input setelah masuk ke sheet
     setValue('groupName', '');
@@ -180,7 +194,6 @@ setIsLoading(true);
 
   return (
     <form onSubmit={handleSubmit(submitHandler)}>
-
       <FormBox mt={0}>
         <FormHeading>
           Pendaftaran I<i>s</i>thara <i>S</i>tarlight 2023
@@ -236,14 +249,6 @@ setIsLoading(true);
                       </FormNotes>
                     )}
                     <FormTextImportant>
-                      {index != 0 ? 'Email' : 'Representative Email'}
-                    </FormTextImportant>
-                    <FormInputEmail
-                      placeholder="starlight@umn.ac.id"
-                      name="email"
-                      onChange={(event) => handleDynamicChange(index, event)}
-                    />
-                    <FormTextImportant>
                       {index != 0 ? 'Name' : 'Representative Name'}
                     </FormTextImportant>
                     <FormInputImportant
@@ -267,6 +272,14 @@ setIsLoading(true);
                     >
                       Please Enter Only Numbers
                     </FormInputNIM>
+                    <FormTextImportant>
+                      {index != 0 ? 'Email' : 'Representative Email'}
+                    </FormTextImportant>
+                    <FormInputEmail
+                      placeholder="starlight@umn.ac.id"
+                      name="email"
+                      onChange={(event) => handleDynamicChange(index, event)}
+                    />
                     <FormNotes>For UMN Students Only</FormNotes>
                     <FormTextImportant>
                       Phone Number (Whatsapp)
@@ -279,6 +292,16 @@ setIsLoading(true);
                       Error: Please input (+62 or 0) followed by 7-13 numbers
                     </FormInputTel>
                     <FormNotes>Example: +62XXXXXXXXXX</FormNotes>
+                    <FormTextImportant>
+                      {index != 0 ? 'Line ID' : 'Line ID (Representative)'}
+                    </FormTextImportant>
+                    <FormInputImportant
+                      placeholder="@starlightumn"
+                      name="instagram"
+                      onChange={(event) => handleDynamicChange(index, event)}
+                    >
+                      Error: Field cannot be empty
+                    </FormInputImportant>
                     <FormTextImportant>Instagram</FormTextImportant>
                     <FormInputImportant
                       placeholder="@starlightumn"
@@ -304,26 +327,26 @@ setIsLoading(true);
                         Remove
                       </Button>
                     ) : null}
-                    </FormBox>
-                  </div>
-                );
-              })}
-            </>
-          )}
-          <Button
-            h="3rem"
-            w="9rem"
-            color={theme.colors.deco[400]}
-            bgColor={theme.colors.bg[700]}
-            border="1px"
-            onClick={addFields}
-            _hover={{
-              bgColor: '0,0,0',
-              color: ' rgb(227,218,201)',
-            }}
-          >
-            Add Member
-          </Button>
+                  </FormBox>
+                </div>
+              );
+            })}
+          </>
+        )}
+        <Button
+          h="3rem"
+          w="9rem"
+          color={theme.colors.deco[400]}
+          bgColor={theme.colors.bg[700]}
+          border="1px"
+          onClick={addFields}
+          _hover={{
+            bgColor: '0,0,0',
+            color: ' rgb(227,218,201)',
+          }}
+        >
+          Add Member
+        </Button>
       </FormBox>
       <Flex justify="flex-end" maxW="1080px" w="100%" mx="auto" mb="2em">
         <Link

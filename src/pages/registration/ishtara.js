@@ -63,7 +63,7 @@ const Registration = () => {
         px={{ base: '2.5rem', md: '4rem' }}
       >
         <Flex
-          mt={{base: "2rem", md :"6rem"}}
+          mt={{ base: '2rem', md: '6rem' }}
           flexDirection="column"
           alignContent="center"
           textAlign="center"
@@ -79,8 +79,8 @@ const Registration = () => {
             fontSize={{ base: '1rem', md: '1.15rem' }}
             spacing="1rem"
             textAlign="left"
-            mt={{base: "2rem", md :"6rem"}}
-            mb={{base: "2rem", md :"6rem"}}
+            mt={{ base: '2rem', md: '6rem' }}
+            mb={{ base: '2rem', md: '6rem' }}
           >
             <ListItem>
               Peformance <b>OFFLINE</b> berdurasi maksimal 10 menit.
@@ -128,10 +128,14 @@ const Registration = () => {
               </UnorderedList>
             </ListItem>
             <ListItem>
-              Jika Ishthara melakukan tindakan yang mengganggu keberlangsungan kegiatan Starlight 2023 maupun Ishthara lain, maka akan diberikan 3 kali peringatan.
+              Jika Ishthara melakukan tindakan yang mengganggu keberlangsungan
+              kegiatan Starlight 2023 maupun Ishthara lain, maka akan diberikan
+              3 kali peringatan.
             </ListItem>
             <ListItem>
-              Apabila Isthara mendapat peringatan sebanyak 3 kali dari pihak Starlight 2023, maka Isthara akan dikeluarkan dari keberlangsungan kegiatan Starlight 2023.
+              Apabila Isthara mendapat peringatan sebanyak 3 kali dari pihak
+              Starlight 2023, maka Isthara akan dikeluarkan dari keberlangsungan
+              kegiatan Starlight 2023.
             </ListItem>
           </OrderedList>
         </Flex>
@@ -143,7 +147,7 @@ const Registration = () => {
         h="90%"
         color=""
         mx="auto"
-        mt={{base: ".5rem", md :"3rem"}}
+        mt={{ base: '.5rem', md: '3rem' }}
         flexDirection="column"
         mb="4rem"
         px={{ base: '.5rem', md: '4rem' }}
@@ -161,9 +165,7 @@ const Registration = () => {
           </Checkbox>
         </Flex>
       </Flex>
-      <Flex
-        justifyContent={{ base: 'center', md: 'end' }}
-      >
+      <Flex justifyContent={{ base: 'center', md: 'end' }}>
         <NextLink href="./ishtaraReg" passHref>
           <Link
             h="3rem"
