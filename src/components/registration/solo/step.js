@@ -140,6 +140,7 @@ function soloForm() {
         <FormInputImportant
           placeholder="Your Name"
           name="name"
+          isDisabled={isLoading}
           onChange={(event) => handleChange(event)}
         >
           Error: Field cannot be empty
@@ -149,6 +150,7 @@ function soloForm() {
         <FormInputImportant
           placeholder="Stage Name"
           name="stageName"
+          isDisabled={isLoading}
           onChange={(event) => handleChange(event)}
         >
           Error: Field cannot be empty
@@ -157,15 +159,17 @@ function soloForm() {
         <FormInputImportant
           placeholder="Universitas Multimedia Nusantara"
           name="univ"
+          isDisabled={isLoading}
           onChange={(event) => handleChange(event)}
         >
           Error: Field cannot be empty
         </FormInputImportant>
         <FormText>Nomor Induk Mahasiswa (NIM)</FormText>
         <FormInputNIM
-          name="nim"
-          onChange={(event) => handleChange(event)}
           placeholder="12345"
+          name="nim"
+          isDisabled={isLoading}
+          onChange={(event) => handleChange(event)}
         >
           Invalid NIM
         </FormInputNIM>
@@ -174,6 +178,7 @@ function soloForm() {
         <FormInputTel
           placeholder="0812345678"
           name="tel"
+          isDisabled={isLoading}
           onChange={(event) => handleChange(event)}
         >
           Error: Please input (+62 or 0) followed by 7-13 numbers
@@ -183,12 +188,14 @@ function soloForm() {
         <FormInputImportant
           placeholder="@starlightumn"
           name="line"
+          isDisabled={isLoading}
           onChange={(event) => handleChange(event)}
         ></FormInputImportant>
         <FormTextImportant>Instagram</FormTextImportant>
         <FormInputImportant
           placeholder="@starlight.umn"
           name="instagram"
+          isDisabled={isLoading}
           onChange={(event) => handleChange(event)}
         >
           Error: Field cannot be empty
@@ -197,6 +204,7 @@ function soloForm() {
         <FormInputEmail
           placeholder="starlight@umn.ac.id"
           name="email"
+          isDisabled={isLoading}
           onChange={(event) => handleChange(event)}
         />
         {/*🔻File Upload disini🔻*/}
@@ -214,6 +222,7 @@ function soloForm() {
         <FormTextImportant>Proof of Following @starlight.umn</FormTextImportant>
         <FormInputFile
           name="instagram"
+          isDisabled={isLoading}
           onChange={(event) => {
             setInstagramUpload(event.target.files[0]);
           }}

@@ -170,30 +170,30 @@ function groupForm() {
   }
 
   async function submitHandler(data) {
-    // setIsLoading(true);
+    setIsLoading(true);
 
-    // await fileHandler();
+    await fileHandler();
 
-    // // customize value
-    // formValue.number = num;
-    // formValue.timestamp = new Date().toLocaleString() + '';
+    // customize value
+    formValue.number = num;
+    formValue.timestamp = new Date().toLocaleString() + '';
 
-    // const response = await fetch('/api/isthara/group', {
-    //   method: 'POST',
-    //   body: JSON.stringify(formValue),
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //   },
-    // });
-    // // console.log(response.status, response.statusText);
+    const response = await fetch('/api/isthara/group', {
+      method: 'POST',
+      body: JSON.stringify(formValue),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+    // console.log(response.status, response.statusText);
 
-    // setIsLoading(false);
+    setIsLoading(false);
 
-    // if (response.status != 201) {
-    //   alert('Submission Unsuccessful. Submit Again');
-    // } else {
-    //   router.push('/registration/ishtaraReg/welcome');
-    // }
+    if (response.status != 201) {
+      alert('Submission Unsuccessful. Submit Again');
+    } else {
+      router.push('/registration/ishtaraReg/welcome');
+    }
   }
 
   return (
@@ -217,6 +217,7 @@ function groupForm() {
         <FormInputImportant
           placeholder="Group Name"
           name="groupName"
+          isDisabled={isLoading}
           onChange={(event) => handleChange(event)}
         />
         {/*🔻File Upload disini🔻*/}
@@ -226,6 +227,7 @@ function groupForm() {
         </Link>
         <FormInputFile
           name="twibbon"
+          isDisabled={isLoading}
           onChange={(event) => {
             setTwibbonUpload(event.target.files[0]);
           }}
@@ -237,6 +239,7 @@ function groupForm() {
         <FormTextImportant>Proof of Following @starlight.umn</FormTextImportant>
         <FormInputFile
           name="instagram"
+          isDisabled={isLoading}
           onChange={(event) => {
             setInstagramUpload(event.target.files[0]);
           }}
@@ -266,6 +269,7 @@ function groupForm() {
                     <FormInputImportant
                       placeholder="Your Name"
                       name="name"
+                      isDisabled={isLoading}
                       onChange={(event) => handleDynamicChange(index, event)}
                       value={input.name} // ini ga perlu juga gpp
                     />
@@ -273,14 +277,16 @@ function groupForm() {
                     <FormInputImportant
                       placeholder="Universitas Multimedia Nusantara"
                       name="univ"
+                      isDisabled={isLoading}
                       onChange={(event) => handleDynamicChange(index, event)}
                       value={input.univ}
                     />
                     <FormText>Nomor Induk Mahasiswa (NIM)</FormText>
                     <FormInputNIM
-                      name="nim"
-                      onChange={(event) => handleDynamicChange(index, event)}
                       placeholder="12345"
+                      name="nim"
+                      isDisabled={isLoading}
+                      onChange={(event) => handleDynamicChange(index, event)}
                     >
                       Invalid NIM
                     </FormInputNIM>
@@ -290,6 +296,7 @@ function groupForm() {
                     <FormInputEmail
                       placeholder="starlight@umn.ac.id"
                       name="email"
+                      isDisabled={isLoading}
                       onChange={(event) => handleDynamicChange(index, event)}
                     />
                     <FormNotes>For UMN Students Only</FormNotes>
@@ -299,6 +306,7 @@ function groupForm() {
                     <FormInputTel
                       placeholder="0812345678"
                       name="tel"
+                      isDisabled={isLoading}
                       onChange={(event) => handleDynamicChange(index, event)}
                     >
                       Error: Please input (+62 or 0) followed by 7-13 numbers
@@ -310,6 +318,7 @@ function groupForm() {
                     <FormInputImportant
                       placeholder="@starlightumn"
                       name="line"
+                      isDisabled={isLoading}
                       onChange={(event) => handleDynamicChange(index, event)}
                     >
                       Error: Field cannot be empty
@@ -318,6 +327,7 @@ function groupForm() {
                     <FormInputImportant
                       placeholder="@starlightumn"
                       name="instagram"
+                      isDisabled={isLoading}
                       onChange={(event) => handleDynamicChange(index, event)}
                     >
                       Error: Field cannot be empty
@@ -331,6 +341,7 @@ function groupForm() {
                         bgColor={theme.colors.bg[700]}
                         border="1px"
                         onClick={() => removeFields(index)}
+                        isDisabled={isLoading}
                         _hover={{
                           bgColor: '0,0,0',
                           color: ' rgb(227,218,201)',
@@ -352,6 +363,7 @@ function groupForm() {
           bgColor={theme.colors.bg[700]}
           border="1px"
           onClick={addFields}
+          isDisabled={isLoading}
           _hover={{
             bgColor: '0,0,0',
             color: ' rgb(227,218,201)',
