@@ -71,7 +71,7 @@ const Registration = () => {
           color={theme.colors.text[600]}
         >
           <RegistrationHeading>
-            Ketentuan Umum Pe<i>s</i>erta
+            Ketentuan Umum I<i>s</i>thara
           </RegistrationHeading>
           <RegistrationHeading>
             <i>S</i>tarlight 2023
@@ -84,93 +84,55 @@ const Registration = () => {
             mb="6rem"
           >
             <ListItem>
-              Peserta <b>SOLO</b> terdiri dari minimal 1 orang, dan <b>GROUP</b>{' '}
-              maksimal 5 orang
+              Peformance <b>OFFLINE</b> berdurasi maksimal 10 menit.
+            </ListItem>
+            <ListItem>Kreativitas dan orisinalitas diutamakan.</ListItem>
+            <ListItem>
+              Kebutuhan properti performance menggunakan uan pribadi kecuali
+              keperluan untuk pengeras suara, kursi, atau meja.
             </ListItem>
             <ListItem>
-              Peserta <b>WAJIB</b> berusia 15-25 tahun
+              Isthara <b>DILARANG</b> menggunakan benda-benda illegal, tajam,
+              dan yang berpotensi membahayakan diri sendiri serta orang lain.
             </ListItem>
             <ListItem>
-              Peserta <b>WAJIB</b> secara resmi terdaftar dalam instansi
-              pendidikan pada tingkat SMA/SMK/MA (Sekolah Menengah Atas /
-              Sekolah Menengah Kejuruan / Madrasah Aliyah) atau Perguruan Tinggi
-              se-Indoneia
+              Ishtara dapat mendaftar secara individu atau kelompok.
             </ListItem>
             <ListItem>
-              Apabila rangkaian Starlight 2023 akan dilaksanakan secara{' '}
-              <b>luring</b> maka
-              <OrderedList listStyleType="lower-alpha" spacing="1rem">
-                <ListItem>
-                  Seluruh biaya akomodasi, kesehatan, dan keperluan lainnya
-                  ditanggung oleh masing-masing peserta
-                </ListItem>
-                <ListItem>
-                  Seluruh peserta <b>WAJIB</b> mencantumkan informasi kesehatan
-                  dan penyakit bawaan/komorbid jika ada
-                </ListItem>
-              </OrderedList>
+              Ishthara wajib hadir sesuai dengan ketentuan dari pihak Starlight
+              2023.
             </ListItem>
             <ListItem>
-              Peserta <b>Wajib </b> melampirkan identitas instansi terkait yang
-              valid (<b>Kartu Pelajar atau Kartu Tanda Mahasiswa</b>) dalam
-              formulir pendaftaran
+              Ishthara <b>DILARANG</b> menampilkan hal-hal yang mengandung unsur
+              pornografi, hal yang tidak berpendidikan, dan SARA.
+            </ListItem>
+            <ListItem>Isthara wajib berpakaian sesuai aturan kampus.</ListItem>
+            <ListItem>
+              Peserta wajib mengumpulkan daftar keperluan penampilan (lagu,
+              properti) dan lain-lain kepada LO sesuai dengan waktu yang telah
+              ditetapkan oleh pihak Starlight UMN.
             </ListItem>
             <ListItem>
-              Peserta yang sudah mendaftar <b>TIDAK</b> diperkenankan untuk
-              mengubah/mengganti/mengurangi anggotanya dari awal hingga akhir
-              kegiatan, kecuali dalam keadaan sebagai berikut:
+              Ishthara harus memberikan informasi apabila terdapat riwayat
+              penyakit.
+            </ListItem>
+            <ListItem>
+              Ishthara yang berkebutuhan khusus dapat menghubungi panitia via DM
+              instagram atau menghubungi contact person yang telah disediakan.
               <UnorderedList listStyleType="none" spacing="1rem" mt="1rem">
                 <ListItem>
-                  - <b>Terinfeksi COVID-19</b>
-                  <UnorderedList ps="2rem">
-                    <ListItem>
-                      Jika salah satu anggota terinfeksi COVID-19, peserta
-                      tersebut dapat mengundurkan diri, tetapi <b>TIDAK</b>{' '}
-                      diperbolehkan penggantian / penambahan anggota
-                    </ListItem>
-                  </UnorderedList>
-                </ListItem>
-                <ListItem>
-                  - <b>Sakit Berat</b>
-                  <UnorderedList ps="2rem">
-                    <ListItem>
-                      Sakit berat yang dimaksud adalah sakit yang memberatkan
-                      aktivitas fisik, seperti kecelakaan yang menyebabkan patah
-                      tulang dan opname
-                    </ListItem>
-                    <ListItem>
-                      Peserta <b>WAJIB</b> memberikan surat dokter kepada{' '}
-                      <i>Liaison Officer</i> (Aquamarine) masing-masing
-                    </ListItem>
-                  </UnorderedList>
-                </ListItem>
-                <ListItem>
-                  - <b>Keluarga inti meninggal</b>
-                  <UnorderedList ps="2rem">
-                    <ListItem>
-                      Peserta <b>WAJIB</b> menginformasikan kepada{' '}
-                      <i>Liaison Officer</i> (Aquamarine) masing-masing
-                    </ListItem>
-                  </UnorderedList>
+                  - Ishthara yang memiliki kebutuhan khusus secara fisik,
+                  intelektual, atau emosional disarankan membawa pendamping.
+                  Apabila Ishthara tidak memiliki pendamping akan ditemani oleh
+                  LO dan petugas keamanan.
                 </ListItem>
               </UnorderedList>
             </ListItem>
             <ListItem>
-              Setiap peserta <b>WAJIB</b> membayar deposit sebesar:
-              <OrderedList listStyleType="lower-alpha" spacing="1rem" mt="1rem">
-                <ListItem>
-                  Solo Rp50.000,00 saat mendaftar dan akan dikembalikan setelah
-                  peserta menyelesaikan seluruh rangkaian Starlight 2023
-                </ListItem>
-                <ListItem>
-                  Group Rp100.000,00 saat mendaftar dan akan dikembalikan
-                  setelah peserta menyelesaikan seluruh rangkaian Starlight 2023
-                </ListItem>
-              </OrderedList>
+              Jika Ishthara melakukan tindakan yang mengganggu keberlangsungan kegiatan Starlight 2023 maupun Ishthara lain, maka akan diberikan 3 kali peringatan.
             </ListItem>
             <ListItem>
-              Seluruh peserta <b>WAJIB</b> mengikuti seluruh peraturan dan
-              regulasi kegiatan yang berlaku selama rangkaian Starlight 2023
+              Apabila Isthara mendapat peringatan sebanyak 3 kali dari pihak Starlight 2023, maka Isthara akan dikeluarkan dari keberlangsungan kegiatan Starlight 2023.
             </ListItem>
           </OrderedList>
         </Flex>
