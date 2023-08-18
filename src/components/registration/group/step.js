@@ -1,4 +1,4 @@
-import { Button, Flex, Link, Text, Box, Divider } from '@chakra-ui/react';
+import { Button, Flex, Link, Text, Box, Divider, Spinner } from '@chakra-ui/react';
 import theme from '@/theme';
 
 import { useState } from 'react';
@@ -31,6 +31,7 @@ function groupForm() {
   const { setValue, handleSubmit } = useForm();
   const [twibbonUpload, setTwibbonUpload] = useState(null);
   const [instagramUpload, setInstagramUpload] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
 
   const router = useRouter();
 
@@ -117,7 +118,7 @@ function groupForm() {
     if (twibbonUpload !== null) {
       const twibbonRef = ref(
         storage,
-        `solo/twibbon/${twibbonUpload.name + v4()}`
+        `group/twibbon/${twibbonUpload.name + v4()}`
       );
       await uploadBytes(twibbonRef, twibbonUpload).then(() => {
         console.log('Twibbon image uploaded.');
@@ -131,7 +132,7 @@ function groupForm() {
     if (instagramUpload !== null) {
       const instagramRef = ref(
         storage,
-        `solo/instagramProof/${instagramUpload.name + v4()}`
+        `group/instagramProof/${instagramUpload.name + v4()}`
       );
       await uploadBytes(instagramRef, instagramUpload).then(() => {
         console.log('Instagram proof image uploaded.');
@@ -144,6 +145,9 @@ function groupForm() {
   }
 
   async function submitHandler(data) {
+
+setIsLoading(true);
+
     await fileHandler();
 
     const response = await fetch('/api/isthara/group', {
@@ -168,6 +172,8 @@ function groupForm() {
     setValue('email', '');
     setValue('twibProof', null);
     setValue('igProof', null);
+
+    setIsLoading(false);
 
     // router.push('/registration/ishtaraReg/welcome');
   }
@@ -331,7 +337,7 @@ function groupForm() {
           onClick={defineValue}
           _hover={{ bgColor: '0,0,0', color: ' rgb(227,218,201)' }}
         >
-          SUBMIT
+          {isLoading ? <Spinner /> : 'SUBMIT'}
         </Link>
       </Flex>
     </form>

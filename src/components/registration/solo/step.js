@@ -1,4 +1,4 @@
-import { VStack, Button, Flex, Link, Text, Box } from '@chakra-ui/react';
+import { VStack, Button, Flex, Link, Text, Box, Spinner } from '@chakra-ui/react';
 import theme from '@/theme';
 import NextLink from 'next/link';
 
@@ -33,7 +33,7 @@ function soloForm() {
   const [twibbonUpload, setTwibbonUpload] = useState(null);
   const [instagramUpload, setInstagramUpload] = useState(null);
   const formRef = useState(null);
-
+  const [isLoading, setIsLoading] = useState(false);
 
   const router = useRouter();
 
@@ -49,10 +49,6 @@ function soloForm() {
   });
 
   function defineValue() {
-    if(!formRef.current.checkValidity()){
-      formRef.current.reportValidity();
-      return;
-    }
     console.log(formValue);
 
     // handle all values to be transfered to sheet here
@@ -108,6 +104,9 @@ function soloForm() {
   }
 
   async function submitHandler(data) {
+
+    setIsLoading(true);
+
     await fileHandler();
 
     const response = await fetch('/api/isthara/solo', {
@@ -131,6 +130,8 @@ function soloForm() {
     setValue('email', '');
     setValue('twibProof', null);
     setValue('igProof', null);
+
+    setIsLoading(false);
 
     router.push('/registration/ishtaraReg/welcome')
   }
@@ -254,7 +255,7 @@ function soloForm() {
           onClick={defineValue}
           _hover={{ bgColor: '0,0,0', color: ' rgb(227,218,201)' }}
         >
-          SUBMIT
+          {isLoading ? <Spinner /> : 'SUBMIT'}
         </Link>
       </Flex>
     </form>
