@@ -1,4 +1,12 @@
-import { VStack, Button, Flex, Link, Text, Box, Spinner } from '@chakra-ui/react';
+import {
+  VStack,
+  Button,
+  Flex,
+  Link,
+  Text,
+  Box,
+  Spinner,
+} from '@chakra-ui/react';
 import theme from '@/theme';
 import NextLink from 'next/link';
 
@@ -46,6 +54,7 @@ function soloForm() {
     tel: '',
     instagram: '',
     email: '',
+    line: '',
   });
 
   function defineValue() {
@@ -60,6 +69,7 @@ function soloForm() {
     setValue('tel', formValue.tel);
     setValue('instagram', formValue.instagram);
     setValue('email', formValue.email);
+    setValue('line', formValue.line);
 
     // image upload handler is inside the fileHandler function
 
@@ -104,7 +114,6 @@ function soloForm() {
   }
 
   async function submitHandler(data) {
-
     setIsLoading(true);
 
     await fileHandler();
@@ -118,7 +127,7 @@ function soloForm() {
     });
     console.log(response.status, response.statusText);
 
-    window.location.href = "/registration/ishtaraReg/welcome";
+    window.location.href = '/registration/ishtaraReg/welcome';
 
     // Disini untuk reset semua input setelah masuk ke sheet
     setValue('name', '');
@@ -128,12 +137,13 @@ function soloForm() {
     setValue('tel', '');
     setValue('instagram', '');
     setValue('email', '');
+    setValue('line', '');
     setValue('twibProof', null);
     setValue('igProof', null);
 
     setIsLoading(false);
 
-    router.push('/registration/ishtaraReg/welcome')
+    router.push('/registration/ishtaraReg/welcome');
   }
 
   return (
@@ -196,9 +206,15 @@ function soloForm() {
           Error: Please input (+62 or 0) followed by 7-13 numbers
         </FormInputTel>
         <FormNotes>Example: +62XXXXXXXXXX</FormNotes>
-        <FormTextImportant>Instagram</FormTextImportant>
+        <FormTextImportant>Line ID</FormTextImportant>
         <FormInputImportant
           placeholder="@starlightumn"
+          name="line"
+          onChange={(event) => handleChange(event)}
+        ></FormInputImportant>
+        <FormTextImportant>Instagram</FormTextImportant>
+        <FormInputImportant
+          placeholder="@starlight.umn"
           name="instagram"
           onChange={(event) => handleChange(event)}
         >
