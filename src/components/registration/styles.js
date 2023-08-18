@@ -337,10 +337,8 @@ export const FormInputNIM = ({ children, name, ...props }) => {
     }
   };
 
-  const isInvalid = isNotNum || invalidLength;
-
   return (
-    <FormControl isInvalid={isInvalid}>
+    <FormControl isInvalid={isNotNum || invalidLength}>
       <Flex>
         <InputGroup borderColor={theme.colors.deco[400]}>
           <InputLeftAddon

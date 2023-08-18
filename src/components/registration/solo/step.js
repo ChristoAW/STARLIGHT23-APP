@@ -9,7 +9,7 @@ import {
 } from '@chakra-ui/react';
 import theme from '@/theme';
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { useRouter } from 'next/router';
 import { useForm } from 'react-hook-form';
 
@@ -91,14 +91,13 @@ function soloForm() {
     }
   }
 
-  async function submitHandler(data) {
+  async function submitHandler(e) {
     setIsLoading(true);
-    
     await fileHandler();
 
     // customize value
     formValue.nim = "'000000" + formValue.nim;
-    formValue.timestamp = new Date().toLocaleString() + ''; 
+    formValue.timestamp = new Date().toLocaleString() + '';
 
     const response = await fetch('/api/isthara/solo', {
       method: 'POST',
@@ -111,10 +110,9 @@ function soloForm() {
 
     setIsLoading(false);
 
-    if(response.status != 201) {
-      alert("Submission Unsuccessful. Submit Again");
-    }
-    else {
+    if (response.status != 201) {
+      alert('Submission Unsuccessful. Submit Again');
+    } else {
       router.push('/registration/ishtaraReg/welcome');
     }
   }

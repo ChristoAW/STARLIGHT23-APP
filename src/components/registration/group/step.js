@@ -41,12 +41,15 @@ function groupForm() {
   const [instagramUpload, setInstagramUpload] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
+  const [num, setNum] = useState(1);
+
   const router = useRouter();
 
   // this state will be used to store all required data
   const [formValue, setFormValue] = useState({
     timestamp: '',
     groupName: '',
+    number: '',
     name: '',
     univ: '',
     nim: '',
@@ -115,12 +118,14 @@ function groupForm() {
       email: '',
     };
     setInputFields([...inputFields, newField]);
+    setNum(num+1);
   };
 
   const removeFields = (index) => {
     let data = [...inputFields];
     data.splice(index, 1);
     setInputFields(data);
+    setNum(num-1);
   };
 
   async function fileHandler() {
@@ -160,6 +165,7 @@ function groupForm() {
     await fileHandler();
 
     // customize value
+    formValue.number = num;
     formValue.timestamp = new Date().toLocaleString() + ''; 
 
     const response = await fetch('/api/isthara/group', {
