@@ -4,7 +4,7 @@ import NextLink from 'next/link';
 import { useState } from 'react';
 
 import theme from '@/theme';
-import { Heado } from '@/components/styles';
+import { PageTitle } from '@/components/styles';
 
 import bg from '@/asset/images/bg/bg.jpg';
 import bgM from '@/asset/images/bg/bg-m.png';
@@ -73,6 +73,7 @@ const formIshtara = () => {
       justifyContent="center"
       alignItems="center"
       py={{ base: '10', md: '4rem' }}
+      px={{ base: '6', md: '4rem' }}
       flexDirection="column"
       overflowY="hidden"
       bgImage={{ base: bgM.src, md: bg.src }}
@@ -80,9 +81,9 @@ const formIshtara = () => {
       bgPos="center"
       bgAttachment="fixed"
     >
-      <Heado textShadow="0 0 20px #b8dafe">
+      <PageTitle textShadow="0 0 20px #b8dafe">
         Welcome, <i>s</i>tarlighter<i>s</i>!
-      </Heado>
+      </PageTitle>
       <Flex textAlign="center">
         <Text
           fontSize={{ base: '1.25rem', md: '1.5rem', xl: '1.75rem' }}

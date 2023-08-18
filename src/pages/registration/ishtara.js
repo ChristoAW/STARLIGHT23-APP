@@ -43,6 +43,7 @@ const Registration = () => {
       justifyContent="center"
       alignItems="center"
       py={{ base: '10', md: '4rem' }}
+      px={{ base: '6', md: '4rem' }}
       flexDirection="column"
       overflowY="hidden"
       bgImage={{ base: bgM.src, md: bg.src }}
@@ -54,17 +55,15 @@ const Registration = () => {
         bgColor="rgba(1, 1, 1, 0.5)"
         border="1px"
         borderColor={theme.colors.deco[400]}
-        w={{ base: '90%', md: '80%', lg: '70%' }}
         h="90%"
         color=""
         mx="auto"
-        mt="9rem"
         flexDirection="column"
         mb="4rem"
         px={{ base: '2.5rem', md: '4rem' }}
       >
         <Flex
-          mt="6rem"
+          mt={{base: "2rem", md :"6rem"}}
           flexDirection="column"
           alignContent="center"
           textAlign="center"
@@ -80,8 +79,8 @@ const Registration = () => {
             fontSize={{ base: '1rem', md: '1.15rem' }}
             spacing="1rem"
             textAlign="left"
-            mt="6rem"
-            mb="6rem"
+            mt={{base: "2rem", md :"6rem"}}
+            mb={{base: "2rem", md :"6rem"}}
           >
             <ListItem>
               Peformance <b>OFFLINE</b> berdurasi maksimal 10 menit.
@@ -141,14 +140,13 @@ const Registration = () => {
         bgColor="rgba(1, 1, 1, 0.5)"
         border="1px"
         borderColor={theme.colors.deco[400]}
-        w={{ base: '90%', md: '70%' }}
         h="90%"
         color=""
         mx="auto"
-        mt="3rem"
+        mt={{base: ".5rem", md :"3rem"}}
         flexDirection="column"
         mb="4rem"
-        px={{ base: '2.5rem', md: '4rem' }}
+        px={{ base: '.5rem', md: '4rem' }}
       >
         <Flex mt="2rem" mb="2rem" color={theme.colors.text[300]}>
           <Checkbox
@@ -165,7 +163,6 @@ const Registration = () => {
       </Flex>
       <Flex
         justifyContent={{ base: 'center', md: 'end' }}
-        mr={{ base: '0', md: '12rem' }}
       >
         <NextLink href="./ishtaraReg" passHref>
           <Link
