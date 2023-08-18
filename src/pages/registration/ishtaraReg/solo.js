@@ -12,8 +12,6 @@ import {
 } from '@chakra-ui/react';
 import NextLink from 'next/link';
 
-import { useState } from 'react';
-
 import theme from '@/theme';
 import { Heado } from '@/components/styles';
 
@@ -25,13 +23,13 @@ import bg from '@/asset/images/bg/bg.jpg';
 import bgM from '@/asset/images/bg/bg-m.png';
 
 const SoloReg = () => {
-  const [step, setStep] = useState(2);
   return (
     <Flex
       w="100%"
       pos="relative"
       justifyContent="center"
       py={{ base: '10', md: '4rem' }}
+      px={{ base: '6', md: '4rem' }}
       flexDirection="column"
       overflowY="hidden"
       bgImage={{ base: bgM.src, md: bg.src }}
@@ -39,10 +37,7 @@ const SoloReg = () => {
       bgPos="center"
       bgAttachment="fixed"
     >
-      <FormIstharaContextProvider>
-        <SoloStep step={step} />
-        {/*<NextButton {...{ step, setStep }} />*/}
-      </FormIstharaContextProvider>
+      <SoloStep />
     </Flex>
   );
 };
