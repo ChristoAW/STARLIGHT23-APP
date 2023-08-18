@@ -14,6 +14,7 @@ const CardText = ({ children, ...props }) => {
   return (
     <Text
       fontFamily="Exodus"
+      px={5}
       fontSize={{ base: '1.75rem', md: '3rem', sm: '2.25rem' }}
       color={theme.colors.deco[400]}
       cursor="default"
@@ -94,8 +95,7 @@ const IstharaRegistration = () => {
       </PageTitle>
       <Flex textAlign="center">
         <SubSubHeado color={theme.colors.text[300]}>
-          Before expressing your true colors at Starlight 2023, please fill out
-          this form!
+          Which role do you want to register for?
         </SubSubHeado>
       </Flex>
       <Flex
@@ -104,7 +104,6 @@ const IstharaRegistration = () => {
         justifyContent="center"
         alignItems="center"
         flexDirection="column"
-        py={{ base: '10', md: '4rem' }}
         overflowY="hidden"
         textAlign="center"
       >
@@ -121,7 +120,7 @@ const IstharaRegistration = () => {
           <NextLink href="" passHref>
             <Link>
               <GlowOnHoverBox>
-                <CardText>Mini Gerda</CardText>
+                <CardText>Gerda</CardText>
               </GlowOnHoverBox>
             </Link>
           </NextLink>

@@ -1,41 +1,31 @@
+import { Flex, Link, Button, Image } from '@chakra-ui/react';
 import {
   FormBox,
   FormHeading,
   FormSubHeading,
-  FormTextImportant,
-  FormText,
-  FormInputImportant,
-  FormInput,
-  FormTextareaImportant,
-  FormTextarea,
-  FormNotes,
-  FormInputFile,
-  FormInputDate,
-  FormInputNIM,
-  FormInputTel,
-  FormInputEmail,
 } from '../../../components/registration/styles';
-import { useState } from 'react';
+
+import { Buddy } from '@/components/styles';
+
 import theme from '@/theme';
 import NextLink from 'next/link';
-import {
-  LogoStarlight,
-  TitleStarlight,
-} from '@/components/pages/about-us/styling/images';
-import { Box, Divider, Flex, Link, Button } from '@chakra-ui/react';
+
 import bg from '@/asset/images/bg/bg.jpg';
 import bgM from '@/asset/images/bg/bg-m.png';
+import qr from '@/asset/images/regist/qrWaGroup.png';
 
 const welcomeUser = () => {
   return (
     <Flex
       w="100%"
       minH="100%"
+      justifyContent="center"
+      alignItems="center"
       bgImage={{ base: bgM.src, md: bg.src }}
       py={{ base: '10', md: '4rem' }}
       px={{ base: '6', md: '4rem' }}
     >
-      <FormBox>
+      <FormBox margin={0}>
         <Flex
           w="100%"
           minH="100%"
@@ -43,16 +33,13 @@ const welcomeUser = () => {
           justifyContent="center"
           alignItems="center"
           textAlign="center"
-          px={{ base: '15vw', sm: '12vw', md: '15vw' }}
-          py={{ base: '10', md: '5rem' }}
           // bgColor={theme.colors.bg[800]}
         >
-          <FormHeading>CONGRATULATIONS</FormHeading>
-          <FormSubHeading>
-            You are now officially part of Ishtara Starlight 2023
-          </FormSubHeading>
-          <TitleStarlight />
-          <NextLink href="/pages/about-us/about-us" passHref>
+          <FormHeading>Welcome aboard!</FormHeading>
+          <FormSubHeading mt={1}>Let's start our journey!</FormSubHeading>
+          <Image mb={5} width={{base: "40vw", md: "20vw"}} src={qr.src} />
+          <Buddy>QR Whatsapp Group Calon Isthara Starlight UMN 2023</Buddy>
+          <NextLink href="/" passHref>
             <Link
               mt="4rem"
               h="3rem"

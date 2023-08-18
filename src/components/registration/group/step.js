@@ -218,7 +218,7 @@ function groupForm() {
         {/*🔻File Upload disini🔻*/}
         <FormTextImportant>Proof of Uploading Twibbon</FormTextImportant>
         <Link href="twibbon" color={theme.colors.text[600]}>
-          *Twibbon Link Here*
+          Twibbon Calon Isthara Starlight UMN 2023
         </Link>
         <FormInputFile
           name="twibbon"
@@ -226,6 +226,7 @@ function groupForm() {
             setTwibbonUpload(event.target.files[0]);
           }}
         />
+        <FormNotes>Silahkan unggah bukti upload Twibbon setiap anggota kelompok yang telah disatukan</FormNotes>
         <FormTextImportant>Proof of Following @starlight.umn</FormTextImportant>
         <FormInputFile
           name="instagram"
@@ -233,6 +234,7 @@ function groupForm() {
             setInstagramUpload(event.target.files[0]);
           }}
         />
+        <FormNotes>Silahkan unggah bukti follow Instagram setiap anggota kelompok yang telah disatukan</FormNotes>
         {inputFields.length > 0 && (
           <>
             {inputFields.map((input, index) => {
