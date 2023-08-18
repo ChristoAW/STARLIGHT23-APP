@@ -57,11 +57,10 @@ function soloForm() {
     setValue('tel', formValue.tel);
     setValue('instagram', formValue.instagram);
     setValue('email', formValue.email);
-    // handle the remaining values
+
     // image upload handler is inside the fileHandler function
 
     // reset all input fields
-    //
   }
 
   const handleChange = (event) => {
@@ -112,7 +111,6 @@ function soloForm() {
       },
     });
     console.log(response.status, response.statusText);
-    // console.log(formValue);
 
     // Disini untuk reset semua input setelah masuk ke sheet
     setValue('name', '');
@@ -121,7 +119,9 @@ function soloForm() {
     setValue('nim', '');
     setValue('tel', '');
     setValue('instagram', '');
-    setValue('email');
+    setValue('email', '');
+    setValue('twibProof', null);
+    setValue('igProof', null);
 
     router.push('/registration/ishtaraReg/welcome')
   }

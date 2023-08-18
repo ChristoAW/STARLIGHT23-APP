@@ -28,7 +28,13 @@ import bgM from '@/asset/images/bg/bg-m.png';
 
 const welcomeUser = () => {
   return (
-    <Flex w="100%" minH="100%" bgImage={{ base: bgM.src, md: bg.src }}>
+    <Flex
+      w="100%"
+      minH="100%"
+      bgImage={{ base: bgM.src, md: bg.src }}
+      py={{ base: '10', md: '4rem' }}
+      px={{ base: '6', md: '4rem' }}
+    >
       <FormBox>
         <Flex
           w="100%"
