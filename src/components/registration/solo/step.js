@@ -1,7 +1,8 @@
 import { VStack, Button, Flex, Link, Text, Box } from '@chakra-ui/react';
 import theme from '@/theme';
+import NextLink from 'next/link';
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { useRouter } from 'next/router';
 import { useForm } from 'react-hook-form';
 
@@ -31,6 +32,8 @@ function soloForm() {
   const { setValue, handleSubmit } = useForm();
   const [twibbonUpload, setTwibbonUpload] = useState(null);
   const [instagramUpload, setInstagramUpload] = useState(null);
+  const formRef = useState(null);
+
 
   const router = useRouter();
 
@@ -46,6 +49,10 @@ function soloForm() {
   });
 
   function defineValue() {
+    if(!formRef.current.checkValidity()){
+      formRef.current.reportValidity();
+      return;
+    }
     console.log(formValue);
 
     // handle all values to be transfered to sheet here
@@ -111,6 +118,8 @@ function soloForm() {
       },
     });
     console.log(response.status, response.statusText);
+
+    window.location.href = "/registration/ishtaraReg/welcome";
 
     // Disini untuk reset semua input setelah masuk ke sheet
     setValue('name', '');
