@@ -22,8 +22,14 @@ import {
 
 import { useState } from 'react';
 
+import { storage } from '@/pages/api/isthara/firebase';
+import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
+import { v4 } from 'uuid';
+
 function soloForm() {
   const { setValue, handleSubmit } = useForm();
+  const [twibbonUpload, setTwibbonUpload] = useState(null);
+  const [instagramUpload, setInstagramUpload] = useState(null);
 
   // this state will be used to store all required data except for those that has its own state
   const [formValue, setFormValue] = useState({
@@ -69,6 +75,29 @@ function soloForm() {
       },
     });
     console.log(response.status, response.statusText);
+    console.log(formValue);
+
+    // Upload the files to Firebase Storage
+    if (twibbonUpload !== null) {
+      const twibbonRef = ref(storage, `solo/twibbon/${twibbonUpload.name + v4()}`);
+      await uploadBytes(twibbonRef, twibbonUpload).then(() => {
+        console.log("Twibbon image uploaded.");
+      });
+      //link twibbon url
+      const twibbonDownloadURL = await getDownloadURL(twibbonRef);
+      console.log("Twibbon Image:", twibbonDownloadURL);
+    }
+
+    if (instagramUpload !== null) {
+      const instagramRef = ref(storage, `solo/instagramProof/${instagramUpload.name + v4()}`);
+      await uploadBytes(instagramRef, instagramUpload).then(() => {
+        console.log("Instagram proof image uploaded.");
+      });
+      //link proof instagram url
+      const instagramDownloadURL = await getDownloadURL(instagramRef);
+      console.log("Instagram Image:", instagramDownloadURL)
+    }
+    
     // Disini untuk reset semua input setelah masuk ke sheet
     setValue('name', '');
     setValue('stageName', '');
@@ -145,19 +174,13 @@ function soloForm() {
           <FormTextImportant>Email</FormTextImportant>
           <FormInputEmail placeholder="starlight@umn.ac.id" name="email" onChange={(event) => handleChange(event)}/>
                     {/*🔻File Upload disini🔻*/}
-
-          {/*<FormInputImportant
-            placeholder="@starlightumn"
-            name="instagram"
-            onChange={(event) => handleChange(event)}
-          >Error: Field cannot be empty</FormInputImportant>
           <FormTextImportant>Proof of Uploading Twibbon</FormTextImportant>
           <Link href="twibbon" color={theme.colors.text[600]}>*Twibbon Link Here*</Link>
           
           
-          <FormInputFile name="twibbon"></FormInputFile>
+          <FormInputFile name="twibbon" onChange={(event) => {setTwibbonUpload(event.target.files[0])}}/>
           <FormTextImportant>Proof of Following @starlight.umn</FormTextImportant>
-  <FormInputFile name="instagram_follow" />*/}
+  <FormInputFile name="instagram" onChange={(event) => {setInstagramUpload(event.target.files[0])}}/> 
 
           {/*<FormTextImportant>Description</FormTextImportant>
           <FormTextareaImportant
