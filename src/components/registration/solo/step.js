@@ -127,8 +127,6 @@ function soloForm() {
     });
     console.log(response.status, response.statusText);
 
-    window.location.href = '/registration/ishtaraReg/welcome';
-
     // Disini untuk reset semua input setelah masuk ke sheet
     setValue('name', '');
     setValue('stageName', '');

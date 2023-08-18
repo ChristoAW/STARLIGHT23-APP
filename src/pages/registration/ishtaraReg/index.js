@@ -4,7 +4,7 @@ import NextLink from 'next/link';
 import { useState } from 'react';
 
 import theme from '@/theme';
-import { PageTitle } from '@/components/styles';
+import { PageTitle, SubSubHeado } from '@/components/styles';
 
 import bg from '@/asset/images/bg/bg.jpg';
 import bgM from '@/asset/images/bg/bg-m.png';
@@ -82,18 +82,10 @@ const formIshtara = () => {
       bgAttachment="fixed"
     >
       <PageTitle textShadow="0 0 20px #b8dafe">
-        Welcome, <i>s</i>tarlighter<i>s</i>!
+        Ahoy, <i>s</i>tarlighter<i>s</i>!
       </PageTitle>
       <Flex textAlign="center">
-        <Text
-          fontSize={{ base: '1.25rem', md: '1.5rem', xl: '1.75rem' }}
-          mt="2rem"
-          color={theme.colors.text[300]}
-          fontFamily="Montserrat"
-        >
-          Before expressing your true colors at Starlight 2023, please fill out
-          this form!
-        </Text>
+        <SubSubHeado>Are you ready to embark on a new journey?</SubSubHeado>
       </Flex>
       <Flex
         w="100%"
@@ -101,7 +93,6 @@ const formIshtara = () => {
         justifyContent="center"
         alignItems="center"
         flexDirection="column"
-        py={{ base: '10', md: '4rem' }}
         overflowY="hidden"
         textAlign="center"
       >
