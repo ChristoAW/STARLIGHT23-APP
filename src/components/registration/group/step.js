@@ -174,6 +174,7 @@ function groupForm() {
 
   return (
     <form onSubmit={handleSubmit(submitHandler)}>
+
       <FormBox mt={0}>
         <FormHeading>
           Pendaftaran I<i>s</i>thara <i>S</i>tarlight 2023
@@ -297,38 +298,12 @@ function groupForm() {
                         Remove
                       </Button>
                     ) : null}
+                    </FormBox>
                   </div>
                 );
               })}
             </>
           )}
-          <br />
-          {/* Pemisah */}
-          {/* <Divider
-            mb="2rem"
-            color={theme.colors.deco[400]}
-            bgColor={theme.colors.bg[700]}
-          /> */}
-          {/*🔻File Upload disini🔻*/}
-
-          {/* <FormInputImportant
-            placeholder="@starlightumn"
-            name="instagram"
-            onChange={(event) => handleChange(event)}
-          >
-            Error: Field cannot be empty
-          </FormInputImportant>
-          <FormTextImportant>Proof of Uploading Twibbon</FormTextImportant>
-          <Link href="twibbon" color={theme.colors.text[600]}>
-            *Twibbon Link Here*
-          </Link> */}
-
-          {/* <FormInputFile name="twibbon"></FormInputFile>
-          <FormTextImportant>
-            Proof of Following @starlight.umn
-          </FormTextImportant>
-          <FormInputFile name="instagram_follow" /> */}
-
           <Button
             h="3rem"
             w="9rem"
@@ -343,22 +318,6 @@ function groupForm() {
           >
             Add Member
           </Button>
-          <Flex justify="flex-end" maxW="1080px" w="100%" mx="auto" mb="2em">
-              <Link
-                h="3rem"
-                w="9rem"
-                color={theme.colors.deco[400]}
-                bgColor={theme.colors.bg[700]}
-                border="1px"
-                as={Button}
-                type="submit"
-                onClick={defineValue}
-                _hover={{ bgColor: '0,0,0', color: ' rgb(227,218,201)' }}
-              >
-                SUBMIT
-              </Link>
-          </Flex>
-        </form>
       </FormBox>
       <Flex justify="flex-end" maxW="1080px" w="100%" mx="auto" mb="2em">
         <Link
