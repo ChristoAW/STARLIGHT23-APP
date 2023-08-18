@@ -36,7 +36,7 @@ import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { v4 } from 'uuid';
 
 function groupForm() {
-  const { setValue, handleSubmit } = useForm();
+  const { handleSubmit } = useForm();
   const [twibbonUpload, setTwibbonUpload] = useState(null);
   const [instagramUpload, setInstagramUpload] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -45,6 +45,7 @@ function groupForm() {
 
   // this state will be used to store all required data
   const [formValue, setFormValue] = useState({
+    timestamp: '',
     groupName: '',
     name: '',
     univ: '',
@@ -52,20 +53,24 @@ function groupForm() {
     tel: '',
     instagram: '',
     email: '',
+    line: '',
+    twibProof: '',
+    igProof: '',
   });
 
   // ini untuk data member yang recurring aja
   const [inputFields, setInputFields] = useState([
-    { name: '', univ: '', nim: '', tel: '', instagram: '', email: '' },
+    { name: '', univ: '', nim: '', line: '', tel: '', instagram: '', email: '' },
   ]);
 
   function defineValue() {
-    console.log(inputFields);
+    // console.log(inputFields);
 
     // Enter other recurring field here
     formValue.name = inputFields[0].name;
     formValue.univ = inputFields[0].univ;
-    formValue.nim = inputFields[0].nim;
+    formValue.nim = "'000000" + inputFields[0].nim;
+    formValue.line = inputFields[0].line;
     formValue.tel = inputFields[0].tel;
     formValue.instagram = inputFields[0].instagram;
     formValue.email = inputFields[0].email;
@@ -75,27 +80,16 @@ function groupForm() {
       // uhmm ini kenapa gabisa new line :'))
 
       // nanti disini bisa masukin variable lain biar sekalian
-      formValue.name = formValue.name + '   ' + input.name;
-      formValue.univ = formValue.univ + '   ' + input.univ;
-      formValue.nim = formValue.nim + '   ' + input.nim;
-      formValue.tel = formValue.tel + '   ' + input.tel;
-      formValue.instagram = formValue.instagram + '   ' + input.instagram;
-      formValue.email = formValue.email + '   ' + input.email;
+      formValue.name = formValue.name + '  *  ' + input.name;
+      formValue.univ = formValue.univ + '  *  ' + input.univ;
+      formValue.nim = formValue.nim + '  *  ' + "000000" + input.nim;
+      formValue.line = formValue.line + '  *  ' + input.line;
+      formValue.tel = formValue.tel + '  *  ' + input.tel;
+      formValue.instagram = formValue.instagram + '  *  ' + input.instagram;
+      formValue.email = formValue.email + '  *  ' + input.email;
     });
 
-    console.log(formValue);
-
-    // handle all values to be transfered to sheet here
-    setValue('timestamp', new Date().toLocaleString() + '');
-    setValue('groupName', formValue.groupName);
-    setValue('name', formValue.name);
-    setValue('nim', "'000000" + formValue.nim);
-    setValue('univ', formValue.univ);
-    setValue('tel', formValue.tel);
-    setValue('instagram', formValue.instagram);
-    setValue('email', formValue.email);
-
-    // reset all input fields
+    // console.log(formValue);
   }
 
   const handleChange = (event) => {
@@ -116,6 +110,7 @@ function groupForm() {
       univ: '',
       nim: '',
       tel: '',
+      line: '',
       instagram: '',
       email: '',
     };
@@ -136,12 +131,12 @@ function groupForm() {
         `group/twibbon/${twibbonUpload.name + v4()}`
       );
       await uploadBytes(twibbonRef, twibbonUpload).then(() => {
-        console.log('Twibbon image uploaded.');
+        // console.log('Twibbon image uploaded.');
       });
       //link twibbon url
       const twibbonDownloadURL = await getDownloadURL(twibbonRef);
-      console.log('Twibbon Image:', twibbonDownloadURL);
-      setValue('twibProof', twibbonDownloadURL);
+      // console.log('Twibbon Image:', twibbonDownloadURL);
+      formValue.twibProof = twibbonDownloadURL;
     }
 
     if (instagramUpload !== null) {
@@ -150,12 +145,12 @@ function groupForm() {
         `group/instagramProof/${instagramUpload.name + v4()}`
       );
       await uploadBytes(instagramRef, instagramUpload).then(() => {
-        console.log('Instagram proof image uploaded.');
+        // console.log('Instagram proof image uploaded.');
       });
       //link proof instagram url
       const instagramDownloadURL = await getDownloadURL(instagramRef);
-      console.log('Instagram Image:', instagramDownloadURL);
-      setValue('igProof', instagramDownloadURL);
+      // console.log('Instagram Image:', instagramDownloadURL);
+      formValue.igProof = instagramDownloadURL;
     }
   }
 
@@ -164,32 +159,26 @@ function groupForm() {
 
     await fileHandler();
 
+    // customize value
+    formValue.timestamp = new Date().toLocaleString() + ''; 
+
     const response = await fetch('/api/isthara/group', {
       method: 'POST',
-      body: JSON.stringify(data),
+      body: JSON.stringify(formValue),
       headers: {
         'Content-Type': 'application/json',
       },
     });
-    console.log(response.status, response.statusText);
-
-    //biar ganti halaman
-    window.location.href = '/registration/ishtaraReg/welcome';
-
-    // Disini untuk reset semua input setelah masuk ke sheet
-    setValue('groupName', '');
-    setValue('name', '');
-    setValue('univ', '');
-    setValue('nim', '');
-    setValue('tel', '');
-    setValue('instagram', '');
-    setValue('email', '');
-    setValue('twibProof', null);
-    setValue('igProof', null);
+    // console.log(response.status, response.statusText);
 
     setIsLoading(false);
 
-    // router.push('/registration/ishtaraReg/welcome');
+    if(response.status != 201) {
+      alert("Submission Unsuccessful. Submit Again");
+    }
+    else {
+      router.push('/registration/ishtaraReg/welcome');
+    }
   }
 
   return (

@@ -9,7 +9,7 @@ import {
 } from '@chakra-ui/react';
 import theme from '@/theme';
 
-import { useState, useRef, useEffect } from 'react';
+import { useState } from 'react';
 import { useRouter } from 'next/router';
 import { useForm } from 'react-hook-form';
 
@@ -32,7 +32,7 @@ import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { v4 } from 'uuid';
 
 function soloForm() {
-  const { setValue, handleSubmit } = useForm();
+  const { handleSubmit } = useForm();
   const [twibbonUpload, setTwibbonUpload] = useState(null);
   const [instagramUpload, setInstagramUpload] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -41,6 +41,7 @@ function soloForm() {
 
   // this state will be used to store all required data except for those that has its own state
   const [formValue, setFormValue] = useState({
+    timestamp: '',
     stageName: '',
     name: '',
     univ: '',
@@ -50,29 +51,8 @@ function soloForm() {
     email: '',
     line: '',
     twibProof: '',
-    igProof: ''
+    igProof: '',
   });
-
-  function defineValue() {
-    // console.log(formValue);
-
-    // handle all values to be transfered to sheet here
-    setValue('timestamp', new Date().toLocaleString() + '');
-    setValue('stageName', formValue.stageName);
-    setValue('name', formValue.name);
-    setValue('nim', "'000000" + formValue.nim);
-    setValue('univ', formValue.univ);
-    setValue('tel', formValue.tel);
-    setValue('instagram', formValue.instagram);
-    setValue('email', formValue.email);
-    setValue('line', formValue.line);
-    setValue('twibProof', formValue.twibProof);
-    setValue('igProof', formValue.igProof);
-
-    // image upload handler is inside the fileHandler function
-
-    // reset all input fields
-  }
 
   const handleChange = (event) => {
     let data = formValue;
@@ -88,13 +68,12 @@ function soloForm() {
         `solo/twibbon/${twibbonUpload.name + v4()}`
       );
       await uploadBytes(twibbonRef, twibbonUpload).then(() => {
-        console.log('Twibbon image uploaded.');
+        // console.log('Twibbon image uploaded.');
       });
       //link twibbon url
       const twibbonDownloadURL = await getDownloadURL(twibbonRef);
-      console.log('Twibbon Image:', twibbonDownloadURL);
+      // console.log('Twibbon Image:', twibbonDownloadURL);
       formValue.twibProof = twibbonDownloadURL;
-      // setValue('twibProof', twibbonDownloadURL);
     }
 
     if (instagramUpload !== null) {
@@ -103,15 +82,12 @@ function soloForm() {
         `solo/instagramProof/${instagramUpload.name + v4()}`
       );
       await uploadBytes(instagramRef, instagramUpload).then(() => {
-        console.log('Instagram proof image uploaded.');
+        // console.log('Instagram proof image uploaded.');
       });
       //link proof instagram url
       const instagramDownloadURL = await getDownloadURL(instagramRef);
-      console.log('Instagram Image:', instagramDownloadURL);
+      // console.log('Instagram Image:', instagramDownloadURL);
       formValue.igProof = instagramDownloadURL;
-      // setValue('igProof', instagramDownloadURL);
-      
-      console.log(formValue) // yg disini uda bener masuknya linknya
     }
   }
 
@@ -120,7 +96,9 @@ function soloForm() {
     
     await fileHandler();
 
-    console.log(data); // yang disini masuknya yang sebelomnya
+    // customize value
+    formValue.nim = "'000000" + formValue.nim;
+    formValue.timestamp = new Date().toLocaleString() + ''; 
 
     const response = await fetch('/api/isthara/solo', {
       method: 'POST',
@@ -129,23 +107,16 @@ function soloForm() {
         'Content-Type': 'application/json',
       },
     });
-    console.log(response.status, response.statusText);
-
-    // Disini untuk reset semua input setelah masuk ke sheet
-    setValue('name', '');
-    setValue('stageName', '');
-    setValue('univ', '');
-    setValue('nim', '');
-    setValue('tel', '');
-    setValue('instagram', '');
-    setValue('email', '');
-    setValue('line', '');
-    // setValue('twibProof', '');
-    // setValue('igProof', '');
+    // console.log(response.status, response.statusText);
 
     setIsLoading(false);
 
-    // router.push('/registration/ishtaraReg/welcome');
+    if(response.status != 201) {
+      alert("Submission Unsuccessful. Submit Again");
+    }
+    else {
+      router.push('/registration/ishtaraReg/welcome');
+    }
   }
 
   return (
@@ -247,19 +218,6 @@ function soloForm() {
             setInstagramUpload(event.target.files[0]);
           }}
         />
-
-        {/*<FormTextImportant>Description</FormTextImportant>
-          <FormTextareaImportant
-            placeholder="Performance description"
-            name="desc"
-            onChange={(event) => {
-              setDesc(event.target.value);
-            }}
-            value={desc}
-          >
-            Error: Field cannot be empty
-          </FormTextareaImportant>
-          <FormNotes>Starlight will provide...</FormNotes> */}
       </FormBox>
       <Flex justify="flex-end" maxW="1080px" w="100%" mx="auto" mb="2em">
         <Link
@@ -270,7 +228,6 @@ function soloForm() {
           border="1px"
           as={Button}
           type="submit"
-          onClick={defineValue}
           _hover={{ bgColor: '0,0,0', color: ' rgb(227,218,201)' }}
         >
           {isLoading ? <Spinner /> : 'SUBMIT'}
