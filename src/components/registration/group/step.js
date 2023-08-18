@@ -9,6 +9,7 @@ import {
 } from '@chakra-ui/react';
 import { useForm } from 'react-hook-form';
 import theme from '@/theme';
+import NextLink from 'next/link';
 
 import {
   FormBox,
@@ -168,7 +169,7 @@ function soloForm() {
                       placeholder="Universitas Multimedia Nusantara"
                       name="univ"
                       onChange={(event) => handleDynamicChange(index, event)}
-                      value={input.desc}
+                      value={input.univ}
                     />
                     <FormText>Nomor Induk Mahasiswa (NIM)</FormText>
                     <FormInputNIM
@@ -251,19 +252,21 @@ function soloForm() {
             Add Member
           </Button>
           <Flex justify="flex-end" maxW="1080px" w="100%" mx="auto" mb="2em">
-            <Link
-              h="3rem"
-              w="9rem"
-              color={theme.colors.deco[400]}
-              bgColor={theme.colors.bg[700]}
-              border="1px"
-              as={Button}
-              type="submit"
-              onClick={defineValue}
-              _hover={{ bgColor: '0,0,0', color: ' rgb(227,218,201)' }}
-            >
-              SUBMIT
-            </Link>
+            <NextLink href="/registration/ishtaraReg/welcome" passHref>
+              <Link
+                h="3rem"
+                w="9rem"
+                color={theme.colors.deco[400]}
+                bgColor={theme.colors.bg[700]}
+                border="1px"
+                as={Button}
+                type="submit"
+                onClick={defineValue}
+                _hover={{ bgColor: '0,0,0', color: ' rgb(227,218,201)' }}
+              >
+                SUBMIT
+              </Link>
+            </NextLink>
           </Flex>
         </form>
       </FormBox>

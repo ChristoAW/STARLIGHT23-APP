@@ -39,11 +39,11 @@ function soloForm() {
     nim: '',
     tel: '',
     instagram: '',
-    email:'',
+    email: '',
   });
 
   function defineValue() {
-     console.log(formValue);
+    console.log(formValue);
 
     // handle all values to be transfered to sheet here
     setValue('timestamp', new Date().toLocaleString() + '');
@@ -53,7 +53,7 @@ function soloForm() {
     setValue('univ', formValue.univ);
     setValue('tel', formValue.tel);
     setValue('instagram', formValue.instagram);
-    setValue('email', formValue.email)
+    setValue('email', formValue.email);
     // handle the remaining values
 
     // reset all input fields
@@ -79,25 +79,31 @@ function soloForm() {
 
     // Upload the files to Firebase Storage
     if (twibbonUpload !== null) {
-      const twibbonRef = ref(storage, `solo/twibbon/${twibbonUpload.name + v4()}`);
+      const twibbonRef = ref(
+        storage,
+        `solo/twibbon/${twibbonUpload.name + v4()}`
+      );
       await uploadBytes(twibbonRef, twibbonUpload).then(() => {
-        console.log("Twibbon image uploaded.");
+        console.log('Twibbon image uploaded.');
       });
       //link twibbon url
       const twibbonDownloadURL = await getDownloadURL(twibbonRef);
-      console.log("Twibbon Image:", twibbonDownloadURL);
+      console.log('Twibbon Image:', twibbonDownloadURL);
     }
 
     if (instagramUpload !== null) {
-      const instagramRef = ref(storage, `solo/instagramProof/${instagramUpload.name + v4()}`);
+      const instagramRef = ref(
+        storage,
+        `solo/instagramProof/${instagramUpload.name + v4()}`
+      );
       await uploadBytes(instagramRef, instagramUpload).then(() => {
-        console.log("Instagram proof image uploaded.");
+        console.log('Instagram proof image uploaded.');
       });
       //link proof instagram url
       const instagramDownloadURL = await getDownloadURL(instagramRef);
-      console.log("Instagram Image:", instagramDownloadURL)
+      console.log('Instagram Image:', instagramDownloadURL);
     }
-    
+
     // Disini untuk reset semua input setelah masuk ke sheet
     setValue('name', '');
     setValue('stageName', '');
@@ -105,7 +111,7 @@ function soloForm() {
     setValue('nim', '');
     setValue('tel', '');
     setValue('instagram', '');
-    setValue('email')
+    setValue('email');
   }
 
   return (
@@ -152,7 +158,13 @@ function soloForm() {
             Error: Field cannot be empty
           </FormInputImportant>
           <FormText>Nomor Induk Mahasiswa (NIM)</FormText>
-          <FormInputNIM name="nim" onChange={(event) => handleChange(event)} placeholder="12345">Please Enter Only Numbers</FormInputNIM>
+          <FormInputNIM
+            name="nim"
+            onChange={(event) => handleChange(event)}
+            placeholder="12345"
+          >
+            Please Enter Only Numbers
+          </FormInputNIM>
           <FormNotes>For UMN Students Only</FormNotes>
           <FormTextImportant>Phone Number (Whatsapp)</FormTextImportant>
           <FormInputTel
@@ -172,15 +184,32 @@ function soloForm() {
             Error: Field cannot be empty
           </FormInputImportant>
           <FormTextImportant>Email</FormTextImportant>
-          <FormInputEmail placeholder="starlight@umn.ac.id" name="email" onChange={(event) => handleChange(event)}/>
-                    {/*🔻File Upload disini🔻*/}
+          <FormInputEmail
+            placeholder="starlight@umn.ac.id"
+            name="email"
+            onChange={(event) => handleChange(event)}
+          />
+          {/*🔻File Upload disini🔻*/}
           <FormTextImportant>Proof of Uploading Twibbon</FormTextImportant>
-          <Link href="twibbon" color={theme.colors.text[600]}>*Twibbon Link Here*</Link>
-          
-          
-          <FormInputFile name="twibbon" onChange={(event) => {setTwibbonUpload(event.target.files[0])}}/>
-          <FormTextImportant>Proof of Following @starlight.umn</FormTextImportant>
-  <FormInputFile name="instagram" onChange={(event) => {setInstagramUpload(event.target.files[0])}}/> 
+          <Link href="twibbon" color={theme.colors.text[600]}>
+            *Twibbon Link Here*
+          </Link>
+
+          <FormInputFile
+            name="twibbon"
+            onChange={(event) => {
+              setTwibbonUpload(event.target.files[0]);
+            }}
+          />
+          <FormTextImportant>
+            Proof of Following @starlight.umn
+          </FormTextImportant>
+          <FormInputFile
+            name="instagram"
+            onChange={(event) => {
+              setInstagramUpload(event.target.files[0]);
+            }}
+          />
 
           {/*<FormTextImportant>Description</FormTextImportant>
           <FormTextareaImportant
@@ -197,19 +226,21 @@ function soloForm() {
 
           <br />
           <Flex justify="flex-end" maxW="1080px" w="100%" mx="auto" mb="2em">
-            <Link
-              h="3rem"
-              w="9rem"
-              color={theme.colors.deco[400]}
-              bgColor={theme.colors.bg[700]}
-              border="1px"
-              as={Button}
-              type="submit"
-              onClick={defineValue}
-              _hover={{ bgColor: '0,0,0', color: ' rgb(227,218,201)' }}
-            >
-              SUBMIT
-            </Link>
+            <NextLink href="/registration/ishtaraReg/welcome" passHref>
+              <Link
+                h="3rem"
+                w="9rem"
+                color={theme.colors.deco[400]}
+                bgColor={theme.colors.bg[700]}
+                border="1px"
+                as={Button}
+                type="submit"
+                onClick={defineValue}
+                _hover={{ bgColor: '0,0,0', color: ' rgb(227,218,201)' }}
+              >
+                SUBMIT
+              </Link>
+            </NextLink>
           </Flex>
         </form>
       </FormBox>
