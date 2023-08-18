@@ -96,7 +96,9 @@ function soloForm() {
     await fileHandler();
 
     // customize value
-    formValue.nim = "'000000" + formValue.nim;
+    if (formValue.nim != '') {
+      formValue.nim = "'000000" + formValue.nim;
+    }
     formValue.timestamp = new Date().toLocaleString() + '';
 
     const response = await fetch('/api/isthara/solo', {
@@ -224,7 +226,9 @@ function soloForm() {
           color={theme.colors.deco[400]}
           bgColor={theme.colors.bg[700]}
           border="1px"
+          disable
           as={Button}
+          isDisabled={isLoading}
           type="submit"
           _hover={{ bgColor: '0,0,0', color: ' rgb(227,218,201)' }}
         >

@@ -4,7 +4,6 @@ import {
   Link,
   Text,
   Box,
-  Divider,
   Spinner,
 } from '@chakra-ui/react';
 import theme from '@/theme';
@@ -20,12 +19,8 @@ import {
   FormTextImportant,
   FormText,
   FormInputImportant,
-  FormInput,
-  FormTextareaImportant,
-  FormTextarea,
   FormNotes,
   FormInputFile,
-  FormInputDate,
   FormInputNIM,
   FormInputTel,
   FormInputEmail,
@@ -63,7 +58,15 @@ function groupForm() {
 
   // ini untuk data member yang recurring aja
   const [inputFields, setInputFields] = useState([
-    { name: '', univ: '', nim: '', line: '', tel: '', instagram: '', email: '' },
+    {
+      name: '',
+      univ: '',
+      nim: '',
+      line: '',
+      tel: '',
+      instagram: '',
+      email: '',
+    },
   ]);
 
   function defineValue() {
@@ -72,7 +75,9 @@ function groupForm() {
     // Enter other recurring field here
     formValue.name = inputFields[0].name;
     formValue.univ = inputFields[0].univ;
-    formValue.nim = "'000000" + inputFields[0].nim;
+    if (formValue.nim != '') {
+      formValue.nim = "'000000" + inputFields[0].nim;
+    }
     formValue.line = inputFields[0].line;
     formValue.tel = inputFields[0].tel;
     formValue.instagram = inputFields[0].instagram;
@@ -85,14 +90,19 @@ function groupForm() {
       // nanti disini bisa masukin variable lain biar sekalian
       formValue.name = formValue.name + '  *  ' + input.name;
       formValue.univ = formValue.univ + '  *  ' + input.univ;
-      formValue.nim = formValue.nim + '  *  ' + "000000" + input.nim;
+      if (input.nim != '') {
+        formValue.nim = formValue.nim + '  *  ' + '000000' + input.nim;
+      }
+      else {
+        formValue.nim = formValue.nim + '  *  ';
+      }
       formValue.line = formValue.line + '  *  ' + input.line;
       formValue.tel = formValue.tel + '  *  ' + input.tel;
       formValue.instagram = formValue.instagram + '  *  ' + input.instagram;
       formValue.email = formValue.email + '  *  ' + input.email;
     });
 
-    // console.log(formValue);
+    console.log(formValue);
   }
 
   const handleChange = (event) => {
@@ -118,14 +128,14 @@ function groupForm() {
       email: '',
     };
     setInputFields([...inputFields, newField]);
-    setNum(num+1);
+    setNum(num + 1);
   };
 
   const removeFields = (index) => {
     let data = [...inputFields];
     data.splice(index, 1);
     setInputFields(data);
-    setNum(num-1);
+    setNum(num - 1);
   };
 
   async function fileHandler() {
@@ -160,31 +170,30 @@ function groupForm() {
   }
 
   async function submitHandler(data) {
-    setIsLoading(true);
+    // setIsLoading(true);
 
-    await fileHandler();
+    // await fileHandler();
 
-    // customize value
-    formValue.number = num;
-    formValue.timestamp = new Date().toLocaleString() + ''; 
+    // // customize value
+    // formValue.number = num;
+    // formValue.timestamp = new Date().toLocaleString() + '';
 
-    const response = await fetch('/api/isthara/group', {
-      method: 'POST',
-      body: JSON.stringify(formValue),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
-    // console.log(response.status, response.statusText);
+    // const response = await fetch('/api/isthara/group', {
+    //   method: 'POST',
+    //   body: JSON.stringify(formValue),
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //   },
+    // });
+    // // console.log(response.status, response.statusText);
 
-    setIsLoading(false);
+    // setIsLoading(false);
 
-    if(response.status != 201) {
-      alert("Submission Unsuccessful. Submit Again");
-    }
-    else {
-      router.push('/registration/ishtaraReg/welcome');
-    }
+    // if (response.status != 201) {
+    //   alert('Submission Unsuccessful. Submit Again');
+    // } else {
+    //   router.push('/registration/ishtaraReg/welcome');
+    // }
   }
 
   return (
@@ -221,7 +230,10 @@ function groupForm() {
             setTwibbonUpload(event.target.files[0]);
           }}
         />
-        <FormNotes>Silahkan unggah bukti upload Twibbon setiap anggota kelompok yang telah disatukan</FormNotes>
+        <FormNotes>
+          Silahkan unggah bukti upload Twibbon setiap anggota kelompok yang
+          telah disatukan
+        </FormNotes>
         <FormTextImportant>Proof of Following @starlight.umn</FormTextImportant>
         <FormInputFile
           name="instagram"
@@ -229,7 +241,10 @@ function groupForm() {
             setInstagramUpload(event.target.files[0]);
           }}
         />
-        <FormNotes>Silahkan unggah bukti follow Instagram setiap anggota kelompok yang telah disatukan</FormNotes>
+        <FormNotes>
+          Silahkan unggah bukti follow Instagram setiap anggota kelompok yang
+          telah disatukan
+        </FormNotes>
         {inputFields.length > 0 && (
           <>
             {inputFields.map((input, index) => {
@@ -294,7 +309,7 @@ function groupForm() {
                     </FormTextImportant>
                     <FormInputImportant
                       placeholder="@starlightumn"
-                      name="instagram"
+                      name="line"
                       onChange={(event) => handleDynamicChange(index, event)}
                     >
                       Error: Field cannot be empty
@@ -355,6 +370,7 @@ function groupForm() {
           as={Button}
           type="submit"
           onClick={defineValue}
+          isDisabled={isLoading}
           _hover={{ bgColor: '0,0,0', color: ' rgb(227,218,201)' }}
         >
           {isLoading ? <Spinner /> : 'SUBMIT'}
