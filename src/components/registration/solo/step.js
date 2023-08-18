@@ -163,7 +163,7 @@ function soloForm() {
         </Box>
         <FormTextImportant>Full Name</FormTextImportant>
         <FormInputImportant
-          placeholder="Chintia Libby"
+          placeholder="Your Name"
           name="name"
           onChange={(event) => handleChange(event)}
         >
@@ -192,7 +192,7 @@ function soloForm() {
           onChange={(event) => handleChange(event)}
           placeholder="12345"
         >
-          Please Enter Only Numbers
+          Invalid NIM
         </FormInputNIM>
         <FormNotes>For UMN Students Only</FormNotes>
         <FormTextImportant>Phone Number (Whatsapp)</FormTextImportant>

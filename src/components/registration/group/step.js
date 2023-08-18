@@ -272,7 +272,7 @@ function groupForm() {
                       onChange={(event) => handleDynamicChange(index, event)}
                       placeholder="12345"
                     >
-                      Please Enter Only Numbers
+                      Invalid NIM
                     </FormInputNIM>
                     <FormTextImportant>
                       {index != 0 ? 'Email' : 'Representative Email'}

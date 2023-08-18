@@ -318,6 +318,7 @@ export const FormInputDate = ({ name, ...props }) => {
 
 export const FormInputNIM = ({ children, name, ...props }) => {
   const [isNotNum, setIsNotNum] = useState(false);
+  const [invalidLength, setInvalidLength] = useState(false);
 
   const handleChange = (event) => {
     const input = event.target.value;
@@ -328,9 +329,15 @@ export const FormInputNIM = ({ children, name, ...props }) => {
     } else {
       setIsNotNum(false); // Reset the error state when the input is numeric
     }
+
+    if (input.length != 5) {
+      setInvalidLength(true);
+    } else {
+      setInvalidLength(false);
+    }
   };
 
-  const isInvalid = isNotNum;
+  const isInvalid = isNotNum || invalidLength;
 
   return (
     <FormControl isInvalid={isInvalid}>
