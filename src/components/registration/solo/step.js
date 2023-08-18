@@ -110,12 +110,12 @@ function soloForm() {
     });
     // console.log(response.status, response.statusText);
 
-    setIsLoading(false);
-
     if (response.status != 201) {
+      setIsLoading(false);
       alert('Submission Unsuccessful. Submit Again');
     } else {
       router.push('/registration/ishtaraReg/welcome');
+      setIsLoading(false);
     }
   }
 
