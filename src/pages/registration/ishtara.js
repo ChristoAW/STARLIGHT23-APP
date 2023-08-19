@@ -10,10 +10,10 @@ import {
   Button,
 } from '@chakra-ui/react';
 import NextLink from 'next/link';
+import theme from '@/theme';
 
 import { useState } from 'react';
-
-import theme from '@/theme';
+import { FormNotes } from '@/components/registration/styles.js';
 
 import bg from '@/asset/images/bg/bg.jpg';
 import bgM from '@/asset/images/bg/bg-m.png';
@@ -87,7 +87,7 @@ const Registration = () => {
             </ListItem>
             <ListItem>Kreativitas dan orisinalitas diutamakan.</ListItem>
             <ListItem>
-              Kebutuhan properti performance menggunakan uan pribadi kecuali
+              Kebutuhan properti performance menggunakan uang pribadi kecuali
               keperluan untuk pengeras suara, kursi, atau meja.
             </ListItem>
             <ListItem>
@@ -118,14 +118,12 @@ const Registration = () => {
             <ListItem>
               Isthara yang berkebutuhan khusus dapat menghubungi panitia via DM
               instagram atau menghubungi contact person yang telah disediakan.
-              <UnorderedList listStyleType="none" spacing="1rem" mt="1rem">
-                <ListItem>
-                  - Isthara yang memiliki kebutuhan khusus secara fisik,
-                  intelektual, atau emosional disarankan membawa pendamping.
-                  Apabila Isthara tidak memiliki pendamping akan ditemani oleh
-                  LO dan petugas keamanan.
-                </ListItem>
-              </UnorderedList>
+              <FormNotes color={theme.colors.text[500]}>
+                Isthara yang memiliki kebutuhan khusus secara fisik,
+                intelektual, atau emosional disarankan membawa pendamping.
+                Apabila Ishthara tidak memiliki pendamping akan ditemani oleh LO
+                dan petugas keamanan.
+              </FormNotes>
             </ListItem>
             <ListItem>
               Jika Isthara melakukan tindakan yang mengganggu keberlangsungan
@@ -154,7 +152,7 @@ const Registration = () => {
       >
         <Flex mt="2rem" mb="2rem" color={theme.colors.text[300]}>
           <Checkbox
-            px="2rem"
+            px={{base: "2rem", md: "0"}}
             size="lg"
             checked={checked}
             onChange={handleCheck}
