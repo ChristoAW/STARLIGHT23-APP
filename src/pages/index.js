@@ -29,8 +29,6 @@ const Home = () => {
         bgPos="center"
         bgAttachment="fixed"
       >
-        <SoloForm />
-        <GroupForm />
         {/* <LatestNews /> */}
         <TreasureMap />
         <Box px={{ base: 6, sm: 14, md: 20 }}>
