@@ -95,14 +95,14 @@ const Registration = () => {
               dan yang berpotensi membahayakan diri sendiri serta orang lain.
             </ListItem>
             <ListItem>
-              Ishtara dapat mendaftar secara individu atau kelompok.
+              Isthara dapat mendaftar secara individu atau kelompok.
             </ListItem>
             <ListItem>
-              Ishthara wajib hadir sesuai dengan ketentuan dari pihak Starlight
+              Isthara wajib hadir sesuai dengan ketentuan dari pihak Starlight
               2023.
             </ListItem>
             <ListItem>
-              Ishthara <b>DILARANG</b> menampilkan hal-hal yang mengandung unsur
+              Isthara <b>DILARANG</b> menampilkan hal-hal yang mengandung unsur
               pornografi, hal yang tidak berpendidikan, dan SARA.
             </ListItem>
             <ListItem>Isthara wajib berpakaian sesuai aturan kampus.</ListItem>
@@ -112,24 +112,24 @@ const Registration = () => {
               ditetapkan oleh pihak Starlight UMN.
             </ListItem>
             <ListItem>
-              Ishthara harus memberikan informasi apabila terdapat riwayat
+              Isthara harus memberikan informasi apabila terdapat riwayat
               penyakit.
             </ListItem>
             <ListItem>
-              Ishthara yang berkebutuhan khusus dapat menghubungi panitia via DM
+              Isthara yang berkebutuhan khusus dapat menghubungi panitia via DM
               instagram atau menghubungi contact person yang telah disediakan.
               <UnorderedList listStyleType="none" spacing="1rem" mt="1rem">
                 <ListItem>
-                  - Ishthara yang memiliki kebutuhan khusus secara fisik,
+                  - Isthara yang memiliki kebutuhan khusus secara fisik,
                   intelektual, atau emosional disarankan membawa pendamping.
-                  Apabila Ishthara tidak memiliki pendamping akan ditemani oleh
+                  Apabila Isthara tidak memiliki pendamping akan ditemani oleh
                   LO dan petugas keamanan.
                 </ListItem>
               </UnorderedList>
             </ListItem>
             <ListItem>
-              Jika Ishthara melakukan tindakan yang mengganggu keberlangsungan
-              kegiatan Starlight 2023 maupun Ishthara lain, maka akan diberikan
+              Jika Isthara melakukan tindakan yang mengganggu keberlangsungan
+              kegiatan Starlight 2023 maupun Isthara lain, maka akan diberikan
               3 kali peringatan.
             </ListItem>
             <ListItem>
