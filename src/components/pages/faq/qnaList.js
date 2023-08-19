@@ -78,7 +78,7 @@ export const qnaIsthara = [
           '.',
         ],
         [
-          'Setelah kalian membuka website Starlight UMN 2023, akan terdapat pop up “Pendaftaran Isthara Starlight UMN 2023” atau bisa mengakses melalui link ',
+          'Setelah kalian membuka website Starlight UMN 2023, akan terdapat menu Registration, kemudian pilih kartu "Isthara" atau bisa mengakses melalui link ',
           <b>
             <a target="_blank" href="https://bit.ly/PendaftaranIstharaStarlightUMN2023">
             bit.ly/PendaftaranIstharaStarlightUMN2023
