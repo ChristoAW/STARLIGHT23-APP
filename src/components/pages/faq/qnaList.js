@@ -1,6 +1,6 @@
 // belom bisa dikasih warna :(
 
-const qna = [
+export const qnaGerda = [
   {
     q: 'Bagaimana cara mendaftar sebagai Panitia Starlight UMN 2023?',
     a: {
@@ -55,4 +55,103 @@ const qna = [
   },
 ];
 
-export default qna;
+export const qnaIsthara = [
+  {
+    q: 'Bagaimana cara mendaftar sebagai Peserta Starlight UMN 2023?',
+    a: {
+      heading: 'Tahapan Cara Mendaftar Peserta Starlight UMN 2023',
+      type: 'list',
+      body: [
+        [
+          'Buka website resmi Starlight UMN 2023 di ',
+          <b>
+            <a href="https://www.starlight.umn.ac.id">
+              www.starlight.umn.ac.id
+            </a>
+          </b>,
+          ' atau dapat klik link di Bio Instagram resmi Starlight UMN 2023 ',
+          <b>
+            <a target="_blank" href="https://www.instagram.com/starlightumn">
+              @starlightumn
+            </a>
+          </b>,
+          '.',
+        ],
+        [
+          'Setelah kalian membuka website Starlight UMN 2023, akan terdapat pop up “Pendaftaran Isthara Starlight UMN 2023” atau bisa mengakses melalui link ',
+          <b>
+            <a target="_blank" href="https://bit.ly/PendaftaranIstharaStarlightUMN2023">
+            bit.ly/PendaftaranIstharaStarlightUMN2023
+            </a>
+          </b>,
+          '. Calon Isthara juga bisa mendaftarkan diri secara langsung (onsite) melalui booth Open Recruitment Isthara Starlight di Lobby Connector Gedung C & D.',
+        ],
+        'Isi formulir tersebut, lalu persiapkan diri kamu untuk mengikuti audisi Starlight UMN 2023!',
+        'Jangan lupa untuk selalu pantengin media sosial Starlight UMN 2023 untuk mengetahui jadwal tahap berikutnya!',
+      ],
+    },
+  },
+  {
+    q: 'Apa kriteria dan syarat mendaftar sebagai Peserta Starlight UMN 2023?',
+    a: {
+      heading: 'Kriteria dan Syarat',
+      type: 'list',
+      body: [
+        'Pendaftaran Starlight UMN 2023 terbuka untuk umum, baik dari internal maupun eksternal Universitas Multimedia Nusantara',
+        'Peserta WAJIB berusia 16-23 tahun.',
+        'Bersedia mengikuti seluruh rangkaian Starlight UMN 2023 secara offline mulai dari audisi hingga stage terakhir.',
+        'Seluruh peserta WAJIB mengikuti seluruh peraturan dan regulasi kegiatan yang berlaku selama rangkaian Starlight UMN 2023.',
+      ],
+    },
+  },
+  {
+    q: 'Apakah pendaftaran Starlight UMN 2023 dipungut biaya?',
+    a: {
+      body: [
+        'Terdapat biaya registrasi sebesar Rp50.000,00 dan uang deposit sebesar Rp50.000,00. Jadi temen temen yang ingin mendaftar cukup membayar Rp100.000,00. dan akhir rangkaian uang deposit akan dikembalikan.',
+      ],
+    },
+  },
+  {
+    q: 'Bakat dan minat apa saja yang boleh ditampilkan?',
+    a: {
+      body: [
+        'Semua bakat dan penampilan boleh ditampilkan di atas panggung Starlight UMN 2023'
+      ],
+    },
+  },
+  {
+    q: 'Apa syarat dan ketentuan video audisi?',
+    a: {
+      type: 'list',
+      body: [
+        'Durasi video 3-5 menit dengan kualitas video minimal 720p.',
+        'Video harus diunggah ke Youtube dengan pengaturan video unlisted. Link video Youtube dikumpulkan ke dalam form yang telah disediakan panitia sesuai dengan rentang waktu pengumpulan yang telah ditetapkan',
+      ],
+    },
+  },
+  {
+    q: 'Apakah boleh daftar dalam bentuk group atau tim?',
+    a: {
+      body: [
+        'Ya, peserta Starlight UMN bisa tampil dalam jenis performance solo dan juga group.',
+      ],
+    },
+  },
+  {
+    q: 'Apakah ada konsekuensi apabila selama acara berlangsung isthara memutuskan untuk berhenti?',
+    a: {
+      body: [
+        'Maka uang deposit tidak akan dikembalikan setelah rangkaian acara Starlight UMN 2023.',
+      ],
+    },
+  },
+  {
+    q: 'Kapan biasanya audisi setiap babak dilakukan? Apakah pada jam kuliah atau jam setelah perkuliahan? Weekday atau weekend (sabtu-minggu)?',
+    a: {
+      body: [
+        'Sebagian besar dari rangkain Starlight akan diadakan weekdays serta berlangsung diluar jam kuliah. Akan ada beberapa rangkaian yang akan diadakan pada weekend dan jam kuliah, tetap tenang teman-teman segala bentuk informasi akan diberikan dengan jelas melalui platform media sosial dan juga pihak dari Starlight.',
+      ],
+    },
+  },
+];
