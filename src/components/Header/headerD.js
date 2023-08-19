@@ -60,7 +60,11 @@ const DesktopNav = () => {
       <NavbarLink to="/division">
         Divi<i>s</i>ion
       </NavbarLink>
-      {/* <NavDivider /> */}
+      {/* <NavDivider />
+      <NavbarLink to="/registration">
+        Regi<i>s</i>tration
+      </NavbarLink> */}
+      <NavDivider />
       {/* <NavbarLink to="/">Media</NavbarLink>
       <NavDivider />
       <NavbarLink to="/">
@@ -71,9 +75,9 @@ const DesktopNav = () => {
         Talent<i>s</i>
       </NavbarLink>
       <NavDivider /> */}
-      {/* <NavbarLink to="/faq">
+      <NavbarLink to="/faq">
         FA<i>Q</i>
-      </NavbarLink> */}
+      </NavbarLink>
     </Stack>
   );
 };

@@ -76,14 +76,14 @@ const Footer = () => {
               flexDir={{ base: 'column', md: 'row' }}
               textAlign={{ base: 'center', md: 'left' }}
             >
-              <Stack minW={{ base: '150px', xl: '180px' }} gap={{ md: 2 }}>
+              <Stack minW={{ base: '100px', xl: '150px' }} gap={{ md: 2 }}>
                 <FooterLink to="/">About Us</FooterLink>
                 <FooterLink to="/division">Division</FooterLink>
-                {/* <FooterLink to="/faq">FAQ</FooterLink> */}
+                <FooterLink to="/faq">FAQ</FooterLink>
               </Stack>
-              {/* <Stack minW="100px" py={{ base: "2", md: "0" }} gap={{ md: 2 }}>
+              {/* <Stack minW={{ base: '100px', xl: '150px' }} py={{ base: "2", md: "0" }} gap={{ md: 2 }}>
+                <FooterLink to="/registration">Registration</FooterLink>
                 <FooterLink to="/">Talents</FooterLink>
-                <FooterLink to="/">Media</FooterLink>
                 <FooterLink to="/">Testimony</FooterLink>
               </Stack> */}
             </Flex>

@@ -40,7 +40,6 @@ const Layout = ({ children, ...props }) => {
       >
         <Header />
       </Box>
-      {/* <SplashScreen /> */}
       {children}
       <Footer />
     </Flex>
