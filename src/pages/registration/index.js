@@ -10,6 +10,21 @@ import { PageTitle, SubSubHeado } from '@/components/styles';
 import bg from '@/asset/images/bg/bg.jpg';
 import bgM from '@/asset/images/bg/bg-m.png';
 
+const DisabledCardText = ({ children, ...props }) => {
+  return (
+    <Text
+      fontFamily="Exodus"
+      px={5}
+      fontSize={{ base: '1.75rem', md: '3rem', sm: '2.25rem' }}
+      color="rgba(233, 201, 143, 0.3)"
+      cursor="not-allowed"
+      {...props}
+    >
+      {children}
+    </Text>
+  );
+};
+
 const CardText = ({ children, ...props }) => {
   return (
     <Text
@@ -25,13 +40,50 @@ const CardText = ({ children, ...props }) => {
   );
 };
 
-const GlowOnHoverBox = ({ children }) => {
+const DisabledGlowOnHoverBox = ({ children, ...props }) => {
+
+  return (
+    <Flex
+      w={{ base: '15rem', md:'25rem'}}
+      h={{ base: '15rem', md:'25rem'}}
+      bgColor="rgba(1, 1, 1, 0.3)"
+      textAlign="center"
+      borderWidth="7px"
+      borderColor="rgba(225, 180, 92, 0.3)"
+      display="flex"
+      alignItems="center"
+      justifyContent="center"
+      transition="box-shadow 0.1s ease"
+      cursor="not-allowed"
+    >
+      <Box
+        borderWidth="3px"
+        borderColor="rgba(225, 180, 92, 0.3)"
+        w={{ base: '12rem', md:'22rem'}}
+        h={{ base: '12rem', md:'22rem'}}
+        display="flex"
+        alignItems="center"
+        justifyContent="center"
+        mx="1rem"
+      >
+        <Text
+          fontFamily="Exodus"
+          fontSize={{ base: '1.75rem', md: '3rem', sm: '2.25rem' }}
+        >
+          {children}
+        </Text>
+      </Box>
+    </Flex>
+  );
+};
+
+const GlowOnHoverBox = ({ children, ...props }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
     <Flex
-      w="25rem"
-      h="25rem"
+      w={{ base: '15rem', md:'25rem'}}
+      h={{ base: '15rem', md:'25rem'}}
       bgColor="rgba(1, 1, 1, 0.5)"
       textAlign="center"
       borderWidth="7px"
@@ -48,8 +100,8 @@ const GlowOnHoverBox = ({ children }) => {
       <Box
         borderWidth="3px"
         borderColor={theme.colors.deco[500]}
-        w="22rem"
-        h="22rem"
+        w={{ base: '12rem', md:'22rem'}}
+        h={{ base: '12rem', md:'22rem'}}
         display="flex"
         alignItems="center"
         justifyContent="center"
@@ -117,13 +169,6 @@ const IstharaRegistration = () => {
           flexDir={{ base: 'column', lg: 'row' }}
           gap={{ base: '10', md: '150', xl: '200' }}
         >
-          <NextLink href="" passHref>
-            <Link>
-              <GlowOnHoverBox>
-                <CardText>Gerda</CardText>
-              </GlowOnHoverBox>
-            </Link>
-          </NextLink>
           <NextLink href="/registration/ishtara" passHref>
             <Link>
               <GlowOnHoverBox>
@@ -133,6 +178,13 @@ const IstharaRegistration = () => {
               </GlowOnHoverBox>
             </Link>
           </NextLink>
+         {/*} <NextLink href="" passHref>
+            <Link>*/}
+              <DisabledGlowOnHoverBox>
+                <DisabledCardText>Gerda</DisabledCardText>
+              </DisabledGlowOnHoverBox>
+           {/*} </Link>
+          </NextLink> */}
         </Flex>
       </Flex>
     </Flex>
