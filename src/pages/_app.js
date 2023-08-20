@@ -3,6 +3,10 @@ import Head from 'next/head';
 
 import '../theme/fonts.scss';
 import theme from '../theme';
+// import CustomCursor from '@/components/cursor/CustomCursor';
+import './styles/cursor.scss';
+
+import '../components/styles.scss';
 
 import iconSL from '../../public/favicon.ico';
 
@@ -39,6 +43,7 @@ function MyApp({ Component, pageProps }) {
       <BaseHead />
       <ChakraProvider theme={theme}>
         <LayoutProvider>
+          {/* <CustomCursor /> */}
           {/* <Scroll /> */}
           <SplashScreen />
           <Component {...pageProps} />

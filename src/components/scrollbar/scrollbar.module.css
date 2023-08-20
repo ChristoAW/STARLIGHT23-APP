@@ -1,0 +1,12 @@
+.scrollbar{
+    width: 100px;
+    position: fixed;
+    right: 0;
+    z-index: 4;
+}
+
+@media (max-width: 767px){
+    .scrollbar{
+        display: none;
+    }
+}
