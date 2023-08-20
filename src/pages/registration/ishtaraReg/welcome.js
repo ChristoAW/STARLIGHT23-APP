@@ -47,7 +47,7 @@ const welcomeUser = () => {
           >
             <Image mb={5} width={{ base: '40vw', md: '20vw' }} src={qr.src} />
           </Link>
-          <Buddy>Good Luck, Calon Isthara Starlight UMN 2023! ⭐️</Buddy>
+          <Buddy>QR Whatsapp Group Calon Isthara Starlight UMN 2023</Buddy>
           <NextLink href="/" passHref>
             <Link
               mt="4rem"
