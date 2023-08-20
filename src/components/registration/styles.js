@@ -9,6 +9,11 @@ import {
   Textarea,
   InputGroup,
   InputLeftAddon,
+  Accordion,
+  AccordionButton,
+  AccordionItem,
+  AccordionPanel,
+  Link,
 } from '@chakra-ui/react';
 
 import { useState, useRef } from 'react';
@@ -470,3 +475,73 @@ export const FormInputEmail = ({ name, ...props }) => {
     </FormControl>
   );
 };
+
+export function Twibbon({ ...props }) {
+  return (
+    <Box as={Accordion} allowToggle {...props}>
+      <AccordionItem border="none">
+        <Flex
+        justifyContent="center"
+          as={AccordionButton}
+          w="100%"
+          mt=".5rem"
+          border="1px"
+          p=".5rem"
+          borderColor={theme.colors.deco[400]}
+          color={theme.colors.text[400]}
+          _hover={{
+            
+            color:`${theme.colors.text[300]}`,
+            bgColor:`${theme.colors.bg[800]}`,
+          }}
+        >
+          <b>Twibbon Calon Isthara Starlight UMN 2023</b>
+        </Flex>
+        <FormBox
+          as={AccordionPanel}
+          my={0}
+          color={theme.colors.text[600]}
+        >
+          <Link
+            target="_blank"
+            href="http://bit.ly/opregistharastarlightumn2023"
+          >
+            <b><u>Link Twibbon Starlight UMN 2023</u></b>
+          </Link>
+          <Box pt={3}>
+            <Text pt={3}>
+              [🌊 Calling All Stars: Ready to Embark on a New Journey with
+              Starlight UMN 2023]
+              <br />
+              <br />
+              Ahoy, Starlighters! Hoist the Anchor⚓️
+              <br />
+              Perkenalkan aku [[Your Stage Name]] siap untuk mengarungi lautan
+              luas untuk memancarkan cahaya terbaikku dengan mendaftar menjadi
+              Isthara Starlight UMN 2023🌠!
+              <br />
+              <br />
+              Enlist for Isthara Starlight 2023 and be part of the journey to
+              the horizon NOW! ⛵️✨
+              <br />
+              <br />
+              ———
+              <br />
+              <br />
+              📨 Feel free to contact us on :<br />
+              • Instagram: @starlightumn <br />• Website: starlight.umn.ac.id{' '}
+              <br />• Youtube: Starlight UMN <br />• LinkedIn: Starlight UMN{' '}
+              <br />• Email: starlight@umn.ac.id
+              <br />
+              <br />
+              ———
+              <br />
+              <br />
+              #Starlight2023⭐️ #LetsSailToTheHorizon! #The10thStar
+            </Text>
+          </Box>
+        </FormBox>
+      </AccordionItem>
+    </Box>
+  );
+}

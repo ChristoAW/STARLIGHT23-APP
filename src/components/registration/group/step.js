@@ -24,6 +24,7 @@ import {
   FormInputNIM,
   FormInputTel,
   FormInputEmail,
+  Twibbon,
 } from '../styles';
 
 import { storage } from '@/pages/api/isthara/firebase';
@@ -92,8 +93,7 @@ function groupForm() {
       formValue.univ = formValue.univ + '  *  ' + input.univ;
       if (input.nim != '') {
         formValue.nim = formValue.nim + '  *  ' + '000000' + input.nim;
-      }
-      else {
+      } else {
         formValue.nim = formValue.nim + '  *  ';
       }
       formValue.line = formValue.line + '  *  ' + input.line;
@@ -187,7 +187,6 @@ function groupForm() {
     });
     // console.log(response.status, response.statusText);
 
-    
     if (response.status != 201) {
       setIsLoading(false);
       alert('Submission Unsuccessful. Submit Again');
@@ -214,6 +213,7 @@ function groupForm() {
             +62 815 1073 7353 (Whatsapp)
           </Text>
         </Box>
+        <Twibbon py={5} />
         <FormTextImportant>Group Name</FormTextImportant>
         <FormInputImportant
           placeholder="Group Name"
@@ -223,9 +223,6 @@ function groupForm() {
         />
         {/*🔻File Upload disini🔻*/}
         <FormTextImportant>Proof of Uploading Twibbon</FormTextImportant>
-        <Link target="_blank" href="https://twb.nz/opregistharastarlightumn2023" color={theme.colors.text[600]}>
-          Twibbon Calon Isthara Starlight UMN 2023
-        </Link>
         <FormInputFile
           name="twibbon"
           isDisabled={isLoading}

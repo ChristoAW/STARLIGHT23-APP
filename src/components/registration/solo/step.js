@@ -1,5 +1,4 @@
 import {
-  VStack,
   Button,
   Flex,
   Link,
@@ -25,6 +24,7 @@ import {
   FormInputNIM,
   FormInputTel,
   FormInputEmail,
+  Twibbon,
 } from '../styles';
 
 import { storage } from '@/pages/api/isthara/firebase';
@@ -136,6 +136,7 @@ function soloForm() {
             +62 815 1073 7353 (Whatsapp)
           </Text>
         </Box>
+        <Twibbon py={5} />
         <FormTextImportant>Full Name</FormTextImportant>
         <FormInputImportant
           placeholder="Your Name"
@@ -209,10 +210,6 @@ function soloForm() {
         />
         {/*🔻File Upload disini🔻*/}
         <FormTextImportant>Proof of Uploading Twibbon</FormTextImportant>
-        <Link target="_blank" href="https://twb.nz/opregistharastarlightumn2023" color={theme.colors.text[600]}>
-          Twibbon Calon Isthara Starlight UMN 2023
-        </Link>
-
         <FormInputFile
           name="twibbon"
           onChange={(event) => {
