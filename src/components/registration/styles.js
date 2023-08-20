@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import {
   Box,
   Flex,
@@ -319,23 +319,34 @@ export const FormInputDate = ({ name, ...props }) => {
 export const FormInputNIM = ({ children, name, ...props }) => {
   const [isNotNum, setIsNotNum] = useState(false);
   const [invalidLength, setInvalidLength] = useState(false);
+  const [isEmpty, setIsEmpty] = useState(false);
 
   const handleChange = (event) => {
     const input = event.target.value;
     const numeric = /^[0-9]*$/;
-
-    if (!numeric.test(input)) {
-      setIsNotNum(true);
-    } else {
-      setIsNotNum(false); // Reset the error state when the input is numeric
-    }
-
-    if (input.length != 5) {
-      setInvalidLength(true);
-    } else {
+    const inputValue = input.trim();
+  
+    if (inputValue === '') {
+      setIsEmpty(false);
+      setIsNotNum(false);
       setInvalidLength(false);
+    } else {
+      setIsEmpty(true);
+  
+      if (!numeric.test(inputValue)) {
+        setIsNotNum(true);
+      } else {
+        setIsNotNum(false);
+      }
+  
+      if (inputValue.length !== 5) {
+        setInvalidLength(true);
+      } else {
+        setInvalidLength(false);
+      }
     }
   };
+  
 
   return (
     <FormControl isInvalid={isNotNum || invalidLength}>
@@ -352,8 +363,8 @@ export const FormInputNIM = ({ children, name, ...props }) => {
             color={theme.colors.deco[400]}
             bgColor={theme.colors.bg[700]}
             name={name}
-            pattern="[0-9]*" // Only allows numeric input
-            title="0-9" // Custom error message
+            pattern="[0-9]*"
+            title="Enter 0-9"
             onBlur={handleChange}
             {...props}
           />
