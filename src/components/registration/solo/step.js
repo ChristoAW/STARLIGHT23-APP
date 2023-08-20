@@ -209,7 +209,7 @@ function soloForm() {
         />
         {/*🔻File Upload disini🔻*/}
         <FormTextImportant>Proof of Uploading Twibbon</FormTextImportant>
-        <Link target="_blank" href="https://drive.google.com/file/d/1IP4TIlrZPjxUbFkKaaxvQmqTLf7GARXa/view?usp=drive_link" color={theme.colors.text[600]}>
+        <Link target="_blank" href="https://twb.nz/opregistharastarlightumn2023" color={theme.colors.text[600]}>
           Twibbon Calon Isthara Starlight UMN 2023
         </Link>
 

@@ -37,8 +37,17 @@ const welcomeUser = () => {
         >
           <FormHeading>Welcome aboard!</FormHeading>
           <FormSubHeading mt={1}>Let's start our journey!</FormSubHeading>
-          <Image mb={5} width={{base: "40vw", md: "20vw"}} src={qr.src} />
-          <Buddy>QR Whatsapp Group Calon Isthara Starlight UMN 2023</Buddy>
+          <Link
+            target="_blank"
+            href="https://chat.whatsapp.com/HDHT3AXBlxbDVxZZSKLFDJ"
+            _hover={{
+              transform: "scale(1.06)"
+            }}
+            transition="0.3s linear"
+          >
+            <Image mb={5} width={{ base: '40vw', md: '20vw' }} src={qr.src} />
+          </Link>
+          <Buddy>Good Luck, Calon Isthara Starlight UMN 2023! ⭐️</Buddy>
           <NextLink href="/" passHref>
             <Link
               mt="4rem"
