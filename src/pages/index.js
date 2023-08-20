@@ -29,7 +29,7 @@ const Home = () => {
         bgPos="center"
         bgAttachment="fixed"
       >
-        {/* <LatestNews /> */}
+        <LatestNews />
         <TreasureMap />
         <Box px={{ base: 6, sm: 14, md: 20 }}>
           <Divider
