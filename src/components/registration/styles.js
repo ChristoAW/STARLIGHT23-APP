@@ -490,7 +490,6 @@ export function Twibbon({ ...props }) {
           borderColor={theme.colors.deco[400]}
           color={theme.colors.text[400]}
           _hover={{
-            
             color:`${theme.colors.text[300]}`,
             bgColor:`${theme.colors.bg[800]}`,
           }}

@@ -79,13 +79,13 @@ const Footer = () => {
               <Stack minW={{ base: '100px', xl: '150px' }} gap={{ md: 2 }}>
                 <FooterLink to="/">About Us</FooterLink>
                 <FooterLink to="/division">Division</FooterLink>
-                <FooterLink to="/faq">FAQ</FooterLink>
               </Stack>
-              {/* <Stack minW={{ base: '100px', xl: '150px' }} py={{ base: "2", md: "0" }} gap={{ md: 2 }}>
+              <Stack minW={{ base: '100px', xl: '150px' }} py={{ base: "2", md: "0" }} gap={{ md: 2 }}>
                 <FooterLink to="/registration">Registration</FooterLink>
-                <FooterLink to="/">Talents</FooterLink>
-                <FooterLink to="/">Testimony</FooterLink>
-              </Stack> */}
+                <FooterLink to="/faq">FAQ</FooterLink>
+                {/* <FooterLink to="/">Talents</FooterLink>
+                <FooterLink to="/">Testimony</FooterLink> */}
+              </Stack>
             </Flex>
             {/* end page navigation */}
           </Flex>
