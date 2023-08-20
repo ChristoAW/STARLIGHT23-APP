@@ -6,6 +6,8 @@ import { LayoutContext } from '@/components/context/LayoutContext';
 import LatestNews from '@/components/pages/about-us/latest';
 import TreasureMap from '@/components/pages/about-us/treasure-map';
 import AboutUs from '@/components/pages/about-us/about-us';
+import SoloForm from '@/components/pages/test-form/testFormSolo';
+import GroupForm from '@/components/pages/test-form/testFormGroup';
 
 import bg from '@/asset/images/bg/bg.jpg';
 import bgM from '@/asset/images/bg/bg-m.png';

@@ -106,6 +106,9 @@ const MobileNav = () => {
           <NavbarLink to="/division" isOpen={isOpen} setOpen={setOpen}>
             Divi<i>s</i>ion
           </NavbarLink>
+          <NavbarLink to="/registration" isOpen={isOpen} setOpen={setOpen}>
+            Regi<i>s</i>tration
+          </NavbarLink>
           {/* <NavbarLink to="/media" isOpen={isOpen} setOpen={setOpen}>Media</NavbarLink>
           <NavbarLink to="/testimony" isOpen={isOpen} setOpen={setOpen}>
             Te<i>s</i>timony

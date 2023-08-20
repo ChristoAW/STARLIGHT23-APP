@@ -60,10 +60,10 @@ const DesktopNav = () => {
       <NavbarLink to="/division">
         Divi<i>s</i>ion
       </NavbarLink>
-      {/* <NavDivider />
+      <NavDivider />
       <NavbarLink to="/registration">
         Regi<i>s</i>tration
-      </NavbarLink> */}
+      </NavbarLink>
       <NavDivider />
       {/* <NavbarLink to="/">Media</NavbarLink>
       <NavDivider />
