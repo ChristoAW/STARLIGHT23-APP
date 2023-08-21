@@ -2,7 +2,7 @@ import { google } from 'googleapis';
 
 async function handler(req, res) {
   if (req.method == 'POST') {
-    const { no, groupName, number, name, email, line, nim, univ, tel, instagram, twibProof, igProof, timestamp, message } = req.body;
+    const { no, groupName, number, name, email, line, nim, univ, tel, paymentProof, instagram, twibProof, igProof, timestamp, message } = req.body;
     // res.json({ message: 'It works!' });
 
     const auth = new google.auth.GoogleAuth({
@@ -28,7 +28,7 @@ async function handler(req, res) {
       range: 'Group!A2:C',
       valueInputOption: 'USER_ENTERED',
       requestBody: {
-        values: [[no, groupName, number, name, email, line, nim, univ, tel, instagram, twibProof, igProof, timestamp, message]],
+        values: [[no, groupName, number, name, email, line, nim, univ, tel, instagram, paymentProof, twibProof, igProof, timestamp, message]],
       },
     });
 

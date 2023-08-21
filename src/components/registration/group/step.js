@@ -1,11 +1,4 @@
-import {
-  Button,
-  Flex,
-  Link,
-  Text,
-  Box,
-  Spinner,
-} from '@chakra-ui/react';
+import { Button, Flex, Link, Text, Box, Spinner } from '@chakra-ui/react';
 import theme from '@/theme';
 
 import { useState } from 'react';
@@ -36,6 +29,7 @@ function groupForm() {
   const { handleSubmit } = useForm();
   const [twibbonUpload, setTwibbonUpload] = useState(null);
   const [instagramUpload, setInstagramUpload] = useState(null);
+  const [paymentUpload, setPaymentUpload] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
   const [num, setNum] = useState(1);
@@ -103,7 +97,7 @@ function groupForm() {
       formValue.email = formValue.email + '  *  ' + input.email;
     });
 
-    console.log(formValue);
+    //console.log(formValue);
   }
 
   const handleChange = (event) => {
@@ -167,6 +161,16 @@ function groupForm() {
       const instagramDownloadURL = await getDownloadURL(instagramRef);
       // console.log('Instagram Image:', instagramDownloadURL);
       formValue.igProof = instagramDownloadURL;
+    }
+
+    if (paymentUpload !== null) {
+      const paymentRef = ref(storage, `group/paymentProof/${paymentUpload.name + v4()}`)
+      await uploadBytes(paymentRef, paymentUpload).then(() => {
+        //console.log('Payment Proof Uploaded.');
+      })
+      const paymentDownloadURL = await getDownloadURL(paymentRef);
+      //console.log('Payment Proof Image:', paymentDownloadURL);
+      formValue.paymentProof = paymentDownloadURL;
     }
   }
 
@@ -249,6 +253,16 @@ function groupForm() {
           Silahkan unggah bukti follow Instagram setiap anggota kelompok yang
           telah disatukan
         </FormNotes>
+        <FormTextImportant>
+          Proof of Payment Transfer for Registration Fee and Deposit
+        </FormTextImportant>
+        <FormInputFile
+          name="payment"
+          isDisabled={isLoading}
+          onChange={(event) => {
+            setPaymentUpload(event.target.files[0]);
+          }}
+        />
         {inputFields.length > 0 && (
           <>
             {inputFields.map((input, index) => {
