@@ -71,9 +71,10 @@ function groupForm() {
     // Enter other recurring field here
     formValue.name = inputFields[0].name;
     formValue.univ = inputFields[0].univ;
-    if (formValue.nim != '') {
-      formValue.nim = "'000000" + inputFields[0].nim;
-    }
+    formValue.nim = "'000000" + inputFields[0].nim;
+    // if (formValue.nim != '') {
+    //   formValue.nim = "'000000" + inputFields[0].nim;
+    // }
     formValue.line = inputFields[0].line;
     formValue.tel = inputFields[0].tel;
     formValue.instagram = inputFields[0].instagram;
@@ -86,11 +87,13 @@ function groupForm() {
       // nanti disini bisa masukin variable lain biar sekalian
       formValue.name = formValue.name + '  *  ' + input.name;
       formValue.univ = formValue.univ + '  *  ' + input.univ;
-      if (input.nim != '') {
-        formValue.nim = formValue.nim + '  *  ' + '000000' + input.nim;
-      } else {
-        formValue.nim = formValue.nim + '  *  ';
-      }
+      // if (input.nim != '') {
+      //   formValue.nim = formValue.nim + '  *  ' + '000000' + input.nim;
+      // } else {
+      //   formValue.nim = formValue.nim + '  *  ';
+      // }
+
+      formValue.nim = formValue.nim + '  *  ' + '000000' + input.nim;
       formValue.line = formValue.line + '  *  ' + input.line;
       formValue.tel = formValue.tel + '  *  ' + input.tel;
       formValue.instagram = formValue.instagram + '  *  ' + input.instagram;
