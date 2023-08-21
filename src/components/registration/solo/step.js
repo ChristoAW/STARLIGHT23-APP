@@ -1,11 +1,4 @@
-import {
-  Button,
-  Flex,
-  Link,
-  Text,
-  Box,
-  Spinner,
-} from '@chakra-ui/react';
+import { Button, Flex, Link, Text, Box, Spinner } from '@chakra-ui/react';
 import theme from '@/theme';
 
 import { useState, useRef } from 'react';
@@ -24,7 +17,8 @@ import {
   FormInputNIM,
   FormInputTel,
   FormInputEmail,
-  Twibbon,
+  TwibbonInfo,
+  PaymentInfo,
 } from '../styles';
 
 import { storage } from '@/pages/api/isthara/firebase';
@@ -136,7 +130,9 @@ function soloForm() {
             +62 815 1073 7353 (Whatsapp)
           </Text>
         </Box>
-        <Twibbon py={5} />
+        <FormText textAlign="center">Informasi</FormText>
+        <PaymentInfo />
+        <TwibbonInfo />
         <FormTextImportant>Full Name</FormTextImportant>
         <FormInputImportant
           placeholder="Your Name"

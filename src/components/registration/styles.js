@@ -330,20 +330,20 @@ export const FormInputNIM = ({ children, name, ...props }) => {
     const input = event.target.value;
     const numeric = /^[0-9]*$/;
     const inputValue = input.trim();
-  
+
     if (inputValue === '') {
       setIsEmpty(false);
       setIsNotNum(false);
       setInvalidLength(false);
     } else {
       setIsEmpty(true);
-  
+
       if (!numeric.test(inputValue)) {
         setIsNotNum(true);
       } else {
         setIsNotNum(false);
       }
-  
+
       if (inputValue.length !== 5) {
         setInvalidLength(true);
       } else {
@@ -351,7 +351,6 @@ export const FormInputNIM = ({ children, name, ...props }) => {
       }
     }
   };
-  
 
   return (
     <FormControl isInvalid={isNotNum || invalidLength}>
@@ -476,12 +475,12 @@ export const FormInputEmail = ({ name, ...props }) => {
   );
 };
 
-export function Twibbon({ ...props }) {
+export function Info({ children, title, ...props }) {
   return (
     <Box as={Accordion} allowToggle {...props}>
       <AccordionItem border="none">
         <Flex
-        justifyContent="center"
+          justifyContent="center"
           as={AccordionButton}
           w="100%"
           mt=".5rem"
@@ -490,57 +489,73 @@ export function Twibbon({ ...props }) {
           borderColor={theme.colors.deco[400]}
           color={theme.colors.text[400]}
           _hover={{
-            color:`${theme.colors.text[300]}`,
-            bgColor:`${theme.colors.bg[800]}`,
+            color: `${theme.colors.text[300]}`,
+            bgColor: `${theme.colors.bg[800]}`,
           }}
         >
-          <b>Twibbon Calon Isthara Starlight UMN 2023</b>
+          <b>{title}</b>
         </Flex>
-        <FormBox
-          as={AccordionPanel}
-          my={0}
-          color={theme.colors.text[600]}
-        >
-          <Link
-            target="_blank"
-            href="http://bit.ly/opregistharastarlightumn2023"
-          >
-            <b><u>Link Twibbon Starlight UMN 2023</u></b>
-          </Link>
-          <Box pt={3}>
-            <Text pt={3}>
-              [🌊 Calling All Stars: Ready to Embark on a New Journey with
-              Starlight UMN 2023]
-              <br />
-              <br />
-              Ahoy, Starlighters! Hoist the Anchor⚓️
-              <br />
-              Perkenalkan aku [[Your Stage Name]] siap untuk mengarungi lautan
-              luas untuk memancarkan cahaya terbaikku dengan mendaftar menjadi
-              Isthara Starlight UMN 2023🌠!
-              <br />
-              <br />
-              Enlist for Isthara Starlight 2023 and be part of the journey to
-              the horizon NOW! ⛵️✨
-              <br />
-              <br />
-              ———
-              <br />
-              <br />
-              📨 Feel free to contact us on :<br />
-              • Instagram: @starlightumn <br />• Website: starlight.umn.ac.id{' '}
-              <br />• Youtube: Starlight UMN <br />• LinkedIn: Starlight UMN{' '}
-              <br />• Email: starlight@umn.ac.id
-              <br />
-              <br />
-              ———
-              <br />
-              <br />
-              #Starlight2023⭐️ #LetsSailToTheHorizon! #The10thStar
-            </Text>
-          </Box>
+        <FormBox as={AccordionPanel} my={0} color={theme.colors.text[600]}>
+          {children}
         </FormBox>
       </AccordionItem>
     </Box>
+  );
+}
+
+export function TwibbonInfo() {
+  return (
+    <Info title="Twibbon Calon Isthara Starlight UMN 2023">
+      <Link target="_blank" href="http://bit.ly/opregistharastarlightumn2023">
+        <b>
+          <u>Link Twibbon Starlight UMN 2023</u>
+        </b>
+      </Link>
+      <Box pt={3}>
+        <Text pt={3}>
+          [🌊 Calling All Stars: Ready to Embark on a New Journey with Starlight
+          UMN 2023]
+          <br />
+          <br />
+          Ahoy, Starlighters! Hoist the Anchor⚓️
+          <br />
+          Perkenalkan aku [[Your Stage Name]] siap untuk mengarungi lautan luas
+          untuk memancarkan cahaya terbaikku dengan mendaftar menjadi Isthara
+          Starlight UMN 2023🌠!
+          <br />
+          <br />
+          Enlist for Isthara Starlight 2023 and be part of the journey to the
+          horizon NOW! ⛵️✨
+          <br />
+          <br />
+          ———
+          <br />
+          <br />
+          📨 Feel free to contact us on :<br />
+          • Instagram: @starlightumn <br />• Website: starlight.umn.ac.id <br />
+          • Youtube: Starlight UMN <br />• LinkedIn: Starlight UMN <br />•
+          Email: starlight@umn.ac.id
+          <br />
+          <br />
+          ———
+          <br />
+          <br />
+          #Starlight2023⭐️ #LetsSailToTheHorizon! #The10thStar
+        </Text>
+      </Box>
+    </Info>
+  );
+}
+
+export function PaymentInfo() {
+  return (
+    <Info title="Biaya Registrasi dan Deposit">
+      <Text>
+        Biaya registrasi dan deposit untuk menjadi Isthara Starlight UMN 2023
+        adalah sebesar Rp 100.000,- yang dapat dibayarkan melalui :
+        <br />
+        <b>BCA 7131539308 a/n Aurelia Alexa Sukandar</b>
+      </Text>
+    </Info>
   );
 }

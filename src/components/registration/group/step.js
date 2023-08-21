@@ -24,7 +24,8 @@ import {
   FormInputNIM,
   FormInputTel,
   FormInputEmail,
-  Twibbon,
+  TwibbonInfo,
+  PaymentInfo,
 } from '../styles';
 
 import { storage } from '@/pages/api/isthara/firebase';
@@ -213,7 +214,9 @@ function groupForm() {
             +62 815 1073 7353 (Whatsapp)
           </Text>
         </Box>
-        <Twibbon py={5} />
+        <FormText textAlign="center">Informasi</FormText>
+        <PaymentInfo />
+        <TwibbonInfo />
         <FormTextImportant>Group Name</FormTextImportant>
         <FormInputImportant
           placeholder="Group Name"
