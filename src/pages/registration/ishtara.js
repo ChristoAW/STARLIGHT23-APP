@@ -83,7 +83,13 @@ const Registration = () => {
             mb={{ base: '2rem', md: '6rem' }}
           >
             <ListItem>
-              Peformance <b>OFFLINE</b> berdurasi maksimal 10 menit.
+              Peserta berumur <b>16-23 tahun.</b>
+            </ListItem>
+            <ListItem>
+              Peserta berasal dari <b>EXTERNAL maupun INTERNAL</b> UMN.
+            </ListItem>
+            <ListItem>
+              Performance <b>OFFLINE</b> berdurasi maksimal 10 menit saja.
             </ListItem>
             <ListItem>Kreativitas dan orisinalitas diutamakan.</ListItem>
             <ListItem>
@@ -127,8 +133,8 @@ const Registration = () => {
             </ListItem>
             <ListItem>
               Jika Isthara melakukan tindakan yang mengganggu keberlangsungan
-              kegiatan Starlight 2023 maupun Isthara lain, maka akan diberikan
-              3 kali peringatan.
+              kegiatan Starlight 2023 maupun Isthara lain, maka akan diberikan 3
+              kali peringatan.
             </ListItem>
             <ListItem>
               Apabila Isthara mendapat peringatan sebanyak 3 kali dari pihak
@@ -152,7 +158,7 @@ const Registration = () => {
       >
         <Flex mt="2rem" mb="2rem" color={theme.colors.text[300]}>
           <Checkbox
-            px={{base: "2rem", md: "0"}}
+            px={{ base: '2rem', md: '0' }}
             size="lg"
             checked={checked}
             onChange={handleCheck}
