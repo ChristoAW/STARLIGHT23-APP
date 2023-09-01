@@ -1,11 +1,4 @@
-import {
-  Button,
-  Flex,
-  Link,
-  Text,
-  Box,
-  Spinner,
-} from '@chakra-ui/react';
+import { Button, Flex, Link, Text, Box, Spinner } from '@chakra-ui/react';
 import theme from '@/theme';
 
 import { useState, useRef } from 'react';
@@ -24,7 +17,8 @@ import {
   FormInputNIM,
   FormInputTel,
   FormInputEmail,
-  Twibbon,
+  TwibbonInfo,
+  PaymentInfo,
 } from '../styles';
 
 import { storage } from '@/pages/api/isthara/firebase';
@@ -35,6 +29,7 @@ function soloForm() {
   const { handleSubmit } = useForm();
   const [twibbonUpload, setTwibbonUpload] = useState(null);
   const [instagramUpload, setInstagramUpload] = useState(null);
+  const [paymentUpload, setPaymentUpload] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
   const router = useRouter();
@@ -89,11 +84,23 @@ function soloForm() {
       // console.log('Instagram Image:', instagramDownloadURL);
       formValue.igProof = instagramDownloadURL;
     }
+
+    if(paymentUpload !==null){
+      const paymentRef = ref(storage, `solo/paymentProof/${paymentUpload.name + v4()}`)
+      await uploadBytes(paymentRef, paymentUpload).then(() => {
+        //console.log('Payment Proof Uploaded.');
+      })
+      const paymentDownloadURL = await getDownloadURL(paymentRef);
+      //console.log('Payment Proof Image:', paymentDownloadURL);
+      formValue.paymentProof = paymentDownloadURL;
+    }
   }
 
   async function submitHandler(e) {
     setIsLoading(true);
     await fileHandler();
+
+    //console.log(formValue)
 
     // customize value
     if (formValue.nim != '') {
@@ -136,7 +143,9 @@ function soloForm() {
             +62 815 1073 7353 (Whatsapp)
           </Text>
         </Box>
-        <Twibbon py={5} />
+        <FormText textAlign="center">Informasi</FormText>
+        <PaymentInfo />
+        <TwibbonInfo />
         <FormTextImportant>Full Name</FormTextImportant>
         <FormInputImportant
           placeholder="Your Name"
@@ -222,6 +231,16 @@ function soloForm() {
           isDisabled={isLoading}
           onChange={(event) => {
             setInstagramUpload(event.target.files[0]);
+          }}
+        />
+        <FormTextImportant>
+          Proof of Payment Transfer for Registration Fee and Deposit
+        </FormTextImportant>
+        <FormInputFile
+          name="payment"
+          isDisabled={isLoading}
+          onChange={(event) => {
+            setPaymentUpload(event.target.files[0]);
           }}
         />
       </FormBox>

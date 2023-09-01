@@ -1,11 +1,4 @@
-import {
-  Button,
-  Flex,
-  Link,
-  Text,
-  Box,
-  Spinner,
-} from '@chakra-ui/react';
+import { Button, Flex, Link, Text, Box, Spinner } from '@chakra-ui/react';
 import theme from '@/theme';
 
 import { useState } from 'react';
@@ -24,7 +17,8 @@ import {
   FormInputNIM,
   FormInputTel,
   FormInputEmail,
-  Twibbon,
+  TwibbonInfo,
+  PaymentInfo,
 } from '../styles';
 
 import { storage } from '@/pages/api/isthara/firebase';
@@ -35,6 +29,7 @@ function groupForm() {
   const { handleSubmit } = useForm();
   const [twibbonUpload, setTwibbonUpload] = useState(null);
   const [instagramUpload, setInstagramUpload] = useState(null);
+  const [paymentUpload, setPaymentUpload] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
   const [num, setNum] = useState(1);
@@ -76,9 +71,10 @@ function groupForm() {
     // Enter other recurring field here
     formValue.name = inputFields[0].name;
     formValue.univ = inputFields[0].univ;
-    if (formValue.nim != '') {
-      formValue.nim = "'000000" + inputFields[0].nim;
-    }
+    formValue.nim = "'000000" + inputFields[0].nim;
+    // if (formValue.nim != '') {
+    //   formValue.nim = "'000000" + inputFields[0].nim;
+    // }
     formValue.line = inputFields[0].line;
     formValue.tel = inputFields[0].tel;
     formValue.instagram = inputFields[0].instagram;
@@ -91,18 +87,20 @@ function groupForm() {
       // nanti disini bisa masukin variable lain biar sekalian
       formValue.name = formValue.name + '  *  ' + input.name;
       formValue.univ = formValue.univ + '  *  ' + input.univ;
-      if (input.nim != '') {
-        formValue.nim = formValue.nim + '  *  ' + '000000' + input.nim;
-      } else {
-        formValue.nim = formValue.nim + '  *  ';
-      }
+      // if (input.nim != '') {
+      //   formValue.nim = formValue.nim + '  *  ' + '000000' + input.nim;
+      // } else {
+      //   formValue.nim = formValue.nim + '  *  ';
+      // }
+
+      formValue.nim = formValue.nim + '  *  ' + '000000' + input.nim;
       formValue.line = formValue.line + '  *  ' + input.line;
       formValue.tel = formValue.tel + '  *  ' + input.tel;
       formValue.instagram = formValue.instagram + '  *  ' + input.instagram;
       formValue.email = formValue.email + '  *  ' + input.email;
     });
 
-    console.log(formValue);
+    //console.log(formValue);
   }
 
   const handleChange = (event) => {
@@ -167,6 +165,16 @@ function groupForm() {
       // console.log('Instagram Image:', instagramDownloadURL);
       formValue.igProof = instagramDownloadURL;
     }
+
+    if (paymentUpload !== null) {
+      const paymentRef = ref(storage, `group/paymentProof/${paymentUpload.name + v4()}`)
+      await uploadBytes(paymentRef, paymentUpload).then(() => {
+        //console.log('Payment Proof Uploaded.');
+      })
+      const paymentDownloadURL = await getDownloadURL(paymentRef);
+      //console.log('Payment Proof Image:', paymentDownloadURL);
+      formValue.paymentProof = paymentDownloadURL;
+    }
   }
 
   async function submitHandler(data) {
@@ -213,7 +221,9 @@ function groupForm() {
             +62 815 1073 7353 (Whatsapp)
           </Text>
         </Box>
-        <Twibbon py={5} />
+        <FormText textAlign="center">Informasi</FormText>
+        <PaymentInfo />
+        <TwibbonInfo />
         <FormTextImportant>Group Name</FormTextImportant>
         <FormInputImportant
           placeholder="Group Name"
@@ -246,6 +256,16 @@ function groupForm() {
           Silahkan unggah bukti follow Instagram setiap anggota kelompok yang
           telah disatukan
         </FormNotes>
+        <FormTextImportant>
+          Proof of Payment Transfer for Registration Fee and Deposit
+        </FormTextImportant>
+        <FormInputFile
+          name="payment"
+          isDisabled={isLoading}
+          onChange={(event) => {
+            setPaymentUpload(event.target.files[0]);
+          }}
+        />
         {inputFields.length > 0 && (
           <>
             {inputFields.map((input, index) => {

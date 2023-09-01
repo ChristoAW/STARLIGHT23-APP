@@ -41,11 +41,10 @@ const CardText = ({ children, ...props }) => {
 };
 
 const DisabledGlowOnHoverBox = ({ children, ...props }) => {
-
   return (
     <Flex
-      w={{ base: '15rem', md:'25rem'}}
-      h={{ base: '15rem', md:'25rem'}}
+      w={{ base: '15rem', md: '25rem' }}
+      h={{ base: '15rem', md: '25rem' }}
       bgColor="rgba(1, 1, 1, 0.3)"
       textAlign="center"
       borderWidth="7px"
@@ -59,8 +58,8 @@ const DisabledGlowOnHoverBox = ({ children, ...props }) => {
       <Box
         borderWidth="3px"
         borderColor="rgba(225, 180, 92, 0.3)"
-        w={{ base: '12rem', md:'22rem'}}
-        h={{ base: '12rem', md:'22rem'}}
+        w={{ base: '12rem', md: '22rem' }}
+        h={{ base: '12rem', md: '22rem' }}
         display="flex"
         alignItems="center"
         justifyContent="center"
@@ -82,8 +81,8 @@ const GlowOnHoverBox = ({ children, ...props }) => {
 
   return (
     <Flex
-      w={{ base: '15rem', md:'25rem'}}
-      h={{ base: '15rem', md:'25rem'}}
+      w={{ base: '15rem', md: '25rem' }}
+      h={{ base: '15rem', md: '25rem' }}
       bgColor="rgba(1, 1, 1, 0.5)"
       textAlign="center"
       borderWidth="7px"
@@ -100,8 +99,8 @@ const GlowOnHoverBox = ({ children, ...props }) => {
       <Box
         borderWidth="3px"
         borderColor={theme.colors.deco[500]}
-        w={{ base: '12rem', md:'22rem'}}
-        h={{ base: '12rem', md:'22rem'}}
+        w={{ base: '12rem', md: '22rem' }}
+        h={{ base: '12rem', md: '22rem' }}
         display="flex"
         alignItems="center"
         justifyContent="center"
@@ -178,13 +177,13 @@ const IstharaRegistration = () => {
               </GlowOnHoverBox>
             </Link>
           </NextLink>
-         {/*} <NextLink href="" passHref>
-            <Link>*/}
-              <DisabledGlowOnHoverBox>
-                <DisabledCardText>Gerda</DisabledCardText>
-              </DisabledGlowOnHoverBox>
-           {/*} </Link>
-          </NextLink> */}
+          <NextLink href="/recruitment" passHref>
+            <Link>
+              <GlowOnHoverBox>
+                <CardText>Gerda</CardText>
+              </GlowOnHoverBox>
+            </Link>
+          </NextLink>
         </Flex>
       </Flex>
     </Flex>
