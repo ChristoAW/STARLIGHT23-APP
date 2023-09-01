@@ -236,9 +236,10 @@ const Popup = (props) => {
         )}
 
         {/* BUTTON PENDAFTARAN */}
-        {props.selectedDivisi.name !== 'POSEIDON' &&
-          props.selectedDivisi.name !== 'LEVIATHAN' &&
-          props.selectedDivisi.name !== 'CALYPSO' && (
+        {props.selectedDivisi.link !== '' &&
+          // props.selectedDivisi.name !== 'LEVIATHAN' &&
+          // props.selectedDivisi.name !== 'CALYPSO' && 
+          (
             <AspectRatio
               ratio={732 / 150}
               w={['45%', '30%', '25%', '20%']}
