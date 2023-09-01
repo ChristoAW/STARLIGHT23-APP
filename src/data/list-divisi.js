@@ -1,6 +1,7 @@
 const listDivisi = [
   {
     name: 'Poseidon',
+    link: '',
     members: [
       'Umar Putrajaya',
       'Teresa Tesalonika',
