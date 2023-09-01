@@ -236,32 +236,34 @@ const Popup = (props) => {
         )}
 
         {/* BUTTON PENDAFTARAN */}
-        {/* {props.selectedDivisi.name !== 'POSEIDON' && (
-          <AspectRatio
-            ratio={732 / 150}
-            w={['45%', '30%', '25%', '20%']}
-            my="20px"
-            _hover={{
-              cursor: 'pointer',
-              transform: 'scale(1.1)',
-            }}
-            transition=".3s ease-in-out"
-          >
-            <Box
-              bgImage={props.selectedDivisi.button}
-              w="70%"
-              bgSize="contain"
-              bgPos="center"
-              bgRepeat="no-repeat"
-              onClick={(e) => {
-                if (!e) var e = window.event;
-                e.cancelBubble = true;
-                if (e.stopPropagation) e.stopPropagation();
-                window.open(props.selectedDivisi.link);
+        {props.selectedDivisi.name !== 'POSEIDON' &&
+          props.selectedDivisi.name !== 'LEVIATHAN' &&
+          props.selectedDivisi.name !== 'CALYPSO' && (
+            <AspectRatio
+              ratio={732 / 150}
+              w={['45%', '30%', '25%', '20%']}
+              my="20px"
+              _hover={{
+                cursor: 'pointer',
+                transform: 'scale(1.1)',
               }}
-            />
-          </AspectRatio>
-        )} */}
+              transition=".3s ease-in-out"
+            >
+              <Box
+                bgImage={props.selectedDivisi.button}
+                w="70%"
+                bgSize="contain"
+                bgPos="center"
+                bgRepeat="no-repeat"
+                onClick={(e) => {
+                  if (!e) var e = window.event;
+                  e.cancelBubble = true;
+                  if (e.stopPropagation) e.stopPropagation();
+                  window.open(props.selectedDivisi.link);
+                }}
+              />
+            </AspectRatio>
+          )}
       </Flex>
     );
   }
