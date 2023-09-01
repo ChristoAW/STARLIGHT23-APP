@@ -14,7 +14,7 @@ const listDivisi = [
   },
   {
     name: 'Sirens',
-    link: 'https://forms.gle/h96U2s9qztsvdQ3H9',
+    link: 'https://forms.gle/BbsKETe619hcMVbcA',
     members: [
       'Sattwika Karna',
       'Maria Graciella',
@@ -34,7 +34,7 @@ const listDivisi = [
   },
   {
     name: 'Circe',
-    link: 'https://forms.gle/jvBGLctuce7UJYY76',
+    link: 'https://forms.gle/qmDM3ymh8yD2wRHz8',
     members: [
       'Margareth Valencia',
       'Citra Puspa',
@@ -55,7 +55,7 @@ const listDivisi = [
   },
   {
     name: 'Naiads',
-    link: 'https://forms.gle/Zp42F3XDwnebNbob6',
+    link: 'https://forms.gle/6mpf86w7pgDTBdYNA',
     members: [
       'Haezer Limanjaya',
       'Ari Sastra',
@@ -76,7 +76,7 @@ const listDivisi = [
   },
   {
     name: 'Charybdis',
-    link: 'https://forms.gle/mop7DaabwVZYv7169',
+    link: 'https://forms.gle/Pvpq9LbrZkFD7bk57',
     members: [
       'Scholastika Santa',
       'Classico Joydie',
@@ -95,7 +95,7 @@ const listDivisi = [
   },
   {
     name: 'Calypso',
-    link: 'https://forms.gle/2edmZVuzmpkLez9Q9',
+    link: '',
     members: [
       'Kelly Christian',
       'Christine Calin',
@@ -109,7 +109,7 @@ const listDivisi = [
   },
   {
     name: 'Hippocampus',
-    link: 'https://forms.gle/ZsmzZJHBEFy3CqyQ6',
+    link: 'https://forms.gle/CypsjQRGqn3NSrse7',
     members: [
       'Aurelia Alexa',
       'Daniel',
@@ -124,7 +124,7 @@ const listDivisi = [
   },
   {
     name: 'Kraken',
-    link: 'https://forms.gle/B2EYU5QS7iJJW9g39',
+    link: 'https://forms.gle/imaByk6zfHqae58M9',
     members: [
       'Mustika Darakinanti',
       'Wafa Salma',
@@ -137,7 +137,7 @@ const listDivisi = [
   },
   {
     name: 'Leviathan',
-    link: 'https://forms.gle/x7SByULMDV9y7u3M6',
+    link: '',
     members: [
       'Charlene Anthea',
       'Ryo Anthonio',
@@ -150,7 +150,7 @@ const listDivisi = [
   },
   {
     name: 'Nereus',
-    link: 'https://forms.gle/z9mKqqb289WmYmpX9',
+    link: 'https://forms.gle/tuz9q1JFDaXT5iKZA',
     members: [
       'Christophorus Augusta',
       'Maecyntha Irelynn',
@@ -163,7 +163,7 @@ const listDivisi = [
   },
   {
     name: 'Hydra',
-    link: 'https://forms.gle/ENtiYAQ6fhsd4hGL8',
+    link: 'https://forms.gle/JJtQVK7g5mCnt78UA',
     members: [
       'Enjelita',
       'Kansha Syaakira',
@@ -177,7 +177,7 @@ const listDivisi = [
   },
   {
     name: 'Cetea',
-    link: 'https://forms.gle/tq6rpXQKG2RxaxVt8',
+    link: 'https://forms.gle/93rAMZ2Uej6Q26EWA',
     members: [
       'Andre Kusuma',
       'Maghfira Permana',
@@ -193,7 +193,7 @@ const listDivisi = [
   },
   {
     name: 'Scylla',
-    link: 'https://forms.gle/3jMAfuvKcHYrvQMw9',
+    link: 'https://forms.gle/ZroD8vwihUpgLVTj8',
     members: [
       'Vito Wijaya',
       'Jennifer Landau',
