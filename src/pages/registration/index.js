@@ -177,7 +177,7 @@ const IstharaRegistration = () => {
               </GlowOnHoverBox>
             </Link>
           </NextLink>
-          <NextLink href="/recruitment" passHref>
+          <NextLink href="/division" passHref>
             <Link>
               <GlowOnHoverBox>
                 <CardText>Gerda</CardText>

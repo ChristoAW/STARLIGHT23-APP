@@ -113,12 +113,11 @@ const listDivisi = [
     link: 'https://forms.gle/CypsjQRGqn3NSrse7',
     members: [
       'Aurelia Alexa',
-      'Daniel',
+      'Valencia Antoinette',
       'Willy Wijaya Krisrena Cong',
       'Marcel Lim',
       'Brigitta Vania Maharani',
       'Kenizyanadi Viede Putri Hananda',
-      'Valencia Antoinette',
       'Vivian Regina Surya',
     ],
     desc: 'Makhluk laut yang melambangkan harapan dan bantuan, melambangkan divisi Fresh Money yang akan menyediakan dana yang dibutuhkan untuk keberlangsungan seluruh acara Starlight 2023.',

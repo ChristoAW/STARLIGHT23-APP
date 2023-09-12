@@ -51,7 +51,7 @@ const FAQ = () => {
             >
               Isthara (Peserta)
             </TypeButton>
-            <TypeButton
+            {/* <TypeButton
               onClick={() => setType(qnaGerda)}
               color={
                 type == qnaGerda
@@ -60,7 +60,7 @@ const FAQ = () => {
               }
             >
               Gerda (Panitia)
-            </TypeButton>
+            </TypeButton> */}
           </Flex>
           {type.map((qna, idx) => (
             <QNA
