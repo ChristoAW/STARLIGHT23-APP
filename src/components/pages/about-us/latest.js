@@ -233,6 +233,13 @@ const LatestNews = () => {
           <SwiperSlide>
             <YtEmbed
               pos="absolute"
+              embedId="lbW5smA94Qw"
+              title="The Relic Trailer"
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <YtEmbed
+              pos="absolute"
               embedId="wcM0lA1MCbg"
               title="Starlight 2023 Trailer"
             />
