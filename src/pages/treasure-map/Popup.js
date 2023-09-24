@@ -4,7 +4,6 @@ import {
   SubHeadBody,
   SubSubHeadBody,
 } from '@/components/pages/about-us/styling/texts';
-import theme from '@/theme';
 
 //dynamic window dimensions checker
 function getWindowsDimensions() {
@@ -48,6 +47,7 @@ const Popup = (props) => {
       justifyContent="center"
       alignItems="center"
       p={5}
+      px="10vw"
       m={0}
       top={width < 768 ? '50%' : null}
       transform={width < 768 ? 'translate(-50%, -50%)' : null}
@@ -58,7 +58,8 @@ const Popup = (props) => {
     >
       <SubHeadBody
         mt={{ base: 6, md: '6rem' }}
-        header={<>The Abyss</>}
+        textAlign="center"
+        header={<>The Aby<i>ss</i></>}
         body={
           <>
             Stages pertama yaitu Abyss, memiliki arti sebagai tempat terbawah

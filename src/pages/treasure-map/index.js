@@ -1,14 +1,21 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef, useContext } from 'react';
 import { Flex, Box, Image, AspectRatio } from '@chakra-ui/react';
 import theme from '@/theme';
 
-import { PageTitle } from '@/components/styles';
+import { LayoutContext } from '@/components/context/LayoutContext';
+
 import bg from '@/asset/images/bg/bg.jpg';
 import bgM from '@/asset/images/bg/bg-m.png';
 import Map from './Map';
 import Popup from './Popup';
 
 function index() {
+  const { setTitleSuffix } = useContext(LayoutContext);
+
+  useEffect(() => {
+    setTitleSuffix(' - Treasure Map');
+  }, [setTitleSuffix]);
+
   const [isAbyssOpened, setIsAbyssOpened] = useState(false);
   const [isLabrysOpened, setIsLabyrsOpened] = useState(false);
   const [isElysiumOpened, setIsElysiumOpened] = useState(false);
