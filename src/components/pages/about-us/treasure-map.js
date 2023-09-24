@@ -1,17 +1,21 @@
-import { Flex, Image, Text } from '@chakra-ui/react';
+import { Button, Flex, Image, Text, keyframes } from '@chakra-ui/react';
+import NextLink from 'next/link';
 
 import vidFrame from '@/asset/images/pages/about-us/frame.png';
 import bgTreasure from '@/asset/images/pages/about-us/coming-soon.jpg';
 
 // pake frame
 const TreasureMap = () => {
+  const float = keyframes`
+    0% {transform: translateY(4px);}
+    50% {transform: translateY(-4px);}
+    100% {transform: translateY(4px);}
+  `;
+
+  const floatAnimation = `${float} infinite 2s ease-in-out`;
+
   return (
-    <Flex
-      w="100%"
-      minH="100%"
-      justifyContent="center"
-      alignItems="center"
-    >
+    <Flex w="100%" minH="100%" justifyContent="center" alignItems="center">
       <Image
         src={vidFrame.src}
         alt="Latest News"
@@ -21,18 +25,25 @@ const TreasureMap = () => {
         zIndex={3}
       />
       <Flex pos="absolute" justifyContent="center" alignItems="center">
-        <Image
-          src={bgTreasure.src}
-          w={{
-            base: 'calc(16 * 5.2vw)',
-            sm: 'calc(16 * 4.7vw)',
-            md: 'calc(16 * 4vw)',
-            xl: 'calc(16 * 3.4vw)',
-          }}
-          sizes="cover"
-        />
+        <NextLink href="/treasure-map" passHref>
+          <Image
+            src={bgTreasure.src}
+            w={{
+              base: 'calc(16 * 5.2vw)',
+              sm: 'calc(16 * 4.7vw)',
+              md: 'calc(16 * 4vw)',
+              xl: 'calc(16 * 3.4vw)',
+            }}
+            sizes="cover"
+            transition=".3s ease-out all"
+            _hover={{
+              transform: 'scale(1.05)',
+            }}
+          />
+        </NextLink>
         <Text
-          mt={{base: "-14vw", md: "-12vw", xl: "-9vw"}}
+          animation={floatAnimation}
+          mt={{ base: '-14vw', md: '-12vw', xl: '-9vw' }}
           pos="absolute"
           textAlign="center"
           fontFamily="Exodus"
@@ -48,7 +59,7 @@ const TreasureMap = () => {
           bgGradient="linear(to-b, #a5bff7, #81addf)"
           bgClip="text"
         >
-          COMING <i>S</i>OON
+          TREA<i>S</i>URE MAP
         </Text>
       </Flex>
     </Flex>
