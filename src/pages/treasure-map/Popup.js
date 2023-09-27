@@ -59,16 +59,20 @@ const Popup = (props) => {
       <SubHeadBody
         mt={{ base: 6, md: '6rem' }}
         textAlign="center"
-        header={<>The Aby<i>ss</i></>}
+        header={
+          <>
+            Aby<i>ss</i>
+          </>
+        }
         body={
           <>
             Stages pertama yaitu Abyss, memiliki arti sebagai tempat terbawah
-            bum yang gelap, dimana para peserta mulai berdatangan untuk memulai
+            bumi yang gelap, dimana para peserta mulai berdatangan untuk memulai
             perjalanan panjang dengan bakat unik yang mereka miliki. Stage
             pertama merupakan proses penyaringan pertama bagi Isthara. Dalam
             stage ini, akan diadakan seleksi pertama (30 Isthara) untuk
             menyaring Isthara-Isthara mana yang masih harus berlatih, Isthara
-            mana yang siap untuk tampil di Kantin C pada stages berikutnya
+            mana yang siap untuk tampil pada stages berikutnya
           </>
         }
       />

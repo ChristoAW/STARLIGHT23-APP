@@ -66,6 +66,7 @@ function tm(props) {
               objectFit="cover"
               src={props.isLabrysOpened ? LabyrssOpen.src : LabyrssClose.src}
               alt=""
+              filter="grayscale(100%)"
             />
           </Box>
           <Box
@@ -79,6 +80,7 @@ function tm(props) {
               objectFit="cover"
               src={props.isElysiumOpened ? ElysiumOpen.src : ElysiumClose.src}
               alt=""
+              filter="grayscale(100%)"
             />
           </Box>
         </Flex>
@@ -126,6 +128,7 @@ function tm(props) {
               objectFit="cover"
               src={props.isLabrysOpened ? LabyrssOpen.src : LabyrssClose.src}
               alt=""
+              filter="grayscale(100%)"
             />
           </Box>
           <Box
@@ -139,6 +142,7 @@ function tm(props) {
               objectFit="cover"
               src={props.isElysiumOpened ? ElysiumOpen.src : ElysiumClose.src}
               alt=""
+              filter="grayscale(100%)"
             />
           </Box>
         </Flex>
@@ -191,6 +195,7 @@ function tm(props) {
               src={props.isLabrysOpened ? LabyrssOpen.src : LabyrssClose.src}
               alt=""
               marginTop="6vh"
+              filter="grayscale(100%)"
             />
           </Box>
           <Box
@@ -205,6 +210,7 @@ function tm(props) {
               src={props.isElysiumOpened ? ElysiumOpen.src : ElysiumClose.src}
               alt=""
               marginTop="8vh"
+              filter="grayscale(100%)"
             />
           </Box>
         </Flex>
