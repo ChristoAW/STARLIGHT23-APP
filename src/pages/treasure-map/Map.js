@@ -9,6 +9,7 @@ import ElysiumOpen from '@/asset/images/treasure/Elysium REV PSB 2.png';
 import ElysiumClose from '@/asset/images/treasure/Elysium_(cangkang_tutup)_REV.png';
 
 function tm(props) {
+  console.log('test');
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
   useEffect(() => {
