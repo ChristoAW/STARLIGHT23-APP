@@ -17,10 +17,12 @@ const listMedia = [
   {
     name: 'Charybdis',
     type: 'medpar',
+		cat: 'mid'
   },
   {
     name: 'Circe',
     type: 'medpar',
+		cat: 'low'
   },
   {
     name: 'Kraken',
@@ -33,6 +35,7 @@ const listMedia = [
   {
     name: 'Naiads',
     type: 'medpar',
+		cat: 'mid'
   },
   {
     name: 'Scylla',
@@ -41,6 +44,7 @@ const listMedia = [
 ];
 
 const loadImage = (entries) => {
+	// nanti ganti pathnya
   entries.map((entry) => {
     {
       entry.type == 'sponsor'
