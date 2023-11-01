@@ -28,9 +28,8 @@ const Home = () => {
         bgPos="center"
         bgAttachment="fixed"
       >
-        {/* <LatestNews /> */}
+        <LatestNews />
         <TreasureMap />
-        <Media />
         <Box px={{ base: 6, sm: 14, md: 20 }}>
           <Divider
             orientation="horizontal"
@@ -40,6 +39,7 @@ const Home = () => {
           />
         </Box>
         <AboutUs />
+        <Media />
       </Box>
     </>
   );
