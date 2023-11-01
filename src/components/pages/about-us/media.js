@@ -23,11 +23,17 @@ const Media = () => {
       <Box as={Marquee} my={8} gradient gradientColor={[19, 40, 74]}>
         {listSponsor.map((media, idx) => {
           return (
-            <Image
+            // <Image
+            //   key={idx}
+            //   src={media.logo}
+            //   px={{ base: 'calc(2.5vw + .1rem)', md: 'calc(2.6vw + .2rem)' }}
+            //   height={{ base: '15vw', md: '10vw' }}
+            // />
+            <SponsorComponent
               key={idx}
-              src={media.logo}
-              px={{ base: 'calc(2.5vw + .1rem)', md: 'calc(2.6vw + .2rem)' }}
-              height={{ base: '15vw', md: '10vw' }}
+              alt={media.name}
+              src={media.file}
+              cat={media.cat}
             />
           );
         })}
@@ -39,7 +45,7 @@ const Media = () => {
             <MedparComponent
               key={idx}
               alt={media.name}
-              src={media.logo}
+              src={media.file}
               cat={media.cat}
             />
           );
@@ -51,6 +57,39 @@ const Media = () => {
 
 // nanti buat yang sponsor juga dibuat gini, cuma ukurannya dominan lebih gede" dibanding medpar
 const MedparComponent = ({ ...props }) => {
+  return (
+    <Flex
+      height="100%"
+      justifyContent="center"
+      alignItems="center"
+      // apa efek ini cuma dikasih buat sponsor aja.. soalnya medpar terlalu cilik
+      _hover={{
+        filter: 'drop-shadow(0px 0px 3px #fff)',
+      }}
+      transition=".2s all linear"
+    >
+      <Image
+        key={props.key}
+        alt={props.alt}
+        src={props.src}
+        px={{ base: 'calc(2.5vw + .1rem)', md: 'calc(2.6vw + .2rem)' }}
+        height={
+          props.cat == 'high'
+            ? { base: '12vw', md: '6vw' }
+            : props.cat == 'mid'
+            ? { base: '8vw', md: '6vw' }
+            : { base: '5vw', md: '6vw' }
+        }
+        // ini belom dibuat responsivenya ya,
+        // nanti tergantung ada berapa level
+        // sama kondisinya dari sponsor nanti coba tanyain dulu
+        // nanti juga perlu test pake logo yang orientasinya beda"
+      />
+    </Flex>
+  );
+};
+
+const SponsorComponent = ({ ...props }) => {
   return (
     <Flex
       height="100%"
