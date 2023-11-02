@@ -61,8 +61,8 @@ const DesktopNav = () => {
         Divi<i>s</i>ion
       </NavbarLink>
       <NavDivider />
-      <NavbarLink to="/registration">
-        Regi<i>s</i>tration
+      <NavbarLink to="/treasure-map">
+        Trea<i>s</i>ure Map
       </NavbarLink>
       <NavDivider />
       {/* <NavbarLink to="/">Media</NavbarLink>
