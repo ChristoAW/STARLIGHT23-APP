@@ -100,6 +100,11 @@ const SponsorComponent = ({ ...props }) => {
         filter: 'drop-shadow(0px 0px 3px #fff)',
       }}
       transition=".2s all linear"
+      onClick={
+        props.alt === 'Emina'
+          ? () => (window.location = 'https://www.eminacosmetics.com/id')
+          : ''
+      }
     >
       <Image
         key={props.key}

@@ -11,6 +11,7 @@ const listMedia = [
     file: 'Valeri Monica MakeupArtist.png',
     cat: 'mid',
   },
+  { name: 'Emina', type: 'sponsor', file: 'emina.png', cat: 'mid' },
   {
     name: 'ChuGa Best Value K-BBQ',
     type: 'sponsor',
