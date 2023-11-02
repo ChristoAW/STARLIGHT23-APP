@@ -152,7 +152,7 @@ const AboutUs = () => {
           }
         />
         <SubSubHeadBody
-          mb={{ base: '5rem', md: '3rem' }}
+          // mb={{ base: '5rem', md: '3rem' }}
           title={<>STARLIGHT 2023 TAGLINE</>}
           header={
             <>
