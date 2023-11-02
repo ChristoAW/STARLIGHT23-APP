@@ -103,7 +103,7 @@ const SponsorComponent = ({ ...props }) => {
       onClick={
         props.alt === 'Emina'
           ? () => (window.location = 'https://www.eminacosmetics.com/id')
-          : ''
+          : () => null
       }
     >
       <Image

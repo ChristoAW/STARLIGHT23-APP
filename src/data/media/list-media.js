@@ -103,9 +103,9 @@ const listMedia = [
     cat: 'mid',
   },
   {
-    name: 'Copy of Logo HIMMA.jpeg',
+    name: 'Copy-of-Logo-HIMMA.jpg',
     type: 'medpar',
-    file: 'Copy of Logo HIMMA.jpeg',
+    file: 'Copy-of-Logo-HIMMA.jpg',
     cat: 'mid',
   },
   {
