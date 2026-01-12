@@ -1,38 +1,66 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Starlight UMN — Event Platform
 
-## Getting Started
+Former official website for **Starlight UMN**, a university-wide student organization event under  
+BEM Universitas Multimedia Nusantara.
 
-First, run the development server:
+This project serves as the primary promotional and information hub for annual Starlight events, with a strong emphasis on interactive UI, animation, and visual presentation.
+
+---
+
+## 📌 Project Context
+
+- **Role:** Lead Web Division  
+- **Team Size:** 6 Web Team Members  
+- **Timeline:** 2022 – 2023  
+- **Organization:** Badan Eksekutif Mahasiswa (BEM) UMN  
+
+The website was developed collaboratively by the student web team and iterated upon from previous years’ implementations.
+
+---
+
+## 🧰 Tech Stack
+
+- **Framework:** Next.js  
+- **UI Library:** Chakra UI  
+- **Animation & Interaction:** Swiper.js, Custom CSS Animations  
+- **Deployment:** Shared hosting control panel (non-cPanel)
+
+---
+
+## 🧠 Engineering Focus
+
+- Utilized **Next.js Server-Side Rendering (SSR)** to improve content delivery and SEO for public-facing event pages.
+- Built interactive UI components using **Swiper.js** combined with custom CSS animations to enhance user engagement.
+- Extended and refined an existing legacy codebase from previous teams while introducing new layouts and interactions.
+- Coordinated development direction, task breakdown, and deployment ownership across the web team.
+
+---
+
+## ✨ Highlighted Feature — Division & Member Showcase
+
+One of the core interactive sections of the site is the **Division & Member Showcase**, designed to visually represent each organizational division.
+
+- Implemented a **card-based carousel** using Swiper.js for smooth navigation.
+- Added custom “jump + flip” CSS animations triggered during page open and close to create a dynamic, tactile feel.
+- Carefully synchronized animation timing with component state to avoid layout instability.
+
+This section became one of the most visually distinctive parts of the site and reinforced the organization’s identity beyond static content.
+
+---
+
+## 🚀 Getting Started
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+Open http://localhost:3000 to view the site locally.
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+📝 Notes
+This repository represents a snapshot of a collaborative student organization project.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+Visual assets and content were produced collaboratively.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+Some content may be modified or sanitized for public sharing.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+---
